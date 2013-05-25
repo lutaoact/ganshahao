@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `mobile_loginjack`;
-CREATE DATABASE `mobile_loginjack` character set utf8;
-USE `mobile_loginjack`;
+DROP DATABASE IF EXISTS `ganshahao`;
+CREATE DATABASE `ganshahao` character set utf8;
+USE `ganshahao`;
 
 DROP TABLE IF EXISTS `mobile_loginjack_setting`;
 CREATE TABLE mobile_loginjack_setting(
