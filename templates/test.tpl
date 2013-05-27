@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='zh'>
     <head>
-    <meta charset="utf-8">
+    <meta charset="ANSI">
     <title>test templates</title>
     </head>
     <body>
