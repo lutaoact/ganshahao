@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__) . '/../lib/constants.php');
+require_once(dirname(__FILE__) . '/db_config.php');
 
 class DbAdapter {
     private $_db;
