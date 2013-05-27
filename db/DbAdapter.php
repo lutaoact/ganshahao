@@ -9,30 +9,41 @@ class DbAdapter {
 		$this->_db->select_db(DB_NAME) or die("could not select " . DB_NAME . " : " . mysqli_error);
 	}
 
+    private function error() {
+        return array('status'=>'error', 'errno'=>$this->_db->errno, 'errmsg'=>$this->_db->errmsg);
+    }
+
+    private function success($data = null) {
+        return array('status'=>'success', 'result'=>$data);
+    }
+
     public function runSql($sql) {
-        return $this->_db->query($sql);
+		if($result = $this->_db->query($sql))
+			return $this->success();
+		return $this->error();
     }
 	
     public function getVar($sql) {
-        $result = $this->runSql($sql);
-        if($result->num_rows) {
-            list($key, $value) = each($result);
-            return $value;
+        if($result = $this->_db->query($sql)) {
+            return $this->success($result->fetch_assoc());
         }
-        return null;
+        return $this->error();
     }
+
     public function getData($sql) {
-        $result = $this->runSql($sql);
-        if($result->num_rows)
-            return $result;
-        return null;
+        if($result = $this->_db->query($sql)) {
+            for($i = 0; $i<$result->num_rows; $i++)
+                $data[$i] = $result->fetch_assoc();
+            return $this->success($data);
+        }
+        return $this->error();
     }
 
     public function getLine($sql) {
-        $result = $this->runSql($sql);
-        if($result->num_rows)
-            return $result->fetch_assoc();
-        return null;
+        if($result = $this->_db->query($sql)) {
+            return $this->success($result->fetch_assoc());
+        }
+        return $this->error();
     }
 
 	private function format_data($params, $separator = ','){
@@ -117,8 +128,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     company
                 SET
-                    {$date}
-                ";
+                    {$date}";
         return $this->runSql($sql);
     }
 
@@ -167,8 +177,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     job
                 SET
-                    {$date}, update_time = NOW()
-                ";
+                    {$date}, update_time = NOW()";
         return $this->runSql($sql);
     }
 
@@ -212,8 +221,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     training
                 SET
-                    {$date}
-                ";
+                    {$date}";
         return $this->runSql($sql);
     }
 
@@ -236,22 +244,51 @@ class DbAdapter {
         $sql = "INSERT INTO
                     question
                 SET
-                    {$date}
-                ";
+                    {$date}";
         return $this->runSql($sql);
     }
 
+    public function update_question($id, $params) {
+        $data = $this->format_data($params);
+        $sql = "UPDATE
+                    question
+                SET
+                    {$data}
+                WHERE
+                    id = {$id}";
+        return $this->runSql($sql);
+    }
+
+    public function select_questions_by_training_id($id) {
+        $sql = "SELECT
+                    *
+                FROM
+                    question
+                WHERE
+                    training_id = {$id}";
+        return $this->getData($sql);
+    }
+
     ##################
-    # training_complete
+    # training_completed
     ##################
     public function insert_training_complete($params) {
         $data = $this->format_data($params);
         $sql = "INSERT INTO
-                    training_complete
+                    training_completed
                 SET
-                    {$date}
-                ";
+                    {$date}";
         return $this->runSql($sql);
+    }
+
+    public function count_training_complete_by_user_id($id) {
+        $sql = "SELECT
+                    count(training_id) as count
+                FROM
+                    training_completed
+                WHERE
+                    user_id = {$id}";
+        return $this->getVar($sql);
     }
 
     ##################
@@ -262,9 +299,18 @@ class DbAdapter {
         $sql = "INSERT INTO
                     job_application
                 SET
-                    {$date}
-                ";
+                    {$date}";
         return $this->runSql($sql);
+    }
+
+    public function get_status_by_job_id_and_user_id($job_id, $user_id) {
+        $sql = "SELECT
+                    status
+                FORM
+                    job_application
+                WHERE
+                    job_id = {$job_id} and user_id = {$user_id}";
+        return $this->getVar($sql);
     }
 }
 ?>
