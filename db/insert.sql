@@ -1,9 +1,9 @@
 use ganshahao;
 
 truncate user;
-insert into user(nick_name, email, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick1', 'a@b.com', 'password1', 'description1', 200011, '/doc/resume/id1.doc', '[{},{}]', '来火焰1', 0);
-insert into user(nick_name, email, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick2', 'a@b.com', 'password2', 'description2', 200022, '/doc/resume/id2.doc', '[{},{}]', '来火焰2', 0);
-insert into user(nick_name, email, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick3', 'a@b.com', 'password3', 'description3', 200033, '/doc/resume/id3.doc', '[{},{}]', '来火焰3', 0);
+insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick1', 'a@b.com', '13800000000', 'password1', 'description1', 200011, '/doc/resume/id1.doc', '[{},{}]', '来火焰1', 0);
+insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick2', 'a@b.com', '13800000000', 'password2', 'description2', 200022, '/doc/resume/id2.doc', '[{},{}]', '来火焰2', 0);
+insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick3', 'a@b.com', '13800000000', 'password3', 'description3', 200033, '/doc/resume/id3.doc', '[{},{}]', '来火焰3', 0);
 
 truncate company;
 insert into company(name, description) values ('翻太平洋国际大财团1', '我们公司就是牛逼啊1');
