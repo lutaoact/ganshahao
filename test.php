@@ -7,7 +7,7 @@ $smarty->assign('world', '世界');
 $smarty->assign('name', '高常宇');
 
 $smarty->display('test.tpl');
-
+function test() {}
 /*
 
 $db = new DbAdapter();

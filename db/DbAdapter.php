@@ -9,41 +9,37 @@ class DbAdapter {
 		$this->_db->select_db(DB_NAME) or die("could not select " . DB_NAME . " : " . mysqli_error);
 	}
 
-    private function error() {
-        return array('status'=>'error', 'errno'=>$this->_db->errno, 'errmsg'=>$this->_db->errmsg);
+    public function format( $data = null){
+        return array($data, $this->_db->errno(), $this->_db->errmsg());
+    }
+    public function errno() {
+        return $this->_db->errno;
     }
 
-    private function success($data = null) {
-        return array('status'=>'success', 'result'=>$data);
+    public function errmsg() {
+        $this->_db->errmsg;
     }
 
     public function runSql($sql) {
-		if($result = $this->_db->query($sql))
-			return $this->success();
-		return $this->error();
+		$result = $this->_db->query($sql);
+        return $this->format($result->affected_rows);
     }
 	
     public function getVar($sql) {
-        if($result = $this->_db->query($sql)) {
-            return $this->success($result->fetch_assoc());
-        }
-        return $this->error();
+        $result = $this->_db->query($sql);
+        return $this->format($result->fetch_assoc());
     }
 
     public function getData($sql) {
-        if($result = $this->_db->query($sql)) {
-            for($i = 0; $i<$result->num_rows; $i++)
-                $data[$i] = $result->fetch_assoc();
-            return $this->success($data);
-        }
-        return $this->error();
+        $result = $this->_db->query($sql);
+        for($i = 0; $i<$result->num_rows; $i++)
+            $data[$i] = $result->fetch_assoc();
+        return $this->format($data);
     }
 
     public function getLine($sql) {
-        if($result = $this->_db->query($sql)) {
-            return $this->success($result->fetch_assoc());
-        }
-        return $this->error();
+        $result = $this->_db->query($sql);
+        return $this->format($result->fetch_assoc());
     }
 
 	private function format_data($params, $separator = ','){
