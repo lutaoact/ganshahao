@@ -7,6 +7,7 @@ CREATE TABLE user(
     id              int unsigned    NOT NULL auto_increment,
     nick_name       varchar(255)    NOT NULL DEFAULT 'nick_name',
     email           varchar(255)    NOT NULL DEFAULT '',
+    mobile          varchar(255)    NOT NULL DEFAULT '',
     password        varchar(255)    NOT NULL DEFAULT '',
     description     text            NOT NULL DEFAULT '',
     zip_code        int(6)          NOT NULL DEFAULT 200001,
