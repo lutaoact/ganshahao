@@ -10,7 +10,7 @@ class DbAdapter {
 	}
 
     public function format( $data = null){
-        return array($data, $this->_db->errno(), $this->_db->errmsg());
+        return array($data, $this->errno(), $this->errmsg());
     }
     public function errno() {
         return $this->_db->errno;

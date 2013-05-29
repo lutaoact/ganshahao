@@ -1,5 +1,10 @@
 <?php
 
+function json_exit( $res ) {
+    echo json_encode( $res );
+    exit(0);
+}
+
 function require_login() {
     if( !is_login() ){
         redirect('/user/login.php?jumpto='.$_SERVER["REQUEST_URI"]);

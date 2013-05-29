@@ -3,28 +3,29 @@
 <head>
     <title>[干啥好] 登录页面</title>
     <meta charset="UTF-8" />
-    <script src="/ganshahao/static/js/jquery-2.0.0.min.js"></script>
-    <script src="/ganshahao/static/js/common.js"></script>
+    <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
+    <script src="../../static/js/jquery.js"></script>
+    <script src="../../static/js/common.js"></script>
     <script>
-        $("#login_btn").click(function(e) {
-                toast('---->>>>login click');
+        $(function() {
+            $("#login_btn").click(function(e) {
                 var params = {
                     "login_email" : $("#login_user_email").val(),
                     "password"    : $("#login_user_pwd").val(),
                     "submit"      : 1
                 };
-                $.post('/user/login.php', params,
+                $.post('../../user/login.php', params,
                     function(result) {
                         if(result["errCode"] > 0) {
-                            toast_err(result["errMsg"]);
+                            alert(result["errMsg"]);
                         } else if(result["errCode"] == 0) {
-                            toast(result["result"]["message"]);
+                            alert(result["result"]["message"]);
                             setTimeout(function(){ location.href = "{$jumpto}"; }, 1000);
                         }
                     },
                     "json"
                 )
-                .error( function() { toast_err('请求失败'); } );
+                .error( function() { alert('请求失败'); } );
             });
 
             $("#register_btn").click(function(e) {
@@ -60,6 +61,7 @@
                     }
                 });
             });
+        });
     </script>
 </head>
 
@@ -74,18 +76,8 @@
                 <input type="password" id="login_user_pwd" name="login_user_pwd" placeholder="******" /><br />
             </div>
             <p id="forget_pwd">忘记密码</p><div class="clr"></div>
-            <input type="submit" value="Submit" />
-            <input type="reset" value="Reset" />
-        </div>
-        <div id="verify_user_part">
-            <input type="hidden" id="inviter" value="{$inviter|default:''}">
-            <p>申&nbsp;请&nbsp;注&nbsp;册</p>
-            <div class="input_area">
-                <label for="register_user_email">您的邮箱(<span>*</span>)：</label>
-                <input type="email" id="register_user_email" name="register_user_email" placeholder="example@example.com" /><br /><br />
-            </div>
-            <span id="register_btn" name="register_btn" class="common_btn">提交申请</span>
-            <span class="return_btn common_btn">返回</span>
+            <span id="login_btn" name="login_btn" class="common_btn">登录</span>
+            <span id="register_first_btn" name="register_first_btn" class="common_btn">注册</span>
         </div>
     </form>
 </body>

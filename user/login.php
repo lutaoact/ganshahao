@@ -1,9 +1,7 @@
 <?php
-    //ini_set('include_path', $_SERVER[DOCUMENT_ROOT] . PATH_SEPARATOR . ini_get('include_path'));
-
-    require_once("../lib/user.php");
-    require_once("../lib/common.php");
-    require_once("../lib/MySmarty.php");
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/user.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 
     # try to login
     if($_POST['submit']) {
@@ -27,7 +25,7 @@
         * TO DO
         * go to home
         */
-        return 'www.baidu.com';
+        return "../home.php";
     }
 
     function try_to_login(){

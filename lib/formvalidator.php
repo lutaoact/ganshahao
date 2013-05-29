@@ -1,6 +1,6 @@
 <?php
     // /lib/formvalidator.php
-    require_once("constants.php");
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
 
 
     function logd( $msg ){
