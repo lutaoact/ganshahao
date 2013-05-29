@@ -1,14 +1,17 @@
 <?php
-require_once('db/DbAdapter.php');
-require_once('lib/MySmarty.php');
+require_once("$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php");
+require_once("$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php");
 
-echo $_SERVER[DOCUMENT_ROOT];
-/*
 $smarty = new MySmarty();
-$smarty->assign('world', '世界');
+$smarty->assign('world', '<p世界></p>');
+$smarty->assign('world2', htmlspecialchars('<p世界></p>'));
 $smarty->assign('name', '高常宇');
 
 $smarty->display('test.tpl');
+/*
+echo htmlspecialchars("<p>hhhhh<p>");
+echo "<p>hhhhh<p>";
+echo $_SERVER[DOCUMENT_ROOT];
 function test() {}
 
 
