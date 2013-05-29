@@ -19,6 +19,10 @@ define('ERR_LOCK_PASSWORD_IS_NULL',         110);
 define('ERR_USER_NOT_REGISTER',             111);
 define('ERR_EMAIL_EXIST',                   112);
 
+// job
+define('ERR_ZIPCODE_FORMAT',                201);
+
+
 define('LOGIN_COOKIE',                      'GANSHAHAO_WEB_SESSION');          //login cookie name
 define('', '');
 define('', '');

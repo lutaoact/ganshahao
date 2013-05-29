@@ -5,7 +5,6 @@
     function logd( $msg ){
     }
 
-
     function validate_email($email) {
         return preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]*\.)+[a-zA-Z]{2,6}$/", $email);
     }
@@ -147,6 +146,17 @@
             $res[errCode] = ERR_EMAIL_OR_PASSWORD_IS_WRONG;
             $res[errMsg]  = '登录密码错误';
         }
+        return $res;
+    }
+
+    function validate_zipcode($input_value, &$res = null) {
+        if( is_null($res) ){
+            $res  = array(result => "", errCode => 0, errMsg => "");
+        }
+      /*   if(!preg_match("/^[0-9]d{5}$/",$input_value)) {
+            $res[errCode] = ERR_ZIPCODE_FORMAT;
+            $res[errMsg]  = '邮编格式错误';
+        } */
         return $res;
     }
 

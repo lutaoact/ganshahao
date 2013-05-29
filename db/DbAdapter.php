@@ -200,14 +200,18 @@ class DbAdapter {
         return $this->getData($sql);
     }
 
-    public function select_trainings_by_zip_code($zip_code) {
-        $zip_code = trim($zip_code);
+    public function select_job_list_by_zip_code($zip_code) {
+        $zip_code = $this->escape($zip_code);
         $sql = "SELECT
-                    *
+                    job.id as job_id,
+                    company.id as company_id,
+                    company.name as company_name,
+                    job.name as job_name
                 FROM
-                    training
+                    job, company
                 WHERE
-                    zipc_ode = {$id}";
+                    company.id = job.company_id and
+                    job.zip_code = {$zip_code}";
         return $this->getData($sql);
     }
 

@@ -3,12 +3,8 @@
 
     $db = new DbAdapter();
 
-    list($user_info, $mysql_err_no, $mysql_err_msg) = $db->select_user_by_email('aa@b.com');
-    if(!$user_info) {
-        echo 'success';
-    }else {
-        echo 'failue';
-    }
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_list_by_zip_code(200011);
+    var_dump($res);
     /* $data = array(
             'email'    => 'test@test.com',
             'password' => 'test',

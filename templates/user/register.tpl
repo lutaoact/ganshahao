@@ -31,7 +31,6 @@
     <script>
         $(function() {
             $("#user_email").change(function(e){
-                console.log('---->>>>change');
                 var user_email = $("#user_email").val();
                 $.ajax({
                     type:	"POST",
