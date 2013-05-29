@@ -4,10 +4,10 @@ require_once(dirname(__FILE__) . '/db_config.php');
 class DbAdapter {
     private $_db;
 
-	public function __construct(){
-		$this->_db = new mysqli(MYSQL_HOST, MYSQL_USER_NAME, MYSQL_PASSWORD) or die('could not connect to database'.mysqli_error);
-		$this->_db->select_db(DB_NAME) or die("could not select " . DB_NAME . " : " . mysqli_error);
-	}
+    public function __construct(){
+        $this->_db = new mysqli(MYSQL_HOST, MYSQL_USER_NAME, MYSQL_PASSWORD) or die('could not connect to database'.mysqli_error);
+        $this->_db->select_db(DB_NAME) or die("could not select " . DB_NAME . " : " . mysqli_error);
+    }
 
     public function format( $data = null){
         return array($data, $this->errno(), $this->errmsg());
@@ -17,14 +17,18 @@ class DbAdapter {
     }
 
     public function errmsg() {
-        $this->_db->errmsg;
+        return $this->_db->errmsg;
+    }
+
+    public function escape($string) {
+        return mysql_escape_string($string);
     }
 
     public function runSql($sql) {
-		$result = $this->_db->query($sql);
+        $result = $this->_db->query($sql);
         return $this->format($result->affected_rows);
     }
-	
+
     public function getVar($sql) {
         $result = $this->_db->query($sql);
         return $this->format($result->fetch_assoc());
@@ -42,29 +46,29 @@ class DbAdapter {
         return $this->format($result->fetch_assoc());
     }
 
-	private function format_data($params, $separator = ','){
-		$str = $s = '';
-		foreach ($params as $k => $v) {
-			$v = is_int($v) ? $v : "'{$v}'";
-			$str .= $s . "`{$k}`={$v}";
-			$s = $separator;
-		}
-		return $str;
-	}
-	
-	private function format_list_to_string($list) {
-		$list_string = '';
-		foreach($list as $e) {
-			$e = $this->escape($e);
-			if($list_string == '') {
-				$list_string = "'{$e}'";
-			} else {
-				$list_string .= ", '{$e}'";
-			}
-		}
-		return $list_string;
-	}
-	
+    private function format_data($params, $separator = ','){
+        $str = $s = '';
+        foreach ($params as $k => $v) {
+            $v = is_int($v) ? $v : "'{$v}'";
+            $str .= $s . "`{$k}`={$v}";
+            $s = $separator;
+        }
+        return $str;
+    }
+
+    private function format_list_to_string($list) {
+        $list_string = '';
+        foreach($list as $e) {
+            $e = $this->escape($e);
+            if($list_string == '') {
+                $list_string = "'{$e}'";
+            } else {
+                $list_string .= ", '{$e}'";
+            }
+        }
+        return $list_string;
+    }
+
     ##################
     # user
     ##################
