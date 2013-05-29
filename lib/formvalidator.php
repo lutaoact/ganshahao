@@ -1,5 +1,4 @@
 <?php
-    // /lib/formvalidator.php
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
 
 
@@ -48,17 +47,23 @@
     function validate_login_email_format($login_email, &$res) {
         if (!validate_not_empty($login_email) || !validate_email($login_email)) {
             $res[errCode] = ERR_EMAIL_FORMAT_IS_WRONG;
-            $res[errMsg]  = localized_string('邮箱格式不对');
+            $res[errMsg]  = '邮箱格式不对';
         }
     }
 
     function validate_login_password($login_password, &$res) {
         if (!validate_not_empty($login_password)) {
             $res[errCode] = ERR_PASSWORD_IS_NULL;
-            $res[errMsg]  = localized_string('登录密码不能为空');
+            $res[errMsg]  = '登录密码不能为空';
         }
     }
 
+    function validate_same_password($login_password, $login_password2, &$res) {
+        if($login_password != $login_password2) {
+            $res[errCode] = ERR_PASSWORD_IS_NOT_SAME;
+            $res[errMsg]  = '两次密码不相等';
+        }
+    }
     function validate_lock_password($lock_password, &$res) {
         if (!validate_not_empty($lock_password)) {
             $res[errCode] = ERR_LOCK_PASSWORD_IS_NULL;
@@ -69,7 +74,7 @@
     function validate_user_name($user_name, &$res) {
         if (!validate_not_empty($user_name)) {
             $res[errCode] = ERR_USER_NAME_IS_NULL;
-            $res[errMsg]  = localized_string('用户名不能为空');
+            $res[errMsg]  = '用户名不能为空';
         }
     }
 
@@ -161,14 +166,14 @@
 
         if(!is_tmp_login()){
             $res[errCode] = ERR_VERIFY_CODE_INVALID;
-			$res[errMsg]  = localized_string("验证码错误");
+			$res[errMsg]  = "验证码错误";
 			return $res;
         }
 
 	   $verify_code = session_get(VERIFY_CODE);
 	   if($code != $verify_code){
             $res[errCode] = ERR_VERIFY_CODE_INVALID;
-			$res[errMsg]  = localized_string("验证码错误");
+			$res[errMsg]  = "验证码错误";
 	   };
 	   return $res;
 	}

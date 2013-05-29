@@ -6,6 +6,6 @@
 </head>
 <body>
     <p>即将开放</p>
-    <a href="user/register.php">注册</a>
+    <a href="/user/register.php">注册</a>
 </body>
 </html>

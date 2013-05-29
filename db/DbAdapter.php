@@ -45,8 +45,6 @@ class DbAdapter {
 	private function format_data($params, $separator = ','){
 		$str = $s = '';
 		foreach ($params as $k => $v) {
-			// $v = $this->_mysql->escape($v);
-			// htmlspecialchars($v);
 			$v = is_int($v) ? $v : "'{$v}'";
 			$str .= $s . "`{$k}`={$v}";
 			$s = $separator;
@@ -80,7 +78,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     user
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
@@ -94,7 +92,7 @@ class DbAdapter {
         $sql = "UPDATE
                     user
                 SET
-                    {$date}
+                    {$data}
                 WHERE
                     id = {$id}";
         return $this->runSql($sql);
@@ -124,7 +122,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     company
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
@@ -173,7 +171,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     job
                 SET
-                    {$date}, update_time = NOW()";
+                    {$data}, update_time = NOW()";
         return $this->runSql($sql);
     }
 
@@ -217,7 +215,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     training
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
@@ -240,7 +238,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     question
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
@@ -273,7 +271,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     training_completed
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
@@ -295,7 +293,7 @@ class DbAdapter {
         $sql = "INSERT INTO
                     job_application
                 SET
-                    {$date}";
+                    {$data}";
         return $this->runSql($sql);
     }
 
