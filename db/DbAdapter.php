@@ -49,6 +49,7 @@ class DbAdapter {
     private function format_data($params, $separator = ','){
         $str = $s = '';
         foreach ($params as $k => $v) {
+            $v = $this->escape($v);
             $v = is_int($v) ? $v : "'{$v}'";
             $str .= $s . "`{$k}`={$v}";
             $s = $separator;
