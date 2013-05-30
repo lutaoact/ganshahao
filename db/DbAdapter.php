@@ -108,7 +108,7 @@ class DbAdapter {
     * @return user_info:Array or null
     */
     public function select_user_by_email($email) {
-        $email = trim($email);
+        $email = $this->escape($email);
         $sql = "SELECT
                     *
                 FROM
@@ -132,6 +132,7 @@ class DbAdapter {
     }
 
     public function select_company_by_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     *
                 FROM
@@ -142,6 +143,7 @@ class DbAdapter {
     }
 
     public function select_jobs_by_company_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     *
                 FROM
@@ -152,6 +154,7 @@ class DbAdapter {
     }
 
     public function select_candidates_by_company_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     user_id, job_id
                 FROM
@@ -192,6 +195,7 @@ class DbAdapter {
     }
 
     public function select_trainings_by_job_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     *
                 FROM
@@ -263,6 +267,7 @@ class DbAdapter {
     }
 
     public function select_questions_by_training_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     *
                 FROM
@@ -285,6 +290,7 @@ class DbAdapter {
     }
 
     public function count_training_complete_by_user_id($id) {
+        $id = $this->escape($id);
         $sql = "SELECT
                     count(training_id) as count
                 FROM
@@ -307,6 +313,8 @@ class DbAdapter {
     }
 
     public function get_status_by_job_id_and_user_id($job_id, $user_id) {
+        $job_id  = $this->escape($job_id);
+        $user_id = $this->escape($user_id);
         $sql = "SELECT
                     status
                 FORM
