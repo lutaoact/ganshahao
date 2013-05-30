@@ -12,7 +12,8 @@ insert into company(name, description) values ('翻太平洋国际大财团3', '
 
 truncate job;
 insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工1', NOW(), '猝死排第一', '花还东路', '200011', 10);
-insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工2', NOW(), '猝死排第一', '花还东路', '200022', 20);
+insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工2', NOW(), '猝死排第二', '花还东路', '200011', 20);
+insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工3', NOW(), '猝死排第一', '花还东路', '200022', 20);
 insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (3, '临时工3', NOW(), '猝死排第一', '花还东路', '200033', 30);
 
 truncate training;

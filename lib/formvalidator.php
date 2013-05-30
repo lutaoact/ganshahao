@@ -153,10 +153,10 @@
         if( is_null($res) ){
             $res  = array(result => "", errCode => 0, errMsg => "");
         }
-      /*   if(!preg_match("/^[0-9]d{5}$/",$input_value)) {
+        if(!preg_match("/^\d{6}$/",$input_value)) {
             $res[errCode] = ERR_ZIPCODE_FORMAT;
             $res[errMsg]  = '邮编格式错误';
-        } */
+        }
         return $res;
     }
 
