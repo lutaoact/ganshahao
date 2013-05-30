@@ -9,7 +9,7 @@ class MySmarty extends Smarty {
         if (!is_dir(TEMPLATE_C_PATH)) {
             mkdir(TEMPLATE_C_PATH);
         }
-
+        $this->escape_html  = true;
         $this->template_dir = TEMPLATE_PATH;
         $this->compile_dir  = TEMPLATE_C_PATH;
         $this->cache_dir    = TEMPLATE_C_PATH;
