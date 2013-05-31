@@ -19,4 +19,15 @@
         return $res;
     }
 
+    function get_job_detail_api($job_id) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($job_detail, $mysql_err_no, $mysql_err_msg) = $_db->select_job_detail_by_job_id($job_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $job_detail;
+        return $res;
+    }
 ?>

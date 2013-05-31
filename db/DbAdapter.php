@@ -12,6 +12,11 @@ class DbAdapter {
     public function format( $data = null){
         return array($data, $this->errno(), $this->errmsg());
     }
+
+    public function emptyResult() {
+        return $this->format();
+    }
+
     public function errno() {
         return $this->_db->errno;
     }
@@ -30,8 +35,11 @@ class DbAdapter {
     }
 
     public function getVar($sql) {
-        $result = $this->_db->query($sql);
-        return $this->format($result->fetch_assoc());
+        if($result = $this->_db->query($sql)) {
+            return $this->format($result->fetch_assoc());
+        } else {
+            return $this->emptyResult();
+        }
     }
 
     public function getData($sql) {
@@ -42,8 +50,11 @@ class DbAdapter {
     }
 
     public function getLine($sql) {
-        $result = $this->_db->query($sql);
-        return $this->format($result->fetch_assoc());
+        if($result = $this->_db->query($sql)) {
+            return $this->format($result->fetch_assoc());
+        } else {
+            return $this->emptyResult();
+        }
     }
 
     private function format_data($params, $separator = ','){
@@ -218,6 +229,23 @@ class DbAdapter {
                     company.id = job.company_id and
                     job.zip_code = {$zip_code}";
         return $this->getData($sql);
+    }
+
+    public function select_job_detail_by_job_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT
+                    job.id as job_id,
+                    company.id as company_id,
+                    job.name as job_name,
+                    company.name as company_name,
+                    job.description as job_description,
+                    job.address as job_address
+                FROM
+                    job, company
+                WHERE
+                    company.id = job.company_id and
+                    job.id = {$id}";
+        return $this->getLine($sql);
     }
 
     ##################
