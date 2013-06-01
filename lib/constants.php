@@ -22,7 +22,8 @@ define('ERR_EMAIL_EXIST',                   112);
 // job
 define('ERR_ZIPCODE_FORMAT',                201);
 
-
+// path
+define('IMG_PATH',                         "/static/img/");
 define('LOGIN_COOKIE',                      'GANSHAHAO_WEB_SESSION');          //login cookie name
 define('', '');
 define('', '');
