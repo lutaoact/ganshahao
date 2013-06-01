@@ -38,4 +38,29 @@
         $res[result] = $job_detail;
         return $res;
     }
+
+    function get_job_trainings_api($job_id, $training_number) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($training, $mysql_err_no, $mysql_err_msg) = $_db->select_trainings_by_job_id($job_id, $training_number);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $training;
+        return $res;
+    }
+
+    function get_training_questions_api($training_id) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($question_list, $mysql_err_no, $mysql_err_msg) = $_db->select_questions_by_training_id($training_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        var_dump($res);
+        $res[result] = $question_list;
+        return $res;
+    }
 ?>

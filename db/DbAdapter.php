@@ -239,7 +239,8 @@ class DbAdapter {
     public function select_trainings_by_job_id($id, $offset) {
         $id = $this->escape($id);
         $sql = "SELECT
-                    training_type,
+                    id as training_id,
+                    training_type as training_type,
                     name as training_name,
                     description as training_description,
                     link as training_link
@@ -249,7 +250,7 @@ class DbAdapter {
                     job_id = {$id}
                 LIMIT
                     {$offset}, 1";
-        return $this->getData($sql);
+        return $this->getLine($sql);
     }
 
     public function select_job_detail_by_job_id($id) {
