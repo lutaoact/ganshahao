@@ -11,15 +11,15 @@ insert into company(name, description) values ('翻太平洋国际大财团2', '
 insert into company(name, description) values ('翻太平洋国际大财团3', '我们公司就是牛逼啊3');
 
 truncate job;
-insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工1', NOW(), '猝死排第一', '花还东路', '200011', 10);
-insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工2', NOW(), '猝死排第二', '花还东路', '200011', 20);
-insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (1, '临时工3', NOW(), '猝死排第一', '花还东路', '200022', 20);
-insert into job(company_id, name, updated_time, description, address, zip_code, salary) values (3, '临时工3', NOW(), '猝死排第一', '花还东路', '200033', 30);
+insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工1', 0, NOW(), '猝死排第一', '花还东路', '200011', 10);
+insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工2', 0, NOW(), '猝死排第二', '花还东路', '200011', 20);
+insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200022', 20);
+insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (3, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200033', 30);
 
 truncate training;
-insert into training(job_id, name, description) values (1, '给连四你1', '临时工联系1');
-insert into training(job_id, name, description) values (2, '给连四你2', '临时工联系2');
-insert into training(job_id, name, description) values (1, '给连四你2', '临时工联系2');
+insert into training(job_id, training_type, name, description) values (1, 1, '给连四你1', '临时工联系1');
+insert into training(job_id, training_type, name, description, link) values (2, 2, '给连四你2', '临时工联系2', '');
+insert into training(job_id, training_type, name, description, link) values (1, 3, '给连四你2', '临时工联系2', 'http://v.youku.com/v_show/id_XNTYxODI1NjEy.html?f=19335058');
 
 truncate question;
 insert into question(training_id, content, choices, answer) values (1, '怎么扫地？', '["方法1", "方法2", "方法3", "方法4"]', 1);
