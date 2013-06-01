@@ -32,7 +32,7 @@ CREATE TABLE job(
     id              int unsigned    NOT NULL auto_increment,
     company_id      int unsigned    NOT NULL,
     name            varchar(255)    NOT NULL DEFAULT '',
-    status          tinyint(1)      NOT NULL DEFAULT 0,  -- 0 => 即将开始， 1 => 正在招聘
+    status          tinyint(1)      NOT NULL DEFAULT 0,  -- 1 => 即将开始， 2 => 正在招聘
     updated_time    datetime        NOT NULL DEFAULT 0,
     description     text            NOT NULL DEFAULT '',
     address         varchar(255)    NOT NULL DEFAULT '',
@@ -45,7 +45,7 @@ DROP TABLE IF EXISTS `training`;
 CREATE TABLE training(
     id              int unsigned    NOT NULL auto_increment,
     job_id          int unsigned    NOT NULL DEFAULT 0,
-    training_type   tinyint(1)      NOT NULL DEFAULT 0, -- 0 => text, 1 => img, 2 => video
+    training_type   tinyint(1)      NOT NULL DEFAULT 0, -- 1 => text, 2 => img, 3 => video
     name            varchar(255)    NOT NULL DEFAULT '',
     description     text            NOT NULL DEFAULT '',
     link            varchar(255)    NOT NULL DEFAULT '',
