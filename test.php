@@ -2,7 +2,25 @@
 require_once("$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php");
 require_once("$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php");
 
+$my_list = array(
+    array(
+        key1 => '1',
+        key2 => '2',
+    ),
+    array(
+        key1 => '3',
+        key2 => '4',
+    ),
+);
 
+foreach ($my_list as &$item) {
+    $item[key1] = 15;
+    $item[key2] = 20;
+}
+var_dump($my_list);
+// show_source('dbtest.php');
+
+/*
 $smarty = new MySmarty();
 $smarty->assign('world', '<p世界></p>');
 $smarty->assign('world2', htmlspecialchars('<p世界></p>'));
@@ -10,9 +28,6 @@ $smarty->assign('name', '高常宇');
 
 $smarty->display('test.tpl');
 
-// show_source('dbtest.php');
-
-/*
 echo htmlspecialchars("<p>hhhhh<p>");
 echo "<p>hhhhh<p>";
 echo $_SERVER[DOCUMENT_ROOT];

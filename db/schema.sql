@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE user(
     id              int unsigned    NOT NULL auto_increment,
     nick_name       varchar(255)    NOT NULL DEFAULT 'nick_name',
+    picture         varchar(255)    NOT NULL DEFAULT 'logo.png',
     email           varchar(255)    NOT NULL DEFAULT '',
     mobile          varchar(255)    NOT NULL DEFAULT '',
     password        varchar(255)    NOT NULL DEFAULT '',
