@@ -13,6 +13,8 @@ insert into company(name, logo, description) values ('翻太平洋国际大财�
 truncate job;
 insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工1', 0, NOW(), '猝死排第一', '花还东路', '200011', 10);
 insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工2', 0, NOW(), '猝死排第二', '花还东路', '200011', 20);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (2, '临时工1', 0, NOW(), '赚钱排第一', '花还东路', '200011', 10);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (2, '临时工2', 0, NOW(), '赚钱排第二', '花还东路', '200011', 20);
 insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200022', 20);
 insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (3, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200033', 30);
 
