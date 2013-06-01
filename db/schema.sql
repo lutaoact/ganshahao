@@ -10,7 +10,7 @@ CREATE TABLE user(
     mobile          varchar(255)    NOT NULL DEFAULT '',
     password        varchar(255)    NOT NULL DEFAULT '',
     description     text            NOT NULL DEFAULT '',
-    zip_code        int(6)          NOT NULL DEFAULT 200001,
+    zipcode         int(6)          NOT NULL DEFAULT 200001,
     resume          varchar(255)    NOT NULL DEFAULT '',
     available_time  text            NOT NULL DEFAULT '',
     real_name       varchar(255)    NOT NULL DEFAULT '',
@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `company`;
 CREATE TABLE company(
     id              int unsigned    NOT NULL auto_increment,
     name            varchar(255)    NOT NULL DEFAULT '',
+    logo            varchar(255)    NOT NULL DEFAULT 'default_logo.png',
     description     text            NOT NULL DEFAULT '',
     primary key(id)
 )Engine=InnoDB;
@@ -35,7 +36,7 @@ CREATE TABLE job(
     updated_time    datetime        NOT NULL DEFAULT 0,
     description     text            NOT NULL DEFAULT '',
     address         varchar(255)    NOT NULL DEFAULT '',
-    zip_code        int(6)          NOT NULL DEFAULT 200001,
+    zipcode         int(6)          NOT NULL DEFAULT 200001,
     salary          int             NOT NULL DEFAULT 0,
     primary key(id)
 )Engine=InnoDB;

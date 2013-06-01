@@ -11,11 +11,19 @@
         validate_zipcode($zipcode, $res);
         if ($res[errCode]) return $res;
 
-        list($job_list, $mysql_err_no, $mysql_err_msg) = $_db->select_job_list_by_zip_code($zipcode);
+        list($company_list, $mysql_err_no, $mysql_err_msg) = $_db->select_company_list_by_zipcode($zipcode);
         validate_db_error($mysql_err_no, $mysql_err_msg, $res);
-        if ($res[errCode]) return $res;
 
-        $res[result] = $job_list;
+        for($i = 0; $i < count($company_list); $i++) {
+            list($job_list, $mysql_err_no, $mysql_err_msg) =
+                $_db->select_job_list_by_company_id_and_zipcode($company_list[$i][company_id], $zipcode);
+            validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+            if ($res[errCode]) return $res;
+
+            $company_list[$i][job_list] = $job_list;
+        }
+
+        $res[result] = $company_list;
         return $res;
     }
 

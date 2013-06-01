@@ -3,7 +3,7 @@
 <head>
     <title>[干啥好] 登录页面</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
 
 <body>
@@ -20,8 +20,8 @@
             <span id="register_btn" name="register_btn" class="common_btn">注册</span>
         </div>
     </form>
-    <script src="../../static/js/jquery.js"></script>
-    <script src="../../static/js/common.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/common.js"></script>
     <script>
         $(function() {
             $("#login_btn").click(function(e) {
@@ -45,7 +45,7 @@
             });
 
             $("#register_btn").click(function(e) {
-                location.href = "../../user/register.php";
+                location.href = "/user/register.php";
             }
         });
     </script>

@@ -153,6 +153,37 @@ class DbAdapter {
         return $this->getLine($sql);
     }
 
+    public function select_company_list_by_zipcode($zipcode) {
+        $zipcode = $this->escape($zipcode);
+        $sql = "SELECT
+                    company.id as company_id,
+                    company.name as company_name,
+                    company.logo as company_logo
+                FROM
+                    job, company
+                WHERE
+                    job.company_id = company.id
+                        AND
+                    job.zipcode = {$zipcode}";
+        return $this->getData($sql);
+    }
+
+    public function select_job_list_by_company_id_and_zipcode($company_id, $zipcode) {
+        $company_id = $this->escape($company_id);
+        $zipcode = $this->escape($zipcode);
+        $sql = "SELECT
+                    job.id as job_id,
+                    job.status as job_status,
+                    job.name as job_name
+                FROM
+                    job
+                WHERE
+                    company_id = {$company_id}
+                        AND
+                    zipcode = {$zipcode}";
+        return $this->getData($sql);
+    }
+
     public function select_jobs_by_company_id($id) {
         $id = $this->escape($id);
         $sql = "SELECT
@@ -205,29 +236,19 @@ class DbAdapter {
         return $this->runSql($sql);
     }
 
-    public function select_trainings_by_job_id($id) {
+    public function select_trainings_by_job_id($id, $offset) {
         $id = $this->escape($id);
         $sql = "SELECT
-                    *
+                    training_type,
+                    name as training_name,
+                    description as training_description,
+                    link as training_link
                 FROM
                     training
                 WHERE
-                    job_id = {$id}";
-        return $this->getData($sql);
-    }
-
-    public function select_job_list_by_zip_code($zip_code) {
-        $zip_code = $this->escape($zip_code);
-        $sql = "SELECT
-                    job.id as job_id,
-                    company.id as company_id,
-                    company.name as company_name,
-                    job.name as job_name
-                FROM
-                    job, company
-                WHERE
-                    company.id = job.company_id and
-                    job.zip_code = {$zip_code}";
+                    job_id = {$id}
+                LIMIT
+                    {$offset}, 1";
         return $this->getData($sql);
     }
 

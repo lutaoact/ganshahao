@@ -1,20 +1,20 @@
 use ganshahao;
 
 truncate user;
-insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick1', 'a@a.com', '13800000000', '111', 'description1', 200011, '/doc/resume/id1.doc', '[{},{}]', '来火焰1', 0);
-insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick2', 'a@b.com', '13800000000', '222', 'description2', 200022, '/doc/resume/id2.doc', '[{},{}]', '来火焰2', 0);
-insert into user(nick_name, email, mobile, password, description, zip_code, resume, available_time, real_name, is_veteran) values ('test_nick3', 'a@c.com', '13800000000', '333', 'description3', 200033, '/doc/resume/id3.doc', '[{},{}]', '来火焰3', 0);
+insert into user(nick_name, email, mobile, password, description, zipcode, resume, available_time, real_name, is_veteran) values ('test_nick1', 'a@a.com', '13800000000', '111', 'description1', 200011, '/doc/resume/id1.doc', '[{},{}]', '来火焰1', 0);
+insert into user(nick_name, email, mobile, password, description, zipcode, resume, available_time, real_name, is_veteran) values ('test_nick2', 'a@b.com', '13800000000', '222', 'description2', 200022, '/doc/resume/id2.doc', '[{},{}]', '来火焰2', 0);
+insert into user(nick_name, email, mobile, password, description, zipcode, resume, available_time, real_name, is_veteran) values ('test_nick3', 'a@c.com', '13800000000', '333', 'description3', 200033, '/doc/resume/id3.doc', '[{},{}]', '来火焰3', 0);
 
 truncate company;
-insert into company(name, description) values ('翻太平洋国际大财团1', '我们公司就是牛逼啊1');
-insert into company(name, description) values ('翻太平洋国际大财团2', '我们公司就是牛逼啊2');
-insert into company(name, description) values ('翻太平洋国际大财团3', '我们公司就是牛逼啊3');
+insert into company(name, logo, description) values ('翻太平洋国际大财团1', 'logo.png', '我们公司就是牛逼啊1');
+insert into company(name, logo, description) values ('翻太平洋国际大财团2', 'logo.png', '我们公司就是牛逼啊2');
+insert into company(name, logo, description) values ('翻太平洋国际大财团3', 'logo.png', '我们公司就是牛逼啊3');
 
 truncate job;
-insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工1', 0, NOW(), '猝死排第一', '花还东路', '200011', 10);
-insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工2', 0, NOW(), '猝死排第二', '花还东路', '200011', 20);
-insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (1, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200022', 20);
-insert into job(company_id, name, status, updated_time, description, address, zip_code, salary) values (3, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200033', 30);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工1', 0, NOW(), '猝死排第一', '花还东路', '200011', 10);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工2', 0, NOW(), '猝死排第二', '花还东路', '200011', 20);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (1, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200022', 20);
+insert into job(company_id, name, status, updated_time, description, address, zipcode, salary) values (3, '临时工3', 1, NOW(), '猝死排第一', '花还东路', '200033', 30);
 
 truncate training;
 insert into training(job_id, training_type, name, description, link) values (1, 1, '给连四你1', '临时工联系1', '');

@@ -3,7 +3,7 @@
 <head>
     <title>[干啥好] 工作详情</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
 <body>
     <div>
@@ -15,8 +15,8 @@
     </div>
 
 
-    <script src="../../static/js/jquery.js"></script>
-    <script src="../../static/js/common.js"></script>
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/common.js"></script>
     <script>
         $(function() {
             $("#apply_btn").click(function(e) {
