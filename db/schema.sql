@@ -13,7 +13,7 @@ CREATE TABLE user(
     description     text            NOT NULL DEFAULT '',
     zipcode         int(6)          NOT NULL DEFAULT 200001,
     resume          varchar(255)    NOT NULL DEFAULT '',
-    available_time  text            NOT NULL DEFAULT '',
+    available_time  text            NOT NULL DEFAULT '', -- json
     real_name       varchar(255)    NOT NULL DEFAULT '',
     is_veteran      BOOL            NOT NULL DEFAULT 0,
     primary key(id)
@@ -58,7 +58,7 @@ CREATE TABLE question(
     id              int unsigned    NOT NULL auto_increment,
     training_id     int unsigned    NOT NULL DEFAULT 0,
     content         varchar(255)    NOT NULL DEFAULT '',
-    choices         text            NOT NULL DEFAULT '',
+    choices         text            NOT NULL DEFAULT '', -- json
     answer          tinyint(1)      NOT NULL DEFAULT 0,
     primary key(id)
 )Engine=InnoDB;

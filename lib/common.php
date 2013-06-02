@@ -1,5 +1,6 @@
 <?php
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/formvalidator.php";
 
     function json_exit( $res ) {
         echo json_encode( $res );

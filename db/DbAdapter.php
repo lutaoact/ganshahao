@@ -104,6 +104,7 @@ class DbAdapter {
     * @return affected rows
     */
     public function update_user($id, $params) {
+        $id = $this->escape($id);
         $data = $this->format_data($params);
         $sql = "UPDATE
                     user
@@ -127,6 +128,21 @@ class DbAdapter {
                 WHERE
                     email = '{$email}'
                 LIMIT 1";
+        return $this->getLine($sql);
+    }
+
+    /*
+    * @param email:string
+    * @return user_info:Array or null
+    */
+    public function select_user_by_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT
+                    *
+                FROM
+                    user
+                WHERE
+                    id = {$id}";
         return $this->getLine($sql);
     }
 
@@ -373,5 +389,9 @@ class DbAdapter {
                     job_id = {$job_id} and user_id = {$user_id}";
         return $this->getVar($sql);
     }
+
+    ##################
+    # settings
+    ##################
 }
 ?>

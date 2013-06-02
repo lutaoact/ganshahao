@@ -71,4 +71,10 @@
         }
         return $res;
     }
+
+    function user_settings_api($user_settings) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+        list($user_info, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_email($user_email);
+    }
 ?>

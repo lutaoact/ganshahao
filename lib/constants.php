@@ -18,6 +18,7 @@ define('ERR_USER_GENDER_IS_WRONG',          109);
 define('ERR_LOCK_PASSWORD_IS_NULL',         110);
 define('ERR_USER_NOT_REGISTER',             111);
 define('ERR_EMAIL_EXIST',                   112);
+define('ERR_CHANGE_EMAIL',                  113); //不能修改邮箱
 
 // job
 define('ERR_ZIPCODE_FORMAT',                201);
