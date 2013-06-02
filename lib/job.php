@@ -59,7 +59,6 @@
         validate_db_error($mysql_err_no, $mysql_err_msg, $res);
         if ($res[errCode]) return $res;
 
-        var_dump($res);
         $res[result] = $question_list;
         return $res;
     }

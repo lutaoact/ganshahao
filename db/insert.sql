@@ -27,6 +27,9 @@ truncate question;
 insert into question(training_id, content, choices, answer) values (1, '怎么扫地？', '["方法1", "方法2", "方法3", "方法4"]', 1);
 insert into question(training_id, content, choices, answer) values (1, '怎么提水？', '["方法1", "方法2", "方法3", "方法4"]', 2);
 insert into question(training_id, content, choices, answer) values (1, '怎么炒菜？', '["方法1", "方法2", "方法3", "方法4"]', 3);
+insert into question(training_id, content, choices, answer) values (3, '怎么扫地2？', '["方法1", "方法2", "方法3", "方法4"]', 3);
+insert into question(training_id, content, choices, answer) values (3, '怎么提水2？', '["方法1", "方法2", "方法3", "方法4"]', 2);
+insert into question(training_id, content, choices, answer) values (3, '怎么炒菜2？', '["方法1", "方法2", "方法3", "方法4"]', 1);
 
 truncate training_completed;
 insert into training_completed(training_id, user_id) values (1, 1);

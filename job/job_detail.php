@@ -5,7 +5,7 @@
     define('JOB_DETAIL_TPL', 'job/job_detail.tpl');
     define('JOB_TRAINING_TPL', 'job/job_training.tpl');
 
-    $job_id = $_REQUEST['job_id'] ? $_REQUEST['job_id'] : 200011;
+    $job_id = $_REQUEST['job_id'];
     $training_number = $_POST['training_number'] ? $_POST['training_number'] : 0;
     if($_POST['training']) {
         try_get_job_trainings($job_id, $training_number);
@@ -43,12 +43,12 @@
         $question_list = $res[result];
         foreach($question_list as &$question) {
             $question[choices] = json_decode($question[choices]);
-            var_dump($question[choices]);
         }
 
         $smarty = new MySmarty();
         $smarty->assign('training_number', $training_number);
         $smarty->assign('training_name', $training[training_name]);
+        $smarty->assign('training_type', $training[training_type]);
         $smarty->assign('training_description', $training[training_description]);
         $smarty->assign('training_link', $training[training_link]);
         $smarty->assign('question_list', $question_list);

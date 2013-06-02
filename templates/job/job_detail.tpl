@@ -34,14 +34,14 @@
             function get_training() {
                 console.log("---->>>>get training");
                 var job_id = $("#job_id").val();
-                var number = $("#number").val();
+                var training_number = $("#training_number").val();
                 $.ajax({
                     type:	"POST",
                     url :	"/job/job_detail.php",
                     data:   {
-                        job_id       : job_id,
-                        number       : number,
-                        training     : 1,
+                        job_id            : job_id,
+                        training_number   : training_number,
+                        training          : 1,
                     },
                     dataType: "text",
                     timeout:120000, // 2min

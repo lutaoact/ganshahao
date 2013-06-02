@@ -7,7 +7,7 @@ class DbAdapter {
     public function __construct(){
         $this->_db = new mysqli(MYSQL_HOST, MYSQL_USER_NAME, MYSQL_PASSWORD) or die('could not connect to database'.mysqli_error);
         $this->_db->select_db(DB_NAME) or die("could not select " . DB_NAME . " : " . mysqli_error);
-        $this->_db->query('set names utf8');
+        //$this->_db->query('set names utf8');
     }
 
     public function format( $data = null){
