@@ -85,7 +85,6 @@
                     data:   {
                         'field_name'  : field_name,
                         'field_value' : field_value,
-                        'user_id'     : $('#user_id').val(),
                         'user_email'  : $('#user_email').val(),
                     },
                     dataType: "json",
@@ -114,7 +113,6 @@
                     data:   {
                         'field_name'  : "user_is_veteran",
                         'field_value' : $("#user_is_veteran").val(),
-                        'user_id'     : $('#user_id').val(),
                         'user_email'  : $('#user_email').val(),
                     },
                     dataType: "json",
