@@ -15,7 +15,7 @@
         validate_db_error($mysql_err_no, $mysql_err_msg, $res);
         if ($res[errCode]) return $res;
 
-        if (!$user_info || $user_info['user_password'] != $user_password) {
+        if (!$user_info || $user_info['password'] != $user_password) {
             $res[errCode] = ERR_EMAIL_OR_PASSWORD_IS_WRONG;
             $res[errMsg]  = '邮箱或密码错误';
             return $res;

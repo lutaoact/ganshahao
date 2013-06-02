@@ -46,7 +46,7 @@
 
             $("#register_btn").click(function(e) {
                 location.href = "/user/register.php";
-            }
+            });
         });
     </script>
 </body>
