@@ -30,7 +30,7 @@
             {/if}/>我是有经验的老手<br>
             <label for="user_description">个人简介:</label><br>
             <textarea cols="40" rows="5" class="field" id="user_description" name="user_description">{$user.description}</textarea><br>
-            <input type="submit" id="update_button" value="更新" /><br>
+            <!-- <input type="submit" id="update_button" value="更新" /><br> -->
             <label>空闲时间</label>
             <table id='availability'>
                 <thead>

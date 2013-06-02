@@ -4,33 +4,41 @@ require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
+//$user_id = require_login();
 $user_id = 1;
 $_db = new DbAdapter();
 
-$field_name = $_REQUEST[field_name];
-$field_value = $_REQUEST[field_value];
+if ($_REQUEST) {
+    $field_name = $_REQUEST[field_name];
+    $field_value = $_REQUEST[field_value];
 
-switch($field_name) {
-    case "user_nick_name":
-        update_user(array(nick_name => $field_value));
-        break;
-    case "user_real_name":
-        update_user(array(real_name => $field_value));
-        break;
-    case "user_mobile":
-        update_user(array(mobile => $field_value));
-        break;
-    case "user_zipcode":
-        update_user(array(zipcode => $field_value));
-        break;
-    case "user_is_veteran":
-        update_user(array(is_veteran => $field_value));
-        break;
-    case "user_description":
-        update_user(array(description => $field_value));
-        break;
-    default:
-        break;
+    switch($field_name) {
+        case "user_nick_name":
+            update_user(array(nick_name => $field_value));
+            break;
+        case "user_real_name":
+            update_user(array(real_name => $field_value));
+            break;
+        case "user_mobile":
+            update_user(array(mobile => $field_value));
+            break;
+        case "user_zipcode":
+            update_user(array(zipcode => $field_value));
+            break;
+        case "user_is_veteran":
+            update_user(array(is_veteran => $field_value));
+            break;
+        case "user_description":
+            update_user(array(description => $field_value));
+            break;
+        default:
+            break;
+    }
+} else {
+    list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
+    $smarty = new MySmarty();
+    $smarty->assign('user', $user);
+    $smarty->display('user/settings.tpl');
 }
 
 function update_user($params) {
@@ -55,8 +63,6 @@ function update_user($params) {
 
     echo json_encode($res);
 }
-
-if ($_POST) {
 #    var_dump($_POST);
 #    $user = array(
 #        id          => $_POST[user_id         ],
@@ -68,15 +74,8 @@ if ($_POST) {
 #        zipcode     => $_POST[user_zipcode    ],
 #        is_veteran  => $_POST[user_is_veteran ],
 #    );
-    $res = array(result => array($_POST[field_name] => $_POST[field_value]), errCode => 0, errMsg => '');
-    echo json_encode($res);
-} else {
-    list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
-    var_dump($user);
-    $smarty = new MySmarty();
-    $smarty->assign('user', $user);
-    $smarty->display('user/settings.tpl');
-}
+#    $res = array(result => array($_POST[field_name] => $_POST[field_value]), errCode => 0, errMsg => '');
+#    echo json_encode($res);
 #$user = array(
 #    morning     => array(1, 0, 1, 0, 1, 0, 1),
 #    afternoon   => array(1, 0, 1, 0, 1, 0, 1),
