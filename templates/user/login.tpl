@@ -34,6 +34,8 @@
                     function(result) {
                         if(result["errCode"] > 0) {
                             toast(result["errMsg"]);
+                            $("#user_email").val(result["user_email"]);
+                            $("#user_password").val("");
                         } else if(result["errCode"] == 0) {
                             toast(result["result"]["message"]);
                             setTimeout(function(){ location.href = "{$jumpto}"; }, 1000);

@@ -82,6 +82,9 @@
                             window.location.href="../home.php";
                         }else{
                             toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                            $("#user_email").val(obj.user_email);
+                            $("#user_password").val("");
+                            $("#user_password2").val("");
                         }
                     },
                     error: function(){

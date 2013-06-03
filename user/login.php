@@ -30,7 +30,10 @@
         $user_password = $_POST['user_password'];
 
         $res = user_login_api($user_email, $user_password);
-        if($res['errCode'] != 0) json_exit($res);
+        if($res['errCode'] != 0) {
+            $res[user_email] = $user_email;
+            json_exit($res);
+        }
 
         $user_id = $res[result][user_id];
         init_login_session( $user_id );
