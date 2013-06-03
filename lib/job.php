@@ -62,4 +62,16 @@
         $res[result] = $question_list;
         return $res;
     }
+
+    function get_question_answer_api($question_id) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($question_answer, $mysql_err_no, $mysql_err_msg) = $_db->select_question_answer_by_question_id($question_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $question_answer;
+        return $res;
+    }
 ?>

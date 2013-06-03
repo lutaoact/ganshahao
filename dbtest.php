@@ -3,7 +3,7 @@
 
     $db = new DbAdapter();
 
-    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_detail_by_job_id('1');
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_question_answer_by_question_id(1);
     var_dump($res);
     /* list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_list_by_zip_code(200011);
     var_dump($res);

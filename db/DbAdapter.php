@@ -344,6 +344,17 @@ class DbAdapter {
         return $this->getData($sql);
     }
 
+    public function select_question_answer_by_question_id($question_id) {
+        $id = $this->escape($question_id);
+        $sql = "SELECT
+                    id as question_id,
+                    answer as question_answer
+                FROM
+                    question
+                WHERE
+                    id = {$question_id}";
+        return $this->getLine($sql);
+    }
     ##################
     # training_completed
     ##################

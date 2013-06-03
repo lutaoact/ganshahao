@@ -18,10 +18,12 @@
     <ul>
         {foreach $question_list as $question}
             <li>
-                question_id : {$question.id}</br>
                 question_content : {$question.content}</br>
                 {foreach $question.choices as $choice}
-                    <p><input type='radio' name='{$question.content}' value="{$choice}" />{$choice}</p>
+                    <p>
+                        <input type='radio' name='{$question.id}' value="{$choice@iteration}" onclick="check(this.name, this.value)" />
+                        <span id='{$question.id}{$choice@iteration}'>{$choice}</span>
+                    </p>
                 {/foreach}
                 answer : {$question.answer}</br>
             </li>

@@ -31,33 +31,66 @@
                 get_training();
             });
 
-            function get_training() {
-                console.log("---->>>>get training");
-                var job_id = $("#job_id").val();
-                var training_number = $("#training_number").val();
-                $.ajax({
-                    type:	"POST",
-                    url :	"/job/job_detail.php",
-                    data:   {
-                        job_id            : job_id,
-                        training_number   : training_number,
-                        training          : 1,
-                    },
-                    dataType: "text",
-                    timeout:120000, // 2min
-                    success: function (text) {
-                        if (text == "") {
-                            $("#training_content").html('没有相关问题');
-                        } else {
-                            $("#training_content").html(text);
-                        }
-                    },
-                });
-            }
-
             $('#next_training_btn').click(function(e) {
                 get_training();
             });
         });
+
+        function get_training() {
+            console.log("---->>>>get training");
+            var job_id = $("#job_id").val();
+            var training_number = $("#training_number").val();
+            $.ajax({
+                type:	"POST",
+                url :	"/job/job_detail.php",
+                data:   {
+                    job_id            : job_id,
+                    training_number   : training_number,
+                    training          : 1,
+                },
+                dataType: "text",
+                timeout:120000, // 2min
+                success: function (text) {
+                    if (text == "") {
+                        $("#training_content").html('没有相关问题');
+                    } else {
+                        $("#training_content").html(text);
+                    }
+                },
+            });
+        }
+
+        function check(question_id, current_answer) {
+            var job_id = $("#job_id").val();
+            $.ajax({
+                type:	"POST",
+                url :	"/job/get_question_answer.php",
+                data:   {
+                    question_id : question_id,
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if (obj.errCode != 0) {
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    }
+                    console.log(obj.result.question_answer);
+                    handle_response(question_id, obj.result.question_answer);
+                },
+                error: function (obj) {
+                    toast_err("请求失败");
+                },
+            });
+        }
+
+        function handle_response(question_id, correct_answer) {
+            var elements = document.getElementsByName(question_id);
+            for(var i=0; i<elements.length; i++) {
+                if(correct_answer == elements[i].value) {
+                    document.getElementById(question_id+correct_answer).style.color = "red";
+                }
+                elements[i].disabled=true;
+            }
+        }
     </script>
 </body>
