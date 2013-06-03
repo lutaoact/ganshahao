@@ -1,4 +1,5 @@
 use ganshahao;
+set names utf8;
 
 truncate user;
 insert into user(nick_name, email, mobile, password, description, zipcode, resume, available_time, real_name, is_veteran) values ('test_nick1', 'a@a.com', '13800000000', '111', 'description1', 200011, '/doc/resume/id1.doc', '[{},{}]', '来火焰1', 0);
@@ -20,8 +21,8 @@ insert into job(company_id, name, status, updated_time, description, address, zi
 
 truncate training;
 insert into training(job_id, training_type, name, description, link) values (1, 1, '给连四你1', '临时工联系1', '');
-insert into training(job_id, training_type, name, description, link) values (2, 2, '给连四你2', '临时工联系2', 'test_description.png');
-insert into training(job_id, training_type, name, description, link) values (1, 3, '给连四你2', '临时工联系2', 'http://v.youku.com/v_show/id_XNTYxODI1NjEy.html?f=19335058');
+insert into training(job_id, training_type, name, description, link) values (1, 2, '给连四你2', '临时工联系2', 'test_description.png');
+insert into training(job_id, training_type, name, description, link) values (1, 3, '给连四你2', '临时工联系2', '<embed src="http://player.youku.com/player.php/sid/XNTYxMTg2MTQ4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>');
 
 truncate question;
 insert into question(training_id, content, choices, answer) values (1, '怎么扫地？', '["方法1", "方法2", "方法3", "方法4"]', 1);
