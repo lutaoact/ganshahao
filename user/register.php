@@ -3,7 +3,7 @@
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 
-    if($_POST['submit']) {
+    if(isset($_POST['submit'])) {
         try_to_register();
     }
 

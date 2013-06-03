@@ -7,9 +7,12 @@
         {/if}
     />
     <p>training_name:{$training_name}</p>
-    <p>training_type:{$training_type}</p>
+    {if $training_type eq 2}
+        <img src="/static/img/{$training_link}" />
+    {elseif $training_type eq 3}
+        <div>{$training_link nofilter}</div>
+    {/if}
     <p>training_description:{$training_description}</p>
-    <p>training_link:{$training_link}</p>
 </div>
 <div>
     <ul>
