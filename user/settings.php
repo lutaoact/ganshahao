@@ -7,11 +7,10 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 //$user_id = require_login();
 $user_id = 1;
 $_db = new DbAdapter();
+$field_name = $_REQUEST[field_name];
+$field_value = $_REQUEST[field_value];
 
-if ($_REQUEST) {
-    $field_name = $_REQUEST[field_name];
-    $field_value = $_REQUEST[field_value];
-
+if (isset($field_name) && isset($field_value)) {
     switch($field_name) {
         case "user_nick_name":
             update_user(array(nick_name => $field_value));
