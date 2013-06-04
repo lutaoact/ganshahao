@@ -32,9 +32,10 @@
             <textarea cols="40" rows="5" class="field" id="user_description" name="user_description">{$user.description}</textarea><br>
             <!-- <input type="submit" id="update_button" value="更新" /><br> -->
             <label>空闲时间</label>
-            <table id='availability'>
+            <table id='user_available_time'>
                 <thead>
                     <tr>
+                        <th>时间</th>
                         <th>周日</th>
                         <th>周一</th>
                         <th>周二</th>
@@ -46,90 +47,156 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td>凌晨(00:00-06:00)</td>
+                        {for $i = 0 to 6}
                         <td>
-                        <input type="checkbox" id="user_morning_sun" name="user[morning][sun]" />
+                        <input type="checkbox" class="available_time_check_box" value="{$user.available_time[$i]}"
+                            {if $user.available_time[$i] == 1}
+                                checked
+                            {/if}
+                        />
                         </td>
+                        {/for}
+                    </tr>
+                    <tr>
+                        <td>下午(12:00-18:00)</td>
+                        {for $i = 7 to 13}
                         <td>
-                        <input type="checkbox" id="user_morning_mon" name="user[morning][mon]" />
+                        <input type="checkbox" class="available_time_check_box" value="{$user.available_time[$i]}"
+                            {if $user.available_time[$i] == 1}
+                                checked
+                            {/if}
+                        />
                         </td>
+                        {/for}
+                    </tr>
+                    <tr>
+                        <td>晚上(18:00-24:00)</td>
+                        {for $i = 14 to 20}
                         <td>
-                        <input type="checkbox" id="user_morning_tue" name="user[morning][tue]" />
+                        <input type="checkbox" class="available_time_check_box" value="{$user.available_time[$i]}"
+                            {if $user.available_time[$i] == 1}
+                                checked
+                            {/if}
+                        />
                         </td>
+                        {/for}
+                    </tr>
+                    <tr>
+                        <td>上午(06:00-12:00)</td>
+                        {for $i = 21 to 27}
                         <td>
-                        <input type="checkbox" id="user_morning_wed" name="user[morning][wed]" />
+                        <input type="checkbox" class="available_time_check_box" value="{$user.available_time[$i]}"
+                            {if $user.available_time[$i] == 1}
+                                checked
+                            {/if}
+                        />
                         </td>
-                        <td>
-                        <input type="checkbox" id="user_morning_thu" name="user[morning][thu]" />
-                        </td>
-                        <td>
-                        <input type="checkbox" id="user_morning_fri" name="user[morning][fri]" />
-                        </td>
-                        <td>
-                        <input type="checkbox" id="user_morning_sat" name="user[morning][sat]" />
-                        </td>
+                        {/for}
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td><input type="button" id="update_available_time_button" value="更新空闲时间" /></td>
+                    </tr>
+                </tfoot>
             </table>
             </fieldset>
         </form>
-        <script src="/static/js/jquery.js"></script>
-        <script src="/static/js/common.js"></script>
-        <script>
-        $(function() {
-            $(".field").change(function() {
-                var field_name = $(this).attr('name');
-                var field_value = $(this).val();
-                $.ajax({
-                    type:"POST",
-                    url :"/user/settings.php",
-                    data:   {
-                        'field_name'  : field_name,
-                        'field_value' : field_value,
-                        'user_email'  : $('#user_email').val(),
-                    },
-                    dataType: "json",
-                    timeout:120000, // 2min
-                    success: function (obj) {
-                        if(obj.errCode == 0 ){
-                            toast("更新成功");
-                        }else{
-                            toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
-                        }
-                    },
-                    error: function () {
-                        toast_err("提交失败");
-                    },
-                });
-            });
-            $("#user_is_veteran").change(function() {
-                if ($(this).val() == 1) {
-                    $(this).val("0");
-                } else {
-                    $(this).val("1");
-                }
-                $.ajax({
-                    type:"POST",
-                    url :"/user/settings.php",
-                    data:   {
-                        'field_name'  : "user_is_veteran",
-                        'field_value' : $("#user_is_veteran").val(),
-                        'user_email'  : $('#user_email').val(),
-                    },
-                    dataType: "json",
-                    timeout:120000, // 2min
-                    success: function (obj) {
-                        if(obj.errCode == 0 ){
-                            toast("更新成功");
-                        }else{
-                            toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
-                        }
-                    },
-                    error: function () {
-                        toast_err("提交失败");
-                    },
-                });
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/common.js"></script>
+    <script>
+    $(function() {
+        $(".field").change(function() {
+            var field_name = $(this).attr('name');
+            var field_value = $(this).val();
+            $.ajax({
+                type:"POST",
+                url :"/user/settings.php",
+                data:   {
+                    'field_name'  : field_name,
+                    'field_value' : field_value,
+                    'user_email'  : $('#user_email').val(),
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if(obj.errCode == 0 ){
+                        toast("更新成功");
+                    }else{
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    }
+                },
+                error: function () {
+                    toast_err("提交失败");
+                },
             });
         });
-        </script>
+        $("#user_is_veteran").change(function() {
+            if ($(this).val() == 1) {
+                $(this).val("0");
+            } else {
+                $(this).val("1");
+            }
+            $.ajax({
+                type:"POST",
+                url :"/user/settings.php",
+                data:   {
+                    'field_name'  : "user_is_veteran",
+                    'field_value' : $("#user_is_veteran").val(),
+                    'user_email'  : $('#user_email').val(),
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if(obj.errCode == 0 ){
+                        toast("更新成功");
+                    }else{
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    }
+                },
+                error: function () {
+                    toast_err("提交失败");
+                },
+            });
+        });
+        $(".available_time_check_box").change(function() {
+            if ($(this).val() == 1) {
+                $(this).val("0");
+            } else {
+                $(this).val("1");
+            }
+        });
+        $("#update_available_time_button").click(function() {
+            var available_time_array = [];
+            $(".available_time_check_box").each(function(index, element) {
+                available_time_array.push($(this).val());
+            });
+            alert(JSON.stringify(available_time_array));
+            var available_time_json = JSON.stringify(available_time_array);
+            $.ajax({
+                type:"POST",
+                url :"/user/settings.php",
+                data:   {
+                    'field_name'  : "user_available_time",
+                    'field_value' : available_time_json,
+                    'user_email'  : $('#user_email').val(),
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if(obj.errCode == 0 ){
+                        toast("更新成功");
+                    }else{
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    }
+                },
+                error: function () {
+                    toast_err("提交失败");
+                },
+            });
+        });
+    });
+    </script>
     </body>
 </html>

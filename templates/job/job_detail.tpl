@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>[干啥好] 工作详情</title>
     <meta charset="UTF-8" />
+    <title>[干啥好] 工作详情</title>
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
 <body>
@@ -94,3 +94,4 @@
         }
     </script>
 </body>
+</html>

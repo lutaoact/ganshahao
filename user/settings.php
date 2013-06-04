@@ -30,11 +30,16 @@ if (isset($field_name) && isset($field_value)) {
         case "user_description":
             update_user(array(description => $field_value));
             break;
+        case "user_available_time":
+            update_user(array(available_time => $field_value));
+            break;
         default:
             break;
     }
 } else {
     list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
+    $user[available_time] = json_decode($user[available_time]);
+    var_dump($user[available_time]);
     $smarty = new MySmarty();
     $smarty->assign('user', $user);
     $smarty->display('user/settings.tpl');

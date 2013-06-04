@@ -3,21 +3,22 @@ require_once("$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php");
 require_once("$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php");
 
 $my_list = array(
-    array(
-        key1 => '1',
-        key2 => '2',
-    ),
-    array(
-        key1 => '3',
-        key2 => '4',
-    ),
+    1, 0, 1, 0, 1, 0, 1,
+    0, 1, 0, 1, 0, 1, 0,
+    1, 1, 1, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 1, 1,
 );
+$string =  json_encode($my_list);
+echo $string;
+$db = new DbAdapter();
+$string = $db->escape($string);
+var_dump ($db->runSql("update user set available_time = '{$string}'"));
 
-foreach ($my_list as &$item) {
-    $item[key1] = 15;
-    $item[key2] = 20;
-}
-var_dump($my_list);
+#foreach ($my_list as &$item) {
+#    $item[key1] = 15;
+#    $item[key2] = 20;
+#}
+#var_dump($my_list);
 // show_source('dbtest.php');
 
 /*
