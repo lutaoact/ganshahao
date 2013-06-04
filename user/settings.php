@@ -39,7 +39,7 @@ if (isset($field_name) && isset($field_value)) {
 } else {
     list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
     $user[available_time] = json_decode($user[available_time]);
-    var_dump($user[available_time]);
+#    var_dump($user[available_time]);
     $smarty = new MySmarty();
     $smarty->assign('user', $user);
     $smarty->display('user/settings.tpl');
