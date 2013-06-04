@@ -24,6 +24,7 @@
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/common.js"></script>
     <script>
+        var score;
         $(function() {
             $("#apply_btn").click(function(e) {
                 console.log("apply this job");
@@ -37,7 +38,7 @@
         });
 
         function get_training() {
-            console.log("---->>>>get training");
+            score =0;
             var job_id = $("#job_id").val();
             var training_number = $("#training_number").val();
             $.ajax({
@@ -87,10 +88,14 @@
             var elements = document.getElementsByName(question_id);
             for(var i=0; i<elements.length; i++) {
                 if(correct_answer == elements[i].value) {
+                    if(elements[i].checked) {
+                        score += 10;
+                    }
                     document.getElementById(question_id+correct_answer).style.color = "red";
                 }
                 elements[i].disabled=true;
             }
+            alert('now your got: ' + score + ' points');
         }
     </script>
 </body>
