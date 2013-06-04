@@ -201,10 +201,10 @@ class DbAdapter {
         return $this->getData($sql);
     }
 
-    public function select_jobs_by_company_id($id) {
+    public function select_job_list_by_company_id($id) {
         $id = $this->escape($id);
         $sql = "SELECT
-                    *
+                    id, name
                 FROM
                     job
                 WHERE
@@ -256,11 +256,11 @@ class DbAdapter {
     public function select_trainings_by_job_id($id, $offset) {
         $id = $this->escape($id);
         $sql = "SELECT
-                    id as training_id,
-                    training_type as training_type,
-                    name as training_name,
-                    description as training_description,
-                    link as training_link
+                    id as id,
+                    training_type as type,
+                    name as name,
+                    description as description,
+                    link as link
                 FROM
                     training
                 WHERE

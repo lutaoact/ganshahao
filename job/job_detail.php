@@ -38,7 +38,7 @@
     }
 
     function show_training_page($training, $training_number) {
-        $res = get_training_questions_api($training[training_id]);
+        $res = get_training_questions_api($training[id]);
         if($res['errCode'] != 0) json_exit($res);
         $question_list = $res[result];
         foreach($question_list as &$question) {
@@ -46,11 +46,8 @@
         }
 
         $smarty = new MySmarty();
+        $smarty->assign('training', $training);
         $smarty->assign('training_number', $training_number);
-        $smarty->assign('training_name', $training[training_name]);
-        $smarty->assign('training_type', $training[training_type]);
-        $smarty->assign('training_description', $training[training_description]);
-        $smarty->assign('training_link', $training[training_link]);
         $smarty->assign('question_list', $question_list);
         @$smarty->display(JOB_TRAINING_TPL);
     }
