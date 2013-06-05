@@ -31,8 +31,8 @@
                                     <div class="profile-pic-file-field">
                                     <form action="settings.php" enctype="multipart/form-data" method="post">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                                        <input id="user_picture" style="border:0;" name="user_picture" type="file" accept="image/*">最大4M<br>
-                                        <label>{$error}</label>
+                                        <input id="user_picture" style="border:0;" name="user_picture" type="file" accept="image/*">最大1M<br>
+                                        <label>{$user_picture_error}</label>
                                         <input type="submit" value="上传" />
                                     </form>
                                     </div>
@@ -64,16 +64,21 @@
                         <div class="field profile-resume">
                             <label for="user_resume">简历</label>
                             <div class="profile-resume-file-field" style="float:left;">
-                                <input id="user_resume" style="border:0;" name="user_resume" type="file"><br/>
+                                <form action="settings.php" enctype="multipart/form-data" method="post">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="4000000">
+                                    <input id="user_resume" style="border:0;" name="user_resume" type="file" accept="application/msword">最大4M，只支持pdf和doc格式<br/>
+                                    <label>{$user_resume_error}</label>
+                                    <input type="submit" value="上传" />
+                                </form>
+                                <a href="{$user.resume nofilter}">下载简历</a>
                                 <div style="color:#666;">
                                 <input id="user_is_veteran" name="user_is_veteran" type="checkbox" value="{$user.is_veteran}"
                                 {if $user.is_veteran}
                                     checked
                                 {/if} style="width:2em;float:none"/>
                                 <span style="font-size:1.4em;padding:5px;">我是有经验的老手</span>
+                                </div>
                             </div>
-                            </div>
-                            
                         </div>
                         <div class="field">
                             <label for="user_description">个人简介</label>

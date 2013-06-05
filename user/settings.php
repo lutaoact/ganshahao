@@ -40,15 +40,33 @@ if (isset($field_name) && isset($field_value)) {
     $smarty = new MySmarty();
     if ($_FILES[user_picture]) {
         if ($_FILES[user_picture][error] > 0) {
-            $smarty->assign('error', "上传出错" . $_FILES[user_picture][error]);
-        } elseif (strpos($_FILES[user_picture][type], 'image')) {
-            $smarty->assign('error', "格式有误");
+            $smarty->assign('user_picture_error', "上传出错" . $_FILES[user_picture][error]);
+        } elseif (strpos($_FILES[user_picture][type], 'image') === false) {
+            $smarty->assign('user_picture_error', "格式有误");
         } elseif (is_uploaded_file($_FILES[user_picture][tmp_name])) {
             $upfile = "/uploads/" . $user_id . $_FILES[user_picture][name];
             if (!move_uploaded_file($_FILES[user_picture][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
-                $smarty->assign('error', "无法重命名");
+                $smarty->assign('user_picture_error', "无法重命名");
             }
             list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(picture => $upfile));
+            validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+            if ($res[errCode]) json_exit($res);
+        }
+    }
+
+    if ($_FILES[user_resume]) {
+        if ($_FILES[user_resume][error] > 0) {
+            $smarty->assign('user_resume_error', "上传出错" . $_FILES[user_resume][error]);
+        } elseif ((strpos($_FILES[user_resume][type], 'msword')
+             || strpos($_FILES[user_resume][type], 'pdf')) === false
+        ) {
+            $smarty->assign('user_resume_error', "格式有误");
+        } elseif (is_uploaded_file($_FILES[user_resume][tmp_name])) {
+            $upfile = "/uploads/" . $user_id . $_FILES[user_resume][name];
+            if (!move_uploaded_file($_FILES[user_resume][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
+                $smarty->assign('user_resume_error', "无法重命名");
+            }
+            list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(resume => $upfile));
             validate_db_error($mysql_err_no, $mysql_err_msg, $res);
             if ($res[errCode]) json_exit($res);
         }

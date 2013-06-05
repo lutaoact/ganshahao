@@ -1,5 +1,5 @@
 Attention:
-1. Make sure directory "templates_c" is writable for other user in linux OS. That is 0777 permission.
+1. Make sure directory "templates_c" and "uploads" is writable for other user in linux OS. That is 0777 permission.
 
 
 developed by lutao & huoyan & chenguoli
