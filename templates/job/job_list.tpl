@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
 </head>
 <body>
+    {include file="common/header.tpl"}
     <label for="zipcode">您工作目标地点的邮编:</label>
     <input type="text" name="zipcode" maxlength="6" id="zipcode" placeholder="200001" />
     <span id="search_btn" name="search_btn" class="common_btn">搜索</span></br>

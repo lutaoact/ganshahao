@@ -7,8 +7,8 @@ insert into user(nick_name, email, mobile, password, description, zipcode, resum
 insert into user(nick_name, email, mobile, password, description, zipcode, resume, available_time, real_name, is_veteran) values ('test_nick3', 'a@c.com', '13800000000', '333', 'description3', 200033, '/doc/resume/id3.doc', '["1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1","1"]', '来火焰3', 0);
 
 truncate company;
-insert into company(name, logo, description) values ('翻太平洋国际大财团1', 'logo.png', '我们公司就是牛逼啊1');
-insert into company(name, logo, description) values ('翻太平洋国际大财团2', 'logo.png', '我们公司就是牛逼啊2');
+insert into company(name, logo, description) values ('翻太平洋国际大财团1', 'logo.png', '1999年底，身在美国硅谷的李彦宏看到了中国互联网及中文搜索引擎服务的巨大发展潜力，抱着技术改变世界的梦想，他毅然辞掉硅谷的高薪工作，携搜索引擎专利技术，于2000年1月1日在中关村创建了百度公司。从最初的不足10人发展至今，员工人数超过18000人。如今的百度，已成为中国最受欢迎、影响力最大的中文网站。百度拥有数千名研发工程师，这是中国乃至全球最为优秀的技术团队，这支队伍掌握着世界上最为先进的搜索引擎技术，使百度成为中国掌握世界尖端科学核心技术的中国高科技企业，也使中国成为美国、俄罗斯、和韩国之外，全球仅有的4个拥有搜索引擎核心技术的国家之一。');
+insert into company(name, logo, description) values ('翻太平洋国际大财团2', 'logo.png', "McDonald's Plaza麦当劳餐厅（McDonald's Corporation）是大型的连锁快餐集团，在世界上大约拥有三万间分店，主要售卖汉堡包、薯条、炸鸡、汽水、沙拉等。麦当劳餐厅遍布在全世界六大洲百余个国家。在很多国家麦当劳代表着一种美国式的生活方式。在中国大陆地区的早期的译名是“麦克唐纳快餐”。2010年7月4日，美国媒体报道麦当劳出售的麦乐鸡，含有泥胶和石油成分的化学物质，即聚二甲基硅氧烷和特丁基对苯二酚。2012年1月中旬，麦当劳提高中国市场部分产品价格。2012年5月，麦当劳悄然启动年内第二次涨价，涨幅16.6%。");
 insert into company(name, logo, description) values ('翻太平洋国际大财团3', 'logo.png', '我们公司就是牛逼啊3');
 
 truncate job;

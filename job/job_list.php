@@ -25,9 +25,9 @@
         show_page($res[result], "job/job_list_div.tpl");
     }
 
-    function show_page($jobArray, $tpl){
+    function show_page($company_list, $tpl){
         $smarty = new MySmarty();
-        $smarty->assign('jobArray', $jobArray);
+        $smarty->assign('company_list', $company_list);
         @$smarty->display($tpl);
     }
 ?>

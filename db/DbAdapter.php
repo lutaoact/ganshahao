@@ -173,7 +173,7 @@ class DbAdapter {
     public function select_company_list_by_zipcode($zipcode) {
         $zipcode = $this->escape($zipcode);
         $sql = "SELECT
-                    company.id as company_id,
+                    DISTINCT company.id as company_id,
                     company.name as company_name,
                     company.logo as company_logo
                 FROM
