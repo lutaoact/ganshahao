@@ -63,6 +63,7 @@ form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #cc
 .user-icon img{float:left;overflow:hidden;border:2px #fff solid;background:#fff;box-shadow:1px 1px 2px #dfdfdf;-moz-box-shadow:1px 1px 2px #dfdfdf;-webkit-box-shadow:1px 1px 2px #dfdfdf}
 .user-icon.large img{width:104px;height:104px;}
 #user-settings .settings .field.profile-pic .profile-pic-upload .profile-pic-file-field{display:none}
+#user-settings .settings .field.profile-resume .profile-resume-upload .profile-resume-file-field{display:none}
 .button{background-color:#00a8c6;font-size:12px;text-shadow:1px 1px 0 #666;-moz-text-shadow:1px 1px 0 #666;-webkit-text-shadow:1px 1px 0 #666;-webkit-transition:background 0.15s ease-in-out;-moz-transition:background 0.15s ease-in-out;-o-transition:background 0.15s ease-in-out}
 .button{background:#00a6fc;display:inline-block;text-align:center;padding:9px 34px 11px;color:#fff;text-decoration:none;font-weight:bold;line-height:1;font-family:"Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;position:relative;cursor:pointer;border:none}
 .button.white{text-shadow:0 1px 0 #fff;-moz-text-shadow:0 1px 0 #fff;-webkit-text-shadow:0 1px 0 #fff}

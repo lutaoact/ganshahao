@@ -29,9 +29,9 @@
 									</div>
 									<div class="columns six">
 										<div class="profile-pic-upload">
-										<a href="#" class="button white medium radius upload-button">Upload a picture</a>
+										<a href="#" class="button white medium radius pic-upload-button">Upload a picture</a>
 										<div class="profile-pic-file-field">
-											<input id="user_picture" name="user_picture" type="file" accept="image/*">
+											<input id="user_picture" style="border:0;" name="user_picture" type="file" accept="image/*">
 										</div>
 										</div>
 									</div>
@@ -59,12 +59,12 @@
 								<label for="user_zipcode">邮政编码</label>
 								<input class="field_change" id="user_zipcode" name="user_zipcode" value="{$user.zipcode}" size="30" type="text">
 							</div>
-							<div class="field profile-pic">
+							<div class="field profile-resume">
 								<label for="user_resume">简历</label>
-								<div class="profile-pic-upload">
-									<a href="#" class="button white medium radius upload-button">Upload a resume</a>
-									<div class="profile-pic-file-field">
-										<input id="user_picture" name="user_picture" type="file"">
+								<div class="profile-resume-upload">
+									<a href="#" class="button white medium radius resume-upload-button">Upload a resume</a>
+									<div class="profile-resume-file-field">
+										<input id="user_resume" style="border:0;" name="user_resume" type="file"">
 									</div>
 									<div style="display:block;font-size:12.em;color:#666;">
 										<input id="user_is_veteran" name="user_is_veteran" type="checkbox" value="{$user.is_veteran}"
@@ -169,6 +169,14 @@
         <script src="/static/js/common.js"></script>
         <script>
         $(function() {
+			$(".pic-upload-button").click(function() {
+				$(this).hide();
+				$(".profile-pic-file-field").show();
+			});
+			$(".resume-upload-button").click(function() {
+				$(this).hide();
+				$(".profile-resume-file-field").show();
+			});
             $(".field_change").change(function() {
                 var field_name = $(this).attr('name');
                 var field_value = $(this).val();
