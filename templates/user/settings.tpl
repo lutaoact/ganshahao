@@ -55,7 +55,7 @@
                             <label for="user_email">邮箱</label>
                             {$user.email}
                             <input class="field_change" id="user_email" name="user_email" value="{$user.email}" size="30" type="hidden">
-                            <a href="#">修改密码</a>
+                            <a href="/user/change_password.php">修改密码</a>
                         </div>
                         <div class="field zipcode">
                             <label for="user_zipcode">邮政编码</label>
