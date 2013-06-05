@@ -7,24 +7,42 @@
 </head>
 
 <body>
-    <form class="user_info" method="post">
-        <ol>
-            <li>
-                <label for="user_email">注册邮箱 <span>*</span></label>
-                <input type="text" id="user_email" name="user_email" placeholder="example@example.com" />
-            </li>
-            <li>
-                <label for="user_password">登录密码 <span>*</span></label>
-                <input type="password" id="user_password" name="user_password" />
-            </li>
-            <li>
-                <label for="user_password2">确认密码 <span>*</span></label>
-                <input type="password" id="user_password2" name="user_password2" />
-            </li>
-            <div id="divide_line">(<span>*</span>)标记为必填项</div>
-        </ol>
-        <span id="register_btn" name="register_btn" class="common_btn">注册</span>
-    </form>
+    {include file="common/header.tpl"}
+    <div class="container content">
+        <div class="row">
+            <div class="columns seven centered">
+                <div class="no-botton-padding" id="login-page">
+                    <div class="login">
+                        <h1>用户注册</h1>
+                        <div class="email-login clearfix">
+                            <fieldset>
+                                <form accept-charset="UTF-8" class="new_user" method="post">
+                                    <div class="field">
+                                        <label for="user_email">注册邮箱 <span>*</span></label>
+                                        <input type="text" id="user_email" name="user_email" placeholder="example@example.com" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="user_password">登录密码 <span>*</span></label>
+                                        <input type="password" id="user_password" name="user_password" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="user_password2">确认密码 <span>*</span></label>
+                                        <input type="password" id="user_password2" name="user_password2" />
+                                    </div>
+                                    <div class="field action">
+                                        <input class="button radius large green" id="register_btn" name="register_btn" type="button" value="注册">
+                                    </div>
+                                </form>
+                                <ul class="additional-links">
+                                    <li><a href="#">(<span>*</span>)标记为必填项</a></li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="../../static/js/jquery.js"></script>
     <script src="../../static/js/common.js"></script>
@@ -78,7 +96,6 @@
                     timeout:120000, // 2min
                     success: function (obj) {
                         if(obj.errCode == 0 ){
-                            toast("注册成功");
                             window.location.href="../home.php";
                         }else{
                             toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
