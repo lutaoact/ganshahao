@@ -2,6 +2,7 @@
     <div>no training</div>
 {else}
     <div>
+        <input type="text" id="training_id" name="training_id" style="display:none" value="{$training.id}" />
         <input type="text" id="training_number" name="training_number" readonly="readonly"
             {if isset($training_number)}
                 value="{$training_number}"

@@ -33,9 +33,30 @@
             });
 
             $('#next_training_btn').click(function(e) {
-                get_training();
+                save_score(score);
             });
         });
+
+        function save_score(score) {
+            var training_id = $("#training_id").val();
+            $.ajax({
+                type:	"POST",
+                url :	"/job/save_score.php",
+                data:   {
+                    training_id  : training_id,
+                    score        : score,
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if (obj.errCode == 0) {
+                        get_training();
+                    } else {
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    }
+                },
+            });
+        }
 
         function get_training() {
             score =0;
