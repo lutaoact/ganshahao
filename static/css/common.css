@@ -3,6 +3,7 @@ html{font-size:62.5%}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 body{line-height:1}
 ol,ul{list-style:none}
+a{color:#2a85e8;text-decoration:none;line-height:inherit;}
 h1,h2,h3,h4,h5,h6{color:#181818;font-weight:bold;line-height:1.25}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
 h1{font-size:46px;font-size:4.6rem;margin-bottom:12px}
@@ -11,6 +12,9 @@ h3{font-size:28px;font-size:2.8rem;margin-bottom:9px}
 h4{font-size:21px;font-size:2.1rem;margin-bottom:3px}
 h5{font-size:18px;font-size:1.8rem;font-weight:normal;margin-bottom:3px}
 h6{font-size:15px;font-size:1.5rem;font-weight:normal}
+#home .header{background:#114048 url("//s3.amazonaws.com/lu-production-assets/images/linen-bg.jpg") top left;overflow:hidden;height:350px;}
+#home .header{background:url("//s3.amazonaws.com/lu-production-assets/images/home-header-bg.jpg") no-repeat top left;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;padding:0;margin:0;height:541px}
+#home a{color:#0093ad;}
 .container{padding:0 20px}
 .content{margin-top:2em;margin-bottom:2em}
 #page-title,.page-title,.section-title,.sub-title{font-weight:300;font-family:"Merriweather",helvetica,arial,sans-serif}
@@ -32,6 +36,7 @@ h1.page-title,#learned-popup h1.page-title,#learned-error h1.page-title{margin-b
 .row .ten.columns{width:82.6%}
 .row .eleven.columns{width:91.3%}
 .row .twelve.columns{width:100%}
+.row .centered{float:none; margin:0 auto;}
 .content-container{padding:5%;background:#fff;border:1px #D9D9D9 solid;box-shadow:3px 3px 5px #e6e6e6;-moz-box-shadow:3px 3px 5px #e6e6e6;-webkit-box-shadow:3px 3px 5px #e6e6e6}
 clearfix:after,.row:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;overflow:hidden}
 * html .clearfix,* html .row{zoom:1}
@@ -62,8 +67,6 @@ form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #cc
 .user-icon{display:inline-block}
 .user-icon img{float:left;overflow:hidden;border:2px #fff solid;background:#fff;box-shadow:1px 1px 2px #dfdfdf;-moz-box-shadow:1px 1px 2px #dfdfdf;-webkit-box-shadow:1px 1px 2px #dfdfdf}
 .user-icon.large img{width:104px;height:104px;}
-#user-settings .settings .field.profile-pic .profile-pic-upload .profile-pic-file-field{display:none}
-#user-settings .settings .field.profile-resume .profile-resume-upload .profile-resume-file-field{display:none}
 .button{background-color:#00a8c6;font-size:12px;text-shadow:1px 1px 0 #666;-moz-text-shadow:1px 1px 0 #666;-webkit-text-shadow:1px 1px 0 #666;-webkit-transition:background 0.15s ease-in-out;-moz-transition:background 0.15s ease-in-out;-o-transition:background 0.15s ease-in-out}
 .button{background:#00a6fc;display:inline-block;text-align:center;padding:9px 34px 11px;color:#fff;text-decoration:none;font-weight:bold;line-height:1;font-family:"Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;position:relative;cursor:pointer;border:none}
 .button.white{text-shadow:0 1px 0 #fff;-moz-text-shadow:0 1px 0 #fff;-webkit-text-shadow:0 1px 0 #fff}
@@ -98,3 +101,26 @@ table thead,table tfoot{background:#f5f5f5}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{font-size:12px;line-height:18px;text-align:left}table thead tr th,table tfoot tr td{padding:8px 10px 9px;font-size:14px;font-weight:bold;color:#222}
 .large.button{font-size:18px;padding:11px 48px 13px;width:auto}
 .button.radius{-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px}
+#top-bar{border-bottom:2px #fff solid;background-color:#fff;background-image:-moz-linear-gradient(#fff, #efefef);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#efefef));background-image:-o-linear-gradient(#fff, #efefef);-moz-box-shadow:0 5px 13px #333;}
+#top-bar .nav-bar{height:auto;margin:.5em 0;background:transparent;border:0}
+#top-bar .logo{margin:13px 0 0 0}
+#top-bar .logo img{width:150px}
+#top-bar .nav-bar li{border:0;line-height:1em}
+#top-bar .nav-bar li a{background:transparent;padding:.75em 1em;color:#333;text-shadow:0 1px 0 #fff;-moz-text-shadow:0 1px 0 #fff;-webkit-text-shadow:0 1px 0 #fff}
+#top-bar .nav-bar li a:hover{color:#eb6841}#new-home{background:#f3f6f7}
+.nav-bar>li{float:left;display:block;position:relative;padding:0;margin:0;border-right:1px solid #ddd;line-height:45px}
+.nav-bar>li>a{position:relative;font-size:14px;padding:0 20px;display:block;text-decoration:none;font-size:15px;font-size:1.5rem}
+.right{float:right;}
+#login-page{padding:5%}
+#login-page.no-bottom-padding{padding:5% 5% 0 5%}
+#login-page{background:#fff;-webkit-border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;border-radius:6px;box-shadow:2px 2px 6px #ccc;-moz-box-shadow:2px 2px 6px #ccc;-webkit-box-shadow:2px 2px 6px #ccc}
+#login-page .email-login{display:block}
+#login-page .email-login fieldset{border-color:#eee}
+#login-page .login .social-login{background:#eee}
+.login h1{forn-size:2em;margin-botton:0;color:#eb6841;}
+.login .email-login form{padding-top:1em}
+.login .email-login input{width:93%;}
+.login .field.action{margin-top:24px;}
+.login .field.action .button.large{font-weight:500;}
+.login .email-login .action input{width:inherit;}
+.login .email-login form label{font-size:20px;}

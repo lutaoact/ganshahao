@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
     </head>
     <body id="user-settings">
+        {include file="common/header.tpl"}
 		<div class="container content">
 			<div class="row">
 				<div class="columns twelve">
@@ -28,11 +29,8 @@
 										</div>
 									</div>
 									<div class="columns six">
-										<div class="profile-pic-upload">
-										<a href="#" class="button white medium radius pic-upload-button">Upload a picture</a>
 										<div class="profile-pic-file-field">
 											<input id="user_picture" style="border:0;" name="user_picture" type="file" accept="image/*">
-										</div>
 										</div>
 									</div>
 								</div>
@@ -52,7 +50,7 @@
 							<div class="field email">
 								<label for="user_email">邮箱</label>
 								{$user.email}
-								<input class="field_change" id="user_email" name="user_email" value="{$user.email}" size="30" type="hide">
+								<input class="field_change" id="user_email" name="user_email" value="{$user.email}" size="30" type="hidden">
 								<a href="#">修改密码</a>
 							</div>
 							<div class="field zipcode">
@@ -61,19 +59,17 @@
 							</div>
 							<div class="field profile-resume">
 								<label for="user_resume">简历</label>
-								<div class="profile-resume-upload">
-									<a href="#" class="button white medium radius resume-upload-button">Upload a resume</a>
-									<div class="profile-resume-file-field">
-										<input id="user_resume" style="border:0;" name="user_resume" type="file"">
-									</div>
-									<div style="display:block;font-size:12.em;color:#666;">
-										<input id="user_is_veteran" name="user_is_veteran" type="checkbox" value="{$user.is_veteran}"
-										{if $user.is_veteran}
-											checked
-										{/if} style="width:2em;"/>
-										<span>我是有经验的老手</span>
-									</div>
-								</div>
+                                <div class="profile-resume-file-field" style="float:left;">
+                                    <input id="user_resume" style="border:0;" name="user_resume" type="file""><br/>
+                                    <div style="color:#666;">
+                                    <input id="user_is_veteran" name="user_is_veteran" type="checkbox" value="{$user.is_veteran}"
+                                    {if $user.is_veteran}
+                                        checked
+                                    {/if} style="width:2em;float:none"/>
+                                    <span style="font-size:1.4em;padding:5px;">我是有经验的老手</span>
+                                </div>
+                                </div>
+                                
 							</div>
 							<div class="field">
 								<label for="user_description">个人简介</label>
@@ -169,14 +165,6 @@
         <script src="/static/js/common.js"></script>
         <script>
         $(function() {
-			$(".pic-upload-button").click(function() {
-				$(this).hide();
-				$(".profile-pic-file-field").show();
-			});
-			$(".resume-upload-button").click(function() {
-				$(this).hide();
-				$(".profile-resume-file-field").show();
-			});
             $(".field_change").change(function() {
                 var field_name = $(this).attr('name');
                 var field_value = $(this).val();

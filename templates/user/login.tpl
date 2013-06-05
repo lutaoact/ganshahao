@@ -7,19 +7,39 @@
 </head>
 
 <body>
-    <form class="contact_content" method="post">
-        <div id="login_part">
-            <p>登录</p>
-            <div class="input_area">
-                <label for="user_email">您的邮箱(<span>*</span>)：</label>
-                <input type="user_email" id="user_email" name="user_email" placeholder="example@example.com" /><br />
-                <label for="user_password">您的密码(<span>*</span>)：</label>
-                <input type="user_password" id="user_password" name="user_password" placeholder="******" /><br />
+    {include file="common/header.tpl"}
+    <div class="container content">
+        <div class="row">
+            <div class="columns seven centered">
+                <div class="no-botton-padding" id="login-page">
+                    <div class="login">
+                        <h1>Sign In</h1>
+                        <div class="email-login clearfix">
+                            <fieldset>
+                                <form accept-charset="UTF-8" class="new_user" method="post">
+                                    <div class="field">
+                                        <label for="user_email">邮箱</label>
+                                        <input type="email" id="user_email" name="user_email" placeholder="example@example.com" />
+                                    </div>
+                                    <div class="field">
+                                        <label for="user_password">密码</label>
+                                        <input type="password" id="user_password" name="user_password" placeholder="your password" />
+                                    </div>
+                                    <div class="field action">
+                                        <input class="button radius large green" id="login_btn" name="login_btn" type="button" value="登陆">
+                                    </div>
+                                </form>
+                                <ul class="additional-links">
+                                    <li><a href="">Forgot your password?</a></li>
+                                </ul>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span id="login_btn" name="login_btn" class="common_btn">登录</span>
-            <span id="register_btn" name="register_btn" class="common_btn">注册</span>
         </div>
-    </form>
+    </div>
+    
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/common.js"></script>
     <script>
@@ -30,7 +50,7 @@
                     "user_password"    : $("#user_password").val(),
                     "submit"           : 1
                 };
-                $.post('../../user/login.php', params,
+                $.post('login.php', params,
                     function(result) {
                         if(result["errCode"] > 0) {
                             toast(result["errMsg"]);
@@ -47,7 +67,7 @@
             });
 
             $("#register_btn").click(function(e) {
-                location.href = "/user/register.php";
+                location.href = "register.php";
             });
         });
     </script>

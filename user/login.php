@@ -22,7 +22,7 @@
         * TO DO
         * go to home
         */
-        return "../home.php";
+        return "/home.php";
     }
 
     function try_to_login(){
