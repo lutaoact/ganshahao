@@ -48,7 +48,7 @@
                         if (text == "") {
                             $("#job_list").html('没有相关职位');
                         } else {
-                            $("#job_list").html(text);
+                            $("#job_list").html('<ul class="block-grid three-up">'+text+'</ul>');
                         }
                     },
                 });
