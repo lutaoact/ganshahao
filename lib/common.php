@@ -7,6 +7,13 @@
         exit(0);
     }
 
+    function get_user_id() {
+        if ( is_login() ) {
+            return session_get('user_id');
+        }
+        return null;
+    }
+
     function require_login() {
         if( !is_login() ){
             redirect('/user/login.php?jumpto='.$_SERVER["REQUEST_URI"]);
@@ -52,10 +59,11 @@
         foreach( $data as $k => $v){
             $_SESSION[$k] = $v;
         }
-        SetCookie(LOGIN_COOKIE, $session_id, time()+60*60*24*30, '/'); # 30 day
+        SetCookie(LOGIN_COOKIE, $session_id, time()+60*60*24, '/'); # one day
     }
 
     function delete_session_cookie() {
+        session_start();
         unset($_SESSION['user_id']);
         SetCookie(LOGIN_COOKIE, '', time() - 3600);
     }

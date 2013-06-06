@@ -26,7 +26,8 @@
                                         <input type="password" id="user_password" name="user_password" placeholder="your password" />
                                     </div>
                                     <div class="field action">
-                                        <input class="button radius large green" id="login_btn" name="login_btn" type="button" value="登陆">
+                                        <input class="button radius large green" id="login_btn" name="login_btn" type="button" value="登陆" >
+                                        <input class="button radius large green" id="register_btn" name="login_btn" type="button" value="注册" style="margin-left:195px">
                                     </div>
                                 </form>
                                 <ul class="additional-links">
@@ -53,12 +54,11 @@
                 $.post('login.php', params,
                     function(result) {
                         if(result["errCode"] > 0) {
-                            toast(result["errMsg"]);
+                            toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
                             $("#user_email").val(result["user_email"]);
                             $("#user_password").val("");
                         } else if(result["errCode"] == 0) {
-                            toast(result["result"]["message"]);
-                            setTimeout(function(){ location.href = "{$jumpto}"; }, 1000);
+                            location.href = "{$jumpto}";
                         }
                     },
                     "json"
