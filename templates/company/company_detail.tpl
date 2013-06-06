@@ -9,29 +9,36 @@
     {include file="common/header.tpl"}
     <div class="container content">
         <div class="row">
-            <div class="company-with-logo">
-                <a href="/job/job_detail.php?job_id={$job.id}">
-                    <img alt="{$company.name}" src="/static/img/{$company.logo}" />
-                </a>
-                <h1 class="company">
-                    {$company.name}
-                </h1>
+            <div class="clearfix" id="user-info">
+                <div class="row">
+                    <div class="columns nine">
+                        <h2>
+                            {$company.name}
+                        </h2>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="description">
-                {$company.description}
+                <h5>
+                    {$company.description}
+                </h5>
             </div>
         </div>
-        {foreach $job_list as $job}
-            <div class="row">
-                <div class="job-title">
-                    <h2>
-                        <a href="/job/job_detail.php?job_id={$job.id}"><h3>{$job.name}</h3></a>
-                    </h2>
-                </div>
+        <div class="row">
+            <div class="job-titles">
+                <ul>
+                    {foreach $job_list as $job}
+                        <li>
+                            <div class="columns eight">
+                                <a href="/job/job_detail.php?job_id={$job.id}">{$job.name}</a>
+                            </div>
+                        </li>
+                    {/foreach}
+                </ul>
             </div>
-        {/foreach}
+        </div>
     </div>
 
     <script src="/static/js/jquery.js"></script>
