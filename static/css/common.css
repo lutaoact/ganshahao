@@ -60,6 +60,11 @@ form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #cc
 #user-settings .settings .field .field-container{float:left;width:70%}
 #user-settings .settings .action{margin-left:160px}
 #user-settings .settings .action input{float:right;margin-top:20px}
+#user-settings .profile-pic-file-field{width:300px;position:relative;}
+#user-settings .profile-pic-file-field form input{float:left;}
+#user-settings .profile-pic-file-field #user_picture{position:absolute;top:0;left:0px;filter:alpha(opacity=0);-moz-opacity:0;opacity:0;}
+#user-settings .profile-pic-file-field  form #pic-path{width:200px;height:38px;border:0;margin:1px;padding:0px;}
+#user-settings .profile-pic-file-field  form .pic-chose-btn{display:block;width:70px;height:38px;}}
 #user-settings #user_available_time .time{width:100px}
 #user-settings #user_available_time .time em{display:block;font-style:normal;font-weight:bold}
 #user-settings #user_available_time td{width:30px;vertical-align:middle}
@@ -155,10 +160,18 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #explore #job_list .employer{background:#fff;padding:3%;box-shadow:-1px -1px 0 #fff, 1px 1px 5px #E9E9E9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
 #explore #job_list .employer-info{border-bottom:1px #e9e9e9 solid;margin-bottom:10px;padding-bottom:10px;}
 #explore #job_list .employer-info .user-name a{float:left;margin-top:8px;font-size:18px;font-weight:bold;color:#333;font-family:"微软雅黑"}
-#explore #job_list .job-titles li{margin-bottom:10px;line-height:20px;font-size:18px;}
-#explore .job-title-link{text-transform:capitalize;font-weight:bold; }
+#explore #job_list .job-titles li, #company .job-titles li{margin-bottom:10px;line-height:20px;font-size:18px;}
+#explore .job-title-link, #company{text-transform:capitalize;font-weight:bold; }
 
 .training-info #training-description, .training-info #training-question{padding:1em;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
 .training-info #training-description h1{font-size:24px;font-weight:bold;color:#0093ad;}
 .training-info #training-description h2{font-size:18px;font-weight:bold;color:#0093ad;}
 .training-info #training-question ul li{margin-bottom:10px;line-height:20px;font-size:14px;font-family:"微软雅黑"}}
+
+#user-profile{margin-top:2em;}
+#profile #user-info{margin-bottom:1em;}
+#profile #user-info .user-icon.large a{float:left;}
+#profile #user-info .user-icon.large img{width:100px;height:auto;border:7px solid #fff;}
+#profile .actions a{font-size:14px;}
+
+

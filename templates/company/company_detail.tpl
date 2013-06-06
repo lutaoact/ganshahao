@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
-<body>
+<body id="company">
     {include file="common/header.tpl"}
     <div class="container content">
         <div class="row">
@@ -32,7 +32,7 @@
                     {foreach $job_list as $job}
                         <li>
                             <div class="columns eight">
-                                <a href="/job/job_detail.php?job_id={$job.id}">{$job.name}</a>
+                                <a href="/job/job_detail.php?job_id={$job.id}" class="job-title-link">{$job.name}</a>
                             </div>
                         </li>
                     {/foreach}

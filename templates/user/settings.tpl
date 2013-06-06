@@ -29,14 +29,13 @@
                                 </div>
                                 <div class="columns six">
                                     <div class="clearfix profile-pic-file-field">
-                                    <form action="settings.php" enctype="multipart/form-data" method="post">
+                                    <form action="settings.php" enctype="multipart/form-data" method="post" class="clearfix">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                                        <a href="javascript:void(0);" class="upload-btn">
-                                            <span>选择头像</span>
-                                            <input type="file" id="user_picture" name="user_picture" tabindex="3" title="文件小于5M" size="3" accept="image">
-                                        </a>
-                                        <label>{$user_picture_error}</label>
-                                        <input type="submit" value="上传" />
+                                        <input type="button" class="clearfix pic-chose-btn" value="选择头像">
+                                        <input type="text" id="pic-path" name="pic-path" class="clearfix">
+                                        <input type="file" id="user_picture" name="user_picture" class="clearfix">
+                                        <input type="submit" class="clearfix pic-chose-btn" value="上传" style="float:none;"/>
+                                        <label style="font-size:12px;">{$user_picture_error}</label>
                                     </form>
                                     </div>
                                 </div>
@@ -176,6 +175,9 @@
         <script src="/static/js/common.js"></script>
         <script>
         $(function() {
+            $("#user_picture").change(function() {
+                $("#pic-path").attr('value', $(this).val());
+            });
             $(".field_change").change(function() {
                 var field_name = $(this).attr('name');
                 var field_value = $(this).val();
