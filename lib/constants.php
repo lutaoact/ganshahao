@@ -19,11 +19,15 @@ define('ERR_LOCK_PASSWORD_IS_NULL',         110);
 define('ERR_USER_NOT_REGISTER',             111);
 define('ERR_EMAIL_EXIST',                   112);
 define('ERR_CHANGE_EMAIL',                  113); //不能修改邮箱
+define('ERR_PASSWORD',                      114); //密码错误
+define('ERR_TWO_NEW_PASSWORD_DO_NOT_MATCH', 115); //两次输入的新密码不相同
 
 // job
 define('ERR_ZIPCODE_FORMAT',                201);
 
 // path
-define('IMG_PATH',                         "/static/img/");
+define('IMG_PATH',                          "/static/img/");
+define('UPLOADS_DIR_PICTURE',               "/uploads/");
+define('UPLOADS_DIR_RESUME',                "/uploads/");
 define('LOGIN_COOKIE',                      'GANSHAHAO_WEB_SESSION');          //login cookie name
 ?>

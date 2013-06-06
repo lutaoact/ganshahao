@@ -44,8 +44,8 @@ if (isset($field_name) && isset($field_value)) {
         } elseif (strpos($_FILES[user_picture][type], 'image') === false) {
             $smarty->assign('user_picture_error', "格式有误");
         } elseif (is_uploaded_file($_FILES[user_picture][tmp_name])) {
-            $upfile = "/uploads/" . $user_id . $_FILES[user_picture][name];
-            if (!move_uploaded_file($_FILES[user_picture][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
+            $upfile = $user_id . $_FILES[user_picture][name];
+            if (!move_uploaded_file($_FILES[user_picture][tmp_name], $_SERVER[DOCUMENT_ROOT] . UPLOADS_DIR_PICTURE . $upfile)) {
                 $smarty->assign('user_picture_error', "无法重命名");
             }
             list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(picture => $upfile));
@@ -62,8 +62,8 @@ if (isset($field_name) && isset($field_value)) {
         ) {
             $smarty->assign('user_resume_error', "格式有误");
         } elseif (is_uploaded_file($_FILES[user_resume][tmp_name])) {
-            $upfile = "/uploads/" . $user_id . $_FILES[user_resume][name];
-            if (!move_uploaded_file($_FILES[user_resume][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
+            $upfile = $user_id . $_FILES[user_resume][name];
+            if (!move_uploaded_file($_FILES[user_resume][tmp_name], $_SERVER[DOCUMENT_ROOT] . UPLOADS_DIR_RESUME . $upfile)) {
                 $smarty->assign('user_resume_error', "无法重命名");
             }
             list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(resume => $upfile));

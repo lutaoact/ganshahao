@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>[干啥好] 注册页面</title>
+    <title>[干啥好] 修改密码</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
@@ -23,7 +23,6 @@
             </li>
             <div id="divide_line">(<span>*</span>)标记为必填项</div>
         </ol>
-        <!-- <span id="register_btn" name="register_btn" class="common_btn">注册</span> -->
         <input type="button" id="change_password_button" value="确认" />
     </form>
 
@@ -39,7 +38,7 @@
                     || new_password.length < 1
                     || new_password2.length < 1
                 ) {
-                    alert("密码不得为空");
+                    alert("密码都不得为空");
                     return;
                 }
 
@@ -61,7 +60,7 @@
                     success: function (obj) {
                         if(obj.errCode == 0 ){
                             toast("密码修改成功");
-                        //    window.location.href="/home.php";
+                            window.location.href="/user/settings.php";
                         }else{
                             toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
                         }
