@@ -52,7 +52,7 @@
                 var user_email = $("#user_email").val();
                 $.ajax({
                     type:	"POST",
-                    url :	"/user/checkEmail.php",
+                    url :	"/user/check_email.php",
                     data:   {
                         user_email     : user_email,
                     },
@@ -61,6 +61,8 @@
                     success: function (obj) {
                         if(obj.errCode != 0 ){
                             toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                            $("#user_email").val("");
+                            $("#user_email").focus();
                         }
                     },
                 });
