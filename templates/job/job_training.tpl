@@ -1,5 +1,8 @@
 {if $training eq null}
     <div>no training</div>
+    <script>
+        $('#next_training_btn').hide();
+    </script>
 {else}
     <div>
         <input type="hidden" id="training_id" name="training_id" value="{$training.id}" />
@@ -25,7 +28,7 @@
                     question_content : {$question.content}</br>
                     {foreach $question.choices as $choice}
                         <p>
-                            <input type='radio' name='{$question.id}' value="{$choice@iteration}" onclick="check(this.name, this.value)" />
+                            <input type='radio' name='{$question.id}' value="{$choice@iteration}" />
                             <span id='{$question.id}{$choice@iteration}'>{$choice}</span>
                         </p>
                     {/foreach}

@@ -54,6 +54,7 @@
     <script src="/static/js/common.js"></script>
     <script>
         var score;
+
         $(function() {
             $("#apply_btn").click(function(e) {
                 console.log("apply this job");
@@ -63,11 +64,22 @@
             });
 
             $('#next_training_btn').click(function(e) {
-                save_score(score);
+                count_score();
             });
         });
 
-        function save_score(score) {
+        function count_score() {
+            var elements = $(":radio");
+            for(var i=0; i<elements.length; i++) {
+                if(elements[i].checked) {
+                    check(elements[i].name, elements[i].value);
+                }
+            }
+            save_score();
+        }
+
+        function save_score() {
+            toast('---->>>>score: '+score);
             var training_id = $("#training_id").val();
             $.ajax({
                 type:	"POST",
@@ -113,11 +125,12 @@
         }
 
         function check(question_id, current_answer) {
-            var job_id = $("#job_id").val();
+            console.log(question_id + ':' + current_answer);
             $.ajax({
-                type:	"POST",
-                url :	"/job/get_question_answer.php",
-                data:   {
+                type :	"POST",
+                async:  false,
+                url  :	"/job/get_question_answer.php",
+                data :   {
                     question_id : question_id,
                 },
                 dataType: "json",
@@ -126,7 +139,7 @@
                     if (obj.errCode != 0) {
                         toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
                     }
-                    console.log(obj.result.question_answer);
+                    console.log('---->>>>answer: ' + question_id + ':' + obj.result.question_answer);
                     handle_response(question_id, obj.result.question_answer);
                 },
                 error: function (obj) {
@@ -146,7 +159,6 @@
                 }
                 elements[i].disabled=true;
             }
-            alert('now your got: ' + score + ' points');
         }
     </script>
 </body>

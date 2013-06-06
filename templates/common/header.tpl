@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="logo columns two">
-                <a href="/">
+                <a href="/home.php">
                     <img alt="Ganshahao" src="/static/img/logo.png">
                 </a>
             </div>
