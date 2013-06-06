@@ -5,13 +5,27 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
 </head>
-<body>
-    <label for="zipcode">您工作目标地点的邮编:</label>
-    <input type="text" name="zipcode" maxlength="6" id="zipcode" placeholder="200001" />
-    <span id="search_btn" name="search_btn" class="common_btn">搜索</span></br>
-    <div id="job_list">
-        <ul>{include file='job/job_list_div.tpl'}</ul>
-    </div>
+<body id="explore" lang="en">
+	{include file="common/header.tpl"}
+	<div class="container content">
+		<div class="row">
+			<div class="columns twelve">
+				<h1 class="page-title search-job">Jobs In Schenectady, NY
+					<div class="columns seven right">
+					<input style="margin-left:20px;" type="text" name="zipcode" id="zipcode" maxlength="6" placeholder="您工作目标地点的邮编" />
+					<input class="button radius large green" id="search_btn" name="search_btn" type="button" value="搜索">
+					</div>
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="columns twelve">
+				<div id="employer-trainings">
+					<ul>{include file='job/job_list_div.tpl'}</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 
     <script src="../../static/js/jquery.js"></script>
     <script src="../../static/js/common.js"></script>

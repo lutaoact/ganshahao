@@ -3,7 +3,7 @@
         <div class="row">
             <div class="logo columns two">
                 <a href="/">
-                    <img alt="Ganshahao" src="//d3h58ti7lx89tg.cloudfront.net/assets/learnup-logo-med-34e099481b71030fbe20391aeed1ba8a.png">
+                    <img alt="Ganshahao" src="/static/img/logo.png">
                 </a>
             </div>
             <div class="columns ten">

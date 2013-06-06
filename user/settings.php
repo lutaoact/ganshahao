@@ -5,7 +5,7 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
 //$user_id = require_login();
-$user_id = 1;
+$user_id = 2;
 $_db = new DbAdapter();
 $field_name = $_REQUEST[field_name];
 $field_value = $_REQUEST[field_value];
@@ -37,10 +37,42 @@ if (isset($field_name) && isset($field_value)) {
             break;
     }
 } else {
+    $smarty = new MySmarty();
+    if ($_FILES[user_picture]) {
+        if ($_FILES[user_picture][error] > 0) {
+            $smarty->assign('user_picture_error', "上传出错" . $_FILES[user_picture][error]);
+        } elseif (strpos($_FILES[user_picture][type], 'image') === false) {
+            $smarty->assign('user_picture_error', "格式有误");
+        } elseif (is_uploaded_file($_FILES[user_picture][tmp_name])) {
+            $upfile = "/uploads/" . $user_id . $_FILES[user_picture][name];
+            if (!move_uploaded_file($_FILES[user_picture][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
+                $smarty->assign('user_picture_error', "无法重命名");
+            }
+            list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(picture => $upfile));
+            validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+            if ($res[errCode]) json_exit($res);
+        }
+    }
+
+    if ($_FILES[user_resume]) {
+        if ($_FILES[user_resume][error] > 0) {
+            $smarty->assign('user_resume_error', "上传出错" . $_FILES[user_resume][error]);
+        } elseif ((strpos($_FILES[user_resume][type], 'msword')
+             || strpos($_FILES[user_resume][type], 'pdf')) === false
+        ) {
+            $smarty->assign('user_resume_error', "格式有误");
+        } elseif (is_uploaded_file($_FILES[user_resume][tmp_name])) {
+            $upfile = "/uploads/" . $user_id . $_FILES[user_resume][name];
+            if (!move_uploaded_file($_FILES[user_resume][tmp_name], $_SERVER[DOCUMENT_ROOT] . $upfile)) {
+                $smarty->assign('user_resume_error', "无法重命名");
+            }
+            list($affected_rows, $mysql_err_no, $mysql_err_msg) = $_db->update_user($user_id, array(resume => $upfile));
+            validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+            if ($res[errCode]) json_exit($res);
+        }
+    }
     list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
     $user[available_time] = json_decode($user[available_time]);
-#    var_dump($user[available_time]);
-    $smarty = new MySmarty();
     $smarty->assign('user', $user);
     $smarty->display('user/settings.tpl');
 }

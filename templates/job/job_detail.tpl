@@ -5,21 +5,50 @@
     <title>[干啥好] 工作详情</title>
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
-<body>
-    <div>
-        <input type="text" readonly="readonly" name="job_id" id="job_id" value='{$job_id}' />
-        <h2>{$job_name}</h2>
-        <p>at<i>{$company_name}</i></p><br>
-        <p>{$job_description}</p><br>
-        <p>location: {$job_address}</p>
-        <span id="apply_btn" name="apply_btn" class="common_btn">申请</span></br>
-    </div>
-
-    <div id="train_div" name="train_div" style="display:none">
-        <div id="training_content"></div>
-        <span id="next_training_btn" name="next_training_btn" class="common_btn">下一题</span></br>
-    </div>
-
+<body id="employer-profile" lang="en">
+	{include file="common/header.tpl"}
+	<div class="container content">
+		<div class="row">
+			<div class="content-container clearfix" id="main-content">
+				<div class="columns twelve">
+					<div class="clearfix" id="user-info">
+						<div class="row">
+							<div class="columns two>
+								<div class="user-icon large round">
+									<img src="">
+								</div>
+							</div>
+							<div class="columns nine">
+								<h1 class="page-title">
+									<div class="job-title">Sales Associate</div>
+									at
+									<span class="employer">Banana Republic</span>
+								</h1>
+							</div>
+							<div class="columns two apply-btn">
+								<input id="job_id" type="hidden" value="{$job_id}">
+                                <input class="button radius large green" id="apply_btn" name="apply_btn" type="button" value="申请">
+                            </div>
+						</div>
+					</div>
+					<div class="main-step clearfix" id="train_div" style="display:none;opacity:1;width:978px;">
+						<div class="row">
+							<div class="columns offset-by-one ten">
+								<div class="content" style="display:block">
+									<div class="clearfix training-info">
+										<div id="training_content"></div>
+										<div style="margin-top:20px;">
+											<input class="button radius large green" id="next_training_btn" name="next_training_btn" type="button" value="下一题">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/common.js"></script>
@@ -28,6 +57,7 @@
         $(function() {
             $("#apply_btn").click(function(e) {
                 console.log("apply this job");
+				$(this).attr('disabled', true);
                 $("#train_div").show();
                 get_training();
             });

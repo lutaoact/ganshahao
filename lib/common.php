@@ -46,7 +46,7 @@
 
 
     function set_session_cookie($user_id, $data = array()) {
-        Session_start();
+        session_start();
         $session_id = session_id();
         $_SESSION['user_id'] = $user_id;
         foreach( $data as $k => $v){
