@@ -10,10 +10,10 @@
                 <div class="columns ten">
                     <ul class="right nav-bar">
                         <li class="register">
-                            <a href="/user/register.php" class="register-link" title="Register for Ganshahao.">Register</a>
+                            <a href="/user/register.php" class="register-link" title="Register for Ganshahao.">注册</a>
                         </li>
                         <li class="signin">
-                            <a href="/user/login.php" class="signin" title="Sign in to Ganshahao.">Sign in</a>
+                            <a href="/user/login.php" class="signin" title="Sign in to Ganshahao.">登陆</a>
                         </li>
                     </ul>
                 </div>

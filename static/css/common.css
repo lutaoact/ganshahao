@@ -64,6 +64,8 @@ form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #cc
 #user-settings #user_available_time .time em{display:block;font-style:normal;font-weight:bold}
 #user-settings #user_available_time td{width:30px;vertical-align:middle}
 #user-settings #user_available_time input{width:30px;}
+.upload-btn{display: inline-block; width:100px; height:40px;position: relative;overflow: hidden;padding: 0 30px;border: 1px solid #EBEBEB;ackground: none repeat scroll 0 0 #F3F3F3;color: #999999;font: 14px/39px 'MicroSoft Yahei','Simhei';cursor: pointer;text-align: center;}
+.upload-btn input{display: block;position: absolute;width:100px; height:40px;top: 0;left: 0;cursor: pointer;opacity: 0;filter:alpha(opacity: 1);}
 .user-icon{display:inline-block}
 .user-icon img{float:left;overflow:hidden;border:2px #fff solid;background:#fff;box-shadow:1px 1px 2px #dfdfdf;-moz-box-shadow:1px 1px 2px #dfdfdf;-webkit-box-shadow:1px 1px 2px #dfdfdf}
 .user-icon.large img{width:104px;height:104px;}
@@ -145,3 +147,18 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #explore .search-job input:not(.button){font-size:0.5em;padding:5px;border:1px #bbb solid;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;box-shadow:0px 0px 6px #dedede;-moz-box-shadow:0px 0px 6px #dedede;-webkit-box-shadow:0px 0px 6px #dedede}
 #explore .page-title{font-weight;font-family:"Merriweather",helvetica,arial,sans-serif;padding-bottom:1em;}
 #explore .large.button{font-size:16px;padding:5px 36px 5px;width:auto;}
+#explore #job_list ul .block-grid{padding-top:0;}
+.block-grid.three-up{margin-left:-2%;}
+.block-grid.three-up>li{margin-left:2%;width:31.3%;}
+.block-grid{display:block;overflow:hidden;}
+.block-grid>li{display:block;height:auto;float:left;}
+#explore #job_list .employer{background:#fff;padding:3%;box-shadow:-1px -1px 0 #fff, 1px 1px 5px #E9E9E9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+#explore #job_list .employer-info{border-bottom:1px #e9e9e9 solid;margin-bottom:10px;padding-bottom:10px;}
+#explore #job_list .employer-info .user-name a{float:left;margin-top:8px;font-size:18px;font-weight:bold;color:#333;font-family:"微软雅黑"}
+#explore #job_list .job-titles li{margin-bottom:10px;line-height:20px;font-size:18px;}
+#explore .job-title-link{text-transform:capitalize;font-weight:bold; }
+
+.training-info #training-description, .training-info #training-question{padding:1em;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
+.training-info #training-description h1{font-size:24px;font-weight:bold;color:#0093ad;}
+.training-info #training-description h2{font-size:18px;font-weight:bold;color:#0093ad;}
+.training-info #training-question ul li{margin-bottom:10px;line-height:20px;font-size:14px;font-family:"微软雅黑"}}

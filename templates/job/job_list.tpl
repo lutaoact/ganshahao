@@ -20,9 +20,11 @@
 		</div>
 		<div class="row">
 			<div class="columns twelve">
-				<div id="employer-trainings">
-					<ul>{include file='job/job_list_div.tpl'}</ul>
-				</div>
+				<div id="job_list">
+                    <ul class="block-grid three-up">
+                        {include file='job/job_list_div.tpl'}
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>

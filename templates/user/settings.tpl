@@ -24,14 +24,17 @@
                             <div class="row">
                                 <div class="columns two">
                                     <div class="user-icon large">
-                                    <img alt="Default-user-icon" src="{$user.picture}">
+                                    <img alt="Default-user-icon" src="/static/img/{$user.picture}">
                                     </div>
                                 </div>
                                 <div class="columns six">
-                                    <div class="profile-pic-file-field">
+                                    <div class="clearfix profile-pic-file-field">
                                     <form action="settings.php" enctype="multipart/form-data" method="post">
                                         <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                                        <input id="user_picture" style="border:0;" name="user_picture" type="file" accept="image/*">最大1M<br>
+                                        <a href="javascript:void(0);" class="upload-btn">
+                                            <span>选择头像</span>
+                                            <input type="file" id="user_picture" name="user_picture" tabindex="3" title="文件小于5M" size="3" accept="image">
+                                        </a>
                                         <label>{$user_picture_error}</label>
                                         <input type="submit" value="上传" />
                                     </form>

@@ -1,21 +1,26 @@
 {foreach $company_list as $company}
-    <li>
-        <div class="row">
-            company_id : {$company.company_id}</br>
-            company_name : {$company.company_name}</br>
-        </div>
-        <div class="row">
-            <ul>
+    <li style="opacity:1;">
+        <div class="employer clearfix" style="height:188.25px;">
+            <div class="employer-info clearfix">
+                <div class="user-name">
+                    <a href="/company/company_detail.php?company_id={$company.company_id}" title="{$company.company_name}">
+                        {$company.company_name}
+                    </a>
+                </div>
+            </div>
+            <div class="job-titles">
+                <ul>
                 {foreach $company.job_list as $job}
-                    <li>
-                        <div>
-                            <a alt="$job.job_name" href="/job/job_detail.php?job_id={$job.job_id}">
-                                {$job.job_name}
-                            </a>
-                        </div>
-                    </li>
+                <li>
+                    <div class="columns eight">
+                        <a href="/job/job_detail.php?job_id={$job.job_id}" class="job-title-link">
+                            {$job.job_name}
+                        </a>
+                    </div>
+                </li>
                 {/foreach}
-            </ul>
+                </ul>
+            </div>
         </div>
     </li>
 {/foreach}
