@@ -1,11 +1,10 @@
 <?php
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
-require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
-//$user_id = require_login();
-$user_id = 2;
+$user_id = require_login();
+//$user_id = 2;
 $_db = new DbAdapter();
 $field_name = $_REQUEST[field_name];
 $field_value = $_REQUEST[field_value];
@@ -99,26 +98,4 @@ function update_user($params) {
 
     echo json_encode($res);
 }
-#    var_dump($_POST);
-#    $user = array(
-#        id          => $_POST[user_id         ],
-#        nick_name   => $_POST[user_nick_name  ],
-#        email       => $_POST[user_email      ],
-#        real_name   => $_POST[user_real_name  ],
-#        mobile      => $_POST[user_mobile     ],
-#        description => $_POST[user_description],
-#        zipcode     => $_POST[user_zipcode    ],
-#        is_veteran  => $_POST[user_is_veteran ],
-#    );
-#    $res = array(result => array($_POST[field_name] => $_POST[field_value]), errCode => 0, errMsg => '');
-#    echo json_encode($res);
-#$user = array(
-#    morning     => array(1, 0, 1, 0, 1, 0, 1),
-#    afternoon   => array(1, 0, 1, 0, 1, 0, 1),
-#    evening     => array(1, 0, 1, 0, 1, 0, 1),
-#    night       => array(1, 0, 1, 0, 1, 0, 1),
-#);
-#$user_string =  json_encode($user);
-#$user_obj = json_decode($user_string);
-#var_dump($user_obj);
 ?>

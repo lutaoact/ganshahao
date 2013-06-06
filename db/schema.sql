@@ -68,6 +68,7 @@ CREATE TABLE training_completed(
     id              int unsigned    NOT NULL auto_increment,
     training_id     int unsigned    NOT NULL DEFAULT 0,
     user_id         int unsigned    NOT NULL DEFAULT 0,
+    updated_time    datetime        NOT NULL DEFAULT 0,
     score           int unsigned    NOT NULL DEFAULT 0,
     primary key(id)
 )Engine=InnoDB;

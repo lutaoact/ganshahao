@@ -37,7 +37,10 @@ class DbAdapter {
 
     public function getVar($sql) {
         if($result = $this->_db->query($sql)) {
-            return $this->format($result->fetch_assoc());
+            $data = $result->fetch_assoc();
+            foreach ($data as $key => $value) {
+                return $this->format($value);
+            }
         } else {
             return $this->emptyResult();
         }
@@ -367,15 +370,28 @@ class DbAdapter {
         return $this->runSql($sql);
     }
 
-    public function count_training_complete_by_user_id($id) {
+    public function count_training_completed_by_user_id($id) {
         $id = $this->escape($id);
         $sql = "SELECT
-                    count(training_id) as count
+                    count(*)
                 FROM
                     training_completed
                 WHERE
                     user_id = {$id}";
         return $this->getVar($sql);
+    }
+
+    public function select_training_names_completed_by_user_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT
+                    training.name as training_name
+                FROM
+                    training, training_completed
+                WHERE
+                    training_completed.user_id = {$id}
+                        AND
+                    training_completed.training_id = training.id ";
+        return $this->getData($sql);
     }
 
     ##################
