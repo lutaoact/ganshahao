@@ -13,7 +13,7 @@
                             <a href="/user/register.php" class="register-link" title="Register for Ganshahao.">注册</a>
                         </li>
                         <li class="signin">
-                            <a href="/user/login.php" class="signin" title="Sign in to Ganshahao.">登陆</a>
+                            <a href="/user/login.php" class="signin" title="Sign in to Ganshahao.">登录</a>
                         </li>
                     </ul>
                 </div>
