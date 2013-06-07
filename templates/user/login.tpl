@@ -52,12 +52,12 @@
                     "submit"           : 1
                 };
                 $.post('login.php', params,
-                    function(result) {
-                        if(result["errCode"] > 0) {
+                    function(obj) {
+                        if(obj["errCode"] > 0) {
                             toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
-                            $("#user_email").val(result["user_email"]);
+                            $("#user_email").val(obj["user_email"]);
                             $("#user_password").val("");
-                        } else if(result["errCode"] == 0) {
+                        } else if(obj["errCode"] == 0) {
                             location.href = "{$jumpto}";
                         }
                     },
