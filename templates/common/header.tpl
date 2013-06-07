@@ -25,6 +25,9 @@
                             <a href="/job/job_list.php" class="register-link" title="Register for Ganshahao.">工作机会</a>
                         </li>
                         <li class="signin">
+                            <a href="/user/profile.php" class="signin" title="Sign in to Ganshahao.">个人信息</a>
+                        </li>
+                        <li class="signin">
                             <a href="/user/settings.php" class="signin" title="Sign in to Ganshahao.">设置</a>
                         </li>
                         <li class="signin">
