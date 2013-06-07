@@ -72,7 +72,7 @@
                                     <label>{$user_resume_error}</label>
                                     <input type="submit" value="上传" />
                                 </form>
-                                <a href="{$user.resume nofilter}">下载简历</a>
+                                <a href="/uploads/{$user.resume nofilter}">下载简历</a>
                                 <div style="color:#666;">
                                 <input id="user_is_veteran" name="user_is_veteran" type="checkbox" value="{$user.is_veteran}"
                                 {if $user.is_veteran}
