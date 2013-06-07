@@ -23,7 +23,6 @@
     function try_get_job_trainings($job_id, $training_number) {
         $res = get_job_trainings_api($job_id, $training_number++);
         if($res['errCode'] != 0) json_exit($res);
-        if($res['result'] == null) return;
 
         show_training_page($res[result], $training_number);
     }
@@ -39,12 +38,14 @@
     }
 
     function show_training_page($training, $training_number) {
-        $res = get_training_questions_api($training[id]);
-        if($res['errCode'] != 0) json_exit($res);
-        if($res[result] == null) json_exit($res);
-        $question_list = $res[result];
-        foreach($question_list as &$question) {
-            $question[choices] = json_decode($question[choices]);
+        if($training != null) {
+            $res = get_training_questions_api($training[id]);
+            if($res['errCode'] != 0) json_exit($res);
+            if($res[result] == null) json_exit($res);
+            $question_list = $res[result];
+            foreach($question_list as &$question) {
+                $question[choices] = json_decode($question[choices]);
+            }
         }
 
         $smarty = new MySmarty();

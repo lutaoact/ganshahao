@@ -1,6 +1,9 @@
 {if $training eq null}
     <div id="training-description">
-        No Trainings
+        没有相关培训了
+        <div style="margin-top:20px;">
+            <input class="button radius large green" type="button" id="job_apply_btn" name="job_apply_btn" value="提交职位申请">
+        </div>
         <script>
             $('#next_training_btn').hide();
         </script>

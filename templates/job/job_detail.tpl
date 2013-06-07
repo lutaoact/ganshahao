@@ -37,9 +37,13 @@
 								<div class="content" style="display:block">
 									<div class="clearfix training-info">
 										<div id="training_content"></div>
+                                        <div id="training_complete_div" style="display:none">
+                                            已经提交职位申请，请耐心等待<br>
+                                            您可以查看更多<a href="job/job_list.php">职位</a>5秒后为你跳转
+                                        </div>
 										<div style="margin-top:20px;">
 											<input class="button radius large green" id="next_training_btn" name="next_training_btn" type="button" value="下一题">
-										</div>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -56,6 +60,9 @@
         var score;
 
         $(function() {
+            $("#job_apply_btn").click(function(e) {
+                save_job_apply();
+            });
             $("#apply_btn").click(function(e) {
                 console.log("apply this job");
 				$(this).attr('disabled', true);
@@ -116,11 +123,37 @@
                 timeout:120000, // 2min
                 success: function (text) {
                     if (text == "") {
-                        $("#training_content").html('没有培训了');
                         $('#next_training_btn').hide();
+                        $("#training_content").hide();
                     } else {
                         $("#training_content").html(text);
                     }
+                },
+            });
+        }
+
+        function save_job_apply() {
+            var job_id = $("#job_id").val();
+            $.ajax({
+                type :	"POST",
+                async:  false,
+                url  :	"/job/save_job_apply.php",
+                data :   {
+                    job_id : job_id,
+                },
+                dataType: "json",
+                timeout:120000, // 2min
+                success: function (obj) {
+                    if (obj.errCode != 0) {
+                        toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                    } else {
+                        $('#job_apply_div').hide();
+                        $('#training_complete_div').show();
+                        setTimeout(function(){ location.href = "/job/job_list.php"; }, 5000);
+                    }
+                },
+                error: function (obj) {
+                    toast_err("请求失败");
                 },
             });
         }
