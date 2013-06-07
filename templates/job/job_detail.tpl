@@ -79,7 +79,7 @@
         }
 
         function save_score() {
-            toast('---->>>>score: '+score);
+            toast('您获得了: '+score+" 分");
             var training_id = $("#training_id").val();
             $.ajax({
                 type:	"POST",
@@ -116,7 +116,8 @@
                 timeout:120000, // 2min
                 success: function (text) {
                     if (text == "") {
-                        $("#training_content").html('没有相关问题');
+                        $("#training_content").html('没有培训了');
+                        $('#next_training_btn').hide();
                     } else {
                         $("#training_content").html(text);
                     }

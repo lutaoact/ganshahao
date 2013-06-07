@@ -32,9 +32,19 @@
     <script src="../../static/js/jquery.js"></script>
     <script src="../../static/js/common.js"></script>
     <script>
+        function validate_zipcode(zipcode) {
+            reg = /^\d{6}$/;
+            return reg.test(zipcode);
+        }
+
         $(function() {
             $("#search_btn").click(function(e) {
                 var zipcode = $("#zipcode").val();
+                if(zipcode == "") {
+                    toast("请先输入邮编");
+                    return;
+                }
+
                 $.ajax({
                     type:	"GET",
                     url :	"/job/job_list.php",
@@ -45,6 +55,20 @@
                     dataType: "text",
                     timeout:120000, // 2min
                     success: function (text) {
+
+                        // try check error
+                        try{
+                            var obj = eval( "(" + text + ")" );
+                            if (obj.errCode != 0) {
+                                toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                                $("#zipcode").focus();
+                                $("#zipcode").val("");
+                                return;
+                            }
+                        } catch(err) {
+                            //TO DO
+                        }
+
                         if (text == "") {
                             $("#job_list").html('没有相关职位');
                         } else {
