@@ -13,7 +13,7 @@
             <div class="columns seven centered">
                 <div class="no-botton-padding" id="login-page">
                     <div class="login">
-                        <h1>Sign In</h1>
+                        <h1>登录</h1>
                         <div class="email-login clearfix">
                             <fieldset>
                                 <form accept-charset="UTF-8" class="new_user" method="post">
@@ -23,7 +23,7 @@
                                     </div>
                                     <div class="field">
                                         <label for="user_password">密码</label>
-                                        <input type="password" id="user_password" name="user_password" placeholder="your password" />
+                                        <input type="password" id="user_password" name="user_password" />
                                     </div>
                                     <div class="field action">
                                         <input class="button radius large green" id="login_btn" name="login_btn" type="button" value="登陆" >
@@ -31,7 +31,7 @@
                                     </div>
                                 </form>
                                 <ul class="additional-links">
-                                    <li><a href="">Forgot your password?</a></li>
+                                    <!-- <li><a href="">Forgot your password?</a></li> -->
                                 </ul>
                             </fieldset>
                         </div>

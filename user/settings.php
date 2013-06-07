@@ -7,7 +7,6 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 $user_id = 1;
 $_db = new DbAdapter();
 
-
 if (isset($_REQUEST['field_name']) && isset($_REQUEST['field_value'])) {
     $field_name = $_REQUEST['field_name'];
     $field_value = $_REQUEST['field_value'];
