@@ -16,7 +16,7 @@
                                 <div class="columns five">
                                     <div class="user-icon large">
                                         <a href="/user/settings.php">
-                                        <img src="//s3.amazonaws.com/lu-production-assets/images/default-user-icon.png">
+                                        <img src="/uploads/{$user.picture}">
                                         </a>
                                     </div>
                                 </div>
