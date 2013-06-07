@@ -4,7 +4,7 @@ require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
 //$user_id = require_login();
-$user_id = 2;
+$user_id = 1;
 $_db = new DbAdapter();
 
 
