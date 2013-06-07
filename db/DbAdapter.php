@@ -23,7 +23,7 @@ class DbAdapter {
     }
 
     public function errmsg() {
-        return $this->_db->errmsg;
+        return $this->_db->error;
     }
 
     public function escape($string) {

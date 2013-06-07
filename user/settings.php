@@ -3,13 +3,14 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
-$user_id = require_login();
-//$user_id = 2;
+//$user_id = require_login();
+$user_id = 2;
 $_db = new DbAdapter();
-$field_name = $_REQUEST[field_name];
-$field_value = $_REQUEST[field_value];
 
-if (isset($field_name) && isset($field_value)) {
+
+if (isset($_REQUEST['field_name']) && isset($_REQUEST['field_value'])) {
+    $field_name = $_REQUEST['field_name'];
+    $field_value = $_REQUEST['field_value'];
     switch($field_name) {
         case "user_nick_name":
             update_user(array(nick_name => $field_value));
@@ -37,7 +38,7 @@ if (isset($field_name) && isset($field_value)) {
     }
 } else {
     $smarty = new MySmarty();
-    if ($_FILES[user_picture]) {
+    if (isset($_FILES['user_picture'])) {
         if ($_FILES[user_picture][error] > 0) {
             $smarty->assign('user_picture_error', "上传出错" . $_FILES[user_picture][error]);
         } elseif (strpos($_FILES[user_picture][type], 'image') === false) {
@@ -53,7 +54,7 @@ if (isset($field_name) && isset($field_value)) {
         }
     }
 
-    if ($_FILES[user_resume]) {
+    if (isset($_FILES['user_resume'])) {
         if ($_FILES[user_resume][error] > 0) {
             $smarty->assign('user_resume_error', "上传出错" . $_FILES[user_resume][error]);
         } elseif ((strpos($_FILES[user_resume][type], 'msword')
@@ -71,7 +72,7 @@ if (isset($field_name) && isset($field_value)) {
         }
     }
     list($user, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
-    $user[available_time] = json_decode($user[available_time]);
+    $user['available_time'] = json_decode($user['available_time']);
     $smarty->assign('user', $user);
     $smarty->display('user/settings.tpl');
 }
