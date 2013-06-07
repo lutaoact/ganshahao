@@ -111,7 +111,7 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #top-bar{border-bottom:2px #fff solid;background-color:#fff;background-image:-moz-linear-gradient(#fff, #efefef);background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#efefef));background-image:-o-linear-gradient(#fff, #efefef);-moz-box-shadow:0 5px 13px #333;}
 #top-bar .nav-bar{height:auto;margin:.5em 0;background:transparent;border:0}
 #top-bar .logo{margin:13px 0 0 0}
-#top-bar .logo img{width:60px; height:32px;}
+#top-bar .logo img{width:60px; height:47px;}
 #top-bar .nav-bar li{border:0;line-height:1em}
 #top-bar .nav-bar li a{background:transparent;padding:.75em 1em;color:#333;text-shadow:0 1px 0 #fff;-moz-text-shadow:0 1px 0 #fff;-webkit-text-shadow:0 1px 0 #fff}
 #top-bar .nav-bar li a:hover{color:#eb6841}#new-home{background:#f3f6f7}

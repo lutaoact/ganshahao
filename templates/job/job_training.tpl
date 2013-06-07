@@ -17,9 +17,9 @@
         />
         <h1>{$training.name}</h1>
         {if $training.type eq 2}
-            <img src="/static/img/{$training.link}" />
+            <div style="text-align:center"><img src="/static/img/{$training.link}" /></div>
         {elseif $training.type eq 3}
-            <div>{$training.link nofilter}</div>
+            <div style="text-align:center">{$training.link nofilter}</div>
         {/if}
         <h2>{$training.description}</h2>
     </div>

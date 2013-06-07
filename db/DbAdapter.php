@@ -343,7 +343,7 @@ class DbAdapter {
                 FROM
                     question
                 WHERE
-                    training_id = {$id}";echo $sql;
+                    training_id = {$id}";
         return $this->getData($sql);
     }
 

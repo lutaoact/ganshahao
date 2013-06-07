@@ -1,8 +1,8 @@
 <div id="top-bar">
     <div class="container">
         <div class="row">
-            <div class="logo columns two">
-                <a href="/home.php">
+            <div class="columns two">
+                <a href="/home.php" class="logo">
                     <img alt="Ganshahao" src="/static/img/logo.png">
                 </a>
             </div>
