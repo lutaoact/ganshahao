@@ -17,10 +17,5 @@
                 </div>
             </dvi>
         </div>
-        <script>
-            $(function() {
-                $
-            });
-        </script>
     </body>
 </html>
