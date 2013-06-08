@@ -28,4 +28,15 @@
         return $res;
     }
 
+    function get_all_job_applications_api($company_id) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($application_list, $mysql_err_no, $mysql_err_msg) = $_db->select_job_applications_by_company_id($company_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $application_list;
+        return $res;
+    }
 ?>

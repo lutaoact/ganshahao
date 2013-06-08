@@ -1,14 +1,15 @@
 <?php
     require_once('db/DbAdapter.php');
-    require_once('lib/user.php');
-
-    $res = check_real_info_api(5);
+    require_once('lib/company.php');
     
-    var_dump($res);
+    var_dump(get_all_job_applications_api(1));
     
     /* $db = new DbAdapter();
 
-    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_question_answer_by_question_id(1);
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_application_by_company_id(1);
+    var_dump($res);
+
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_hot_jobs_by_zipcode(200011);
     var_dump($res);
     list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_list_by_zip_code(200011);
     var_dump($res);

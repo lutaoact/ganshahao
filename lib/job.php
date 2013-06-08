@@ -98,4 +98,16 @@
         $res[result] = $result;
         return $res;
     }
+
+    function get_top_jobs_api($zipcode) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($result, $mysql_err_no, $mysql_err_msg) = $_db->select_hot_jobs_by_zipcode($params);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $result;
+        return $res;
+    }
 ?>
