@@ -5,6 +5,8 @@
     define('JOB_DETAIL_TPL', 'job/job_detail.tpl');
     define('JOB_TRAINING_TPL', 'job/job_training.tpl');
 
+    require_login();
+
     $job_id = $_REQUEST['job_id'];
     $training_number = $_POST['training_number'] ? $_POST['training_number'] : 0;
     if($_POST['training']) {

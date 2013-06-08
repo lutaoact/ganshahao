@@ -4,6 +4,8 @@
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
     define('COMPANY_DETAIL_TPL', 'company/company_detail.tpl');
 
+    require_login();
+
     $company_id = $_REQUEST['company_id'];
     $company = try_get_company_detail($company_id);
     $job_list = try_get_job_list_by_company_id($company_id);

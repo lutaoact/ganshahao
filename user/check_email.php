@@ -1,6 +1,9 @@
 <?php
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/user.php";
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
+
+    require_login();
+
     check_email();
 
     function check_email() {

@@ -1,6 +1,9 @@
 <?php
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/job.php";
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
+
+    require_login();
+
     try_save_score();
 
     function try_save_score() {

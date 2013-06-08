@@ -3,8 +3,8 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
-//$user_id = require_login();
-$user_id = 1;
+$user_id = require_login();
+
 $_db = new DbAdapter();
 
 $res = array('result' => "", 'errCode' => 0, 'errMsg' => "");
