@@ -29,11 +29,7 @@
 
     function show_detail_page($job) {
         $smarty = new MySmarty();
-        $smarty->assign('job_id', $job[job_id]);
-        $smarty->assign('job_name', $job[job_name]);
-        $smarty->assign('company_name', $job[company_name]);
-        $smarty->assign('job_description', $job[job_description]);
-        $smarty->assign('job_address', $job[job_address]);
+        $smarty->assign('job', $job);
         @$smarty->display(JOB_DETAIL_TPL);
     }
 

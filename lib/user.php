@@ -79,7 +79,7 @@
         list($user_info, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
         validate_db_error($mysql_err_no, $mysql_err_msg, $res);
         if ($res[errCode]) return $res;
-        var_dump($user_info);
+
         if($user_info[real_name] && $user_info[mobile]) {
             $res[result] = true;
         }
