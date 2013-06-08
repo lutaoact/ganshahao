@@ -1,11 +1,16 @@
 <?php
     require_once('db/DbAdapter.php');
+    require_once('lib/user.php');
 
-    $db = new DbAdapter();
+    $res = check_real_info_api(5);
+    
+    var_dump($res);
+    
+    /* $db = new DbAdapter();
 
     list($res, $mysql_err_no, $mysql_err_msg) = $db->select_question_answer_by_question_id(1);
     var_dump($res);
-    /* list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_list_by_zip_code(200011);
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_list_by_zip_code(200011);
     var_dump($res);
     $data = array(
             'email'    => 'test@test.com',

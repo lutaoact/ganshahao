@@ -72,6 +72,21 @@
         return $res;
     }
 
+    function check_real_info_api($user_id) {
+        global $_db;
+        $res = array(result => false, errCode => 0, errMsg => "");
+
+        list($user_info, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_id($user_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+        var_dump($user_info);
+        if($user_info[real_name] && $user_info[mobile]) {
+            $res[result] = true;
+        }
+
+        return $res;
+    }
+
     function user_settings_api($user_settings) {
         global $_db;
         $res = array(result => "", errCode => 0, errMsg => "");

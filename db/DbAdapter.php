@@ -146,7 +146,7 @@ class DbAdapter {
                 FROM
                     user
                 WHERE
-                    id = {$id}";
+                    id = '{$id}'";
         return $this->getLine($sql);
     }
 
