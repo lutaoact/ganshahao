@@ -1,15 +1,13 @@
 {if $training eq null}
-    <div id="training-description">
         没有相关培训了
         <div style="margin-top:20px;">
-            <input class="button radius large green" type="button" id="job_apply_btn" name="job_apply_btn" value="提交职位申请">
+            <input class="button radius large green" style="padding:5px 20px;" type="button" id="job_apply_btn" name="job_apply_btn" value="提交职位申请">
         </div>
         <script>
             $('#next_training_btn').hide();
         </script>
-    </div>
 {else}
-    <div id="training-description">
+    <div id="training-description" style="width:70%;float:left;">
         <input type="hidden" id="training_id" name="training_id" value="{$training.id}" />
         <input type="hidden" id="training_number" name="training_number"
             {if isset($training_number)}
@@ -25,8 +23,9 @@
             <div style="text-align:center">{$training.link nofilter}</div>
         {/if}
         <h2>{$training.description}</h2>
+        <div class="bottom1"></div>
     </div>
-    <div id="training-question" style="margin-top:20px;">
+    <div id="training-question" style="width:24%;float:right;">
         <ul>
             {foreach $question_list as $question}
                 <li>
@@ -40,6 +39,8 @@
                 </li>
             {/foreach}
         </ul>
+        <div class="bottom2"></div>
     </div>
+    
 {/if}
 </div>

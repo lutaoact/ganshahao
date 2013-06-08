@@ -163,7 +163,12 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #explore #job_list .job-titles li, #company .job-titles li{margin-bottom:10px;line-height:20px;font-size:18px;}
 #explore .job-title-link, #company{text-transform:capitalize;font-weight:bold; }
 
-.training-info #training-description, .training-info #training-question{padding:1em;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
+#employer-profile .content .training-info #training_content{overflow:hidden;position:relative;}
+.training-info #training-description, .training-info #training-question,.training-info .bottom1, .training-info .bottom2{padding:1em;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
+.training-info #training-description, .training-info #training-question{padding-bottom:520px;margin-bottom:-500px;display:inline;}
+.training-info .bottom1, .training-info .bottom2{position:absolute;bottom:0;height:5px;padding:0 1em;border-top:none;}
+.training-info .bottom1{width:70%;left:0;}
+.training-info .bottom2{width:24%;right:0}
 .training-info #training-description h1{font-size:24px;font-weight:bold;color:#0093ad;}
 .training-info #training-description h2{font-size:18px;font-weight:bold;color:#0093ad;}
 .training-info #training-question ul li{margin-bottom:10px;line-height:20px;font-size:14px;font-family:"微软雅黑"}}

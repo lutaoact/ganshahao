@@ -28,15 +28,14 @@
                             </div>
 						</div>
                         <div class="row">
-                            <div class="columns two apply-btn">
+                            <div class="apply-btn">
 								<input id="job_id" type="hidden" value="{$job.job_id}">
                                 <input class="button radius large green" id="apply_btn" name="apply_btn" type="button" value="申请">
                             </div>
                         </div>
 					</div>
 					<div class="main-step clearfix" id="train_div" style="display:none;opacity:1;width:978px;">
-						<div class="row">
-							<div class="columns offset-by-one ten">
+						<div class="row clearfix">
 								<div class="content" style="display:block">
 									<div class="clearfix training-info">
 										<div id="training_content"></div>
@@ -44,12 +43,12 @@
                                             已经提交职位申请，请耐心等待<br>
                                             您可以查看更多<a href="job/job_list.php">职位</a>5秒后为你跳转
                                         </div>
-										<div style="margin-top:20px;">
+										<div style="margin-top:20px;margin-left:74%;">
 											<input class="button radius large green" id="next_training_btn" name="next_training_btn" type="button" value="下一题">
                                         </div>
 									</div>
 								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>
