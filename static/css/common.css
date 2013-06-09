@@ -157,6 +157,7 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 .block-grid.three-up>li{margin-left:2%;width:31.3%;}
 .block-grid.five-up{margin-left:-2%;}
 .block-grid.five-up>li{margin-left:2%;width:15%;}
+.block-grid.five-up>li a{font-size:18px;}
 .block-grid{display:block;overflow:hidden;}
 .block-grid>li{display:block;height:auto;float:left;}
 #explore #job_list .employer{background:#fff;padding:3%;box-shadow:-1px -1px 0 #fff, 1px 1px 5px #E9E9E9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
@@ -166,6 +167,13 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #explore .job-title-link, #company{text-transform:capitalize;font-weight:bold; }
 
 #employer-profile .content .training-info #training_content{overflow:hidden;position:relative;}
+#employer-profile .content .training-info #training_result_div{text-align:center;}
+#employer-profile .content .training-info #training_finish_div{margin-left:2%;}
+#employer-profile .content .training-info #training_finish_div h5{margin-bottom:10px;}
+#employer-profile .content .training-info #training_result_div .large,
+#employer-profile .content .training-info #no_training_div .large{padding:5px 20px; margin-right:35px;}
+.training-info #training_result_div #training_result table{width:300px;margin:20px auto;border:0;}
+.training-info #training_result_div #training_result table td{font-size:18px;margin-bottom:20px;line-height:30px;text-align:center;width:50%;}
 .training-info #training-description, .training-info #training-question,.training-info .bottom1, .training-info .bottom2{padding:1em;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
 .training-info #training-description, .training-info #training-question{padding-bottom:520px;margin-bottom:-500px;display:inline;}
 .training-info .bottom1, .training-info .bottom2{position:absolute;bottom:0;height:5px;padding:0 1em;border-top:none;}
