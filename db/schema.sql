@@ -34,7 +34,7 @@ CREATE TABLE job(
     company_id      int unsigned    NOT NULL,
     name            varchar(255)    NOT NULL DEFAULT '',
     status          tinyint(1)      NOT NULL DEFAULT 0,  -- 1 => 即将开始， 2 => 正在招聘
-    updated_time    datetime        NOT NULL DEFAULT 0,
+    updated_time    timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     description     text            NOT NULL DEFAULT '',
     address         varchar(255)    NOT NULL DEFAULT '',
     zipcode         int(6)          NOT NULL DEFAULT 200001,
@@ -68,7 +68,7 @@ CREATE TABLE training_completed(
     id              int unsigned    NOT NULL auto_increment,
     training_id     int unsigned    NOT NULL DEFAULT 0,
     user_id         int unsigned    NOT NULL DEFAULT 0,
-    updated_time    datetime        NOT NULL DEFAULT 0,
+    updated_time    timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     score           int unsigned    NOT NULL DEFAULT 0,
     primary key(id)
 )Engine=InnoDB;
@@ -79,5 +79,6 @@ CREATE TABLE job_application(
     job_id          int unsigned    NOT NULL DEFAULT 0,
     user_id         int unsigned    NOT NULL DEFAULT 0,
     status          tinyint         NOT NULL DEFAULT 0,
+    updated_time    timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key(id)
 )Engine=InnoDB;
