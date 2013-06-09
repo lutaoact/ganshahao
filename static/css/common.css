@@ -183,10 +183,12 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 .training-info #training-description h2{font-size:18px;font-weight:bold;color:#0093ad;}
 .training-info #training-question ul li{margin-bottom:10px;line-height:20px;font-size:14px;font-family:"微软雅黑"}}
 
-#user-profile{margin-top:2em;}
-#profile #user-info{margin-bottom:1em;}
-#profile #user-info .user-icon.large a{float:left;}
-#profile #user-info .user-icon.large img{width:100px;height:auto;border:7px solid #fff;}
+#profile #user-profile{margin-top:2em;}
+#profile #user-profile .side-nav #user-info, #profile #user-profile  .side-nav  #user-welcome, #profile #user-profile .side-nav #user-invite{margin-bottom:20px;}
+#profile #user-profile .side-nav #user-info .user-icon.large a{float:left;}
+#profile #user-profile .side-nav  #user-info .user-icon.large img{width:100px;height:100px;border:7px solid #fff;}
+#profile #user-profile .side-nav  #user-welcome p{padding:5px;font-size:18px;font-weight:bold;margin-top:20px;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
+#profile #user-profile .side-nav #user-invite a{width:75%;}
 #profile .actions a{font-size:14px;}
 
 
