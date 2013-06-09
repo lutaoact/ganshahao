@@ -22,6 +22,8 @@ CREATE TABLE user(
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE company(
     id              int unsigned    NOT NULL auto_increment,
+    account         varchar(255)    NOT NULL DEFAULT 'gsh',
+    password        varchar(255)    NOT NULL DEFAULT '123',
     name            varchar(255)    NOT NULL DEFAULT '',
     logo            varchar(255)    NOT NULL DEFAULT 'default_logo.png',
     description     text            NOT NULL DEFAULT '',

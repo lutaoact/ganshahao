@@ -173,6 +173,17 @@ class DbAdapter {
         return $this->getLine($sql);
     }
 
+    public function select_company_by_account($account) {
+        $account = $this->escape($account);
+        $sql = "SELECT
+                    *
+                FROM
+                    company
+                WHERE
+                    account = '{$account}'";
+        return $this->getLine($sql);
+    }
+
     public function select_company_list_by_zipcode($zipcode) {
         $zipcode = $this->escape($zipcode);
         $sql = "SELECT

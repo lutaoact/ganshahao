@@ -4,3 +4,4 @@
     delete_session_cookie();
 
     redirect("/home.php");
+?>

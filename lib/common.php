@@ -62,9 +62,20 @@
         SetCookie(LOGIN_COOKIE, $session_id, time()+60*60*24, '/'); # one day
     }
 
+    function set_company_session_cookie($company_id, $data = array()) {
+        session_start();
+        $session_id = session_id();
+        $_SESSION['company_id'] = $company_id;
+        foreach( $data as $k => $v){
+            $_SESSION[$k] = $v;
+        }
+        SetCookie(LOGIN_COOKIE, $session_id, time()+60*60*24, '/'); # one day
+    }
+
     function delete_session_cookie() {
         session_start();
         unset($_SESSION['user_id']);
+        unset($_SESSION['company_id']);
         SetCookie(LOGIN_COOKIE, '', time() - 3600);
     }
 
