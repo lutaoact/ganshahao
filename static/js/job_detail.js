@@ -145,6 +145,7 @@ function save_job_apply() {
             } else {
                 $('#job_apply_div').hide();
                 $('#training_result_div').hide();
+                $("#no_training_div").hide();
                 $('#apply_finish_div').show();
                 $('#apply_success_div').show();
                 get_hot_jobs();
