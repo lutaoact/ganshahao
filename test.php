@@ -3,6 +3,8 @@ require_once("$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php");
 require_once("$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php");
 
 echo "this is test.php";
+$smarty = new MySmarty();
+$smarty->display('test.tpl');
 #$my_list = array(
 #    1, 0, 1, 0, 1, 0, 1,
 #    0, 1, 0, 1, 0, 1, 0,

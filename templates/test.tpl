@@ -8,5 +8,6 @@
         <p>hello {$world}</p>
         <p>hello {$world2}</p>
         <p>hello {$name}</p>
+        <img src="static/img/nycli1.gif">
     </body>
 </html>
