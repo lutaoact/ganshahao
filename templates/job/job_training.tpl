@@ -1,14 +1,12 @@
 {if $training eq null}
-        没有相关培训了
-        <div style="margin-top:20px;">
-            <input class="button radius large green" style="padding:5px 20px;" type="button" id="job_apply_btn" name="job_apply_btn" value="提交职位申请">
-        </div>
-        <script>
-            $('#next_training_btn').hide();
-        </script>
+    <script>
+        adjust_result_page();
+        $('#next_training_btn').hide();
+    </script>
 {else}
     <div id="training-description" style="width:70%;float:left;">
         <input type="hidden" id="training_id" name="training_id" value="{$training.id}" />
+        <input type="hidden" id="training_name" name="training_name" value="{$training.name}" />
         <input type="hidden" id="training_number" name="training_number"
             {if isset($training_number)}
                 value="{$training_number}"

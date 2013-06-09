@@ -1,9 +1,10 @@
 var score;
+var scores_map = new HashMap();
 
 $(function() {
-    $("#job_apply_btn").click(function(e) {
+/*     $("#job_apply_btn").click(function(e) {
         save_job_apply();
-    });
+    }); */
     $("#apply_btn").click(function(e) {
         console.log("apply this job");
         check_real_info_setted();
@@ -11,6 +12,7 @@ $(function() {
 
     $('#next_training_btn').click(function(e) {
         count_score();
+        get_next_training();
     });
 });
 
@@ -22,9 +24,8 @@ function check_real_info_setted() {
         timeout:120000, // 2min
         success: function (obj) {
             if (obj.errCode == 0) {
-            console.log('----' + obj.result);
                 if (obj.result) {
-                    $(this).attr('disabled', true);
+                    $("#apply_btn").attr('disabled', true);
                     $("#train_div").show();
                     get_training();
                 } else {
@@ -47,29 +48,55 @@ function count_score() {
             check(elements[i].name, elements[i].value);
         }
     }
-    save_score();
+    catch_score();
 }
 
-function save_score() {
-    toast('您获得了: '+score+" 分");
+function catch_score() {
     var training_id = $("#training_id").val();
+    var training_name = $("#training_name").val();
+    var training_obj = new Object();
+    training_obj.name = training_name;
+    training_obj.score = score;
+    scores_map.put(training_id, training_obj);
+    console.log('---->>>>put: ' + training_id + training_obj + " :size " + scores_map.size());
+}
+
+function save_scores() {
+    var keys = scores_map.keys();
+    for (var index in keys) {
+        var key = keys[index];
+        var obj = scores_map.get(key);
+        save_score(key, obj.score);
+    }
+}
+function save_score(training_id, training_score) {
+    /* toast('您获得了: '+score+" 分");
+    var training_id = $("#training_id").val(); */
+    console.log('---->>>>save score ' + training_id + " : " + training_score);
     $.ajax({
         type:	"POST",
         url :	"/job/save_score.php",
         data:   {
             training_id  : training_id,
-            score        : score,
+            score        : training_score,
         },
         dataType: "json",
         timeout:120000, // 2min
         success: function (obj) {
-            if (obj.errCode == 0) {
-                get_training();
-            } else {
+            if (obj.errCode != 0) {
                 toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
             }
         },
     });
+}
+
+function redo_training() {
+    $("#training_number").val("0");
+    get_training();
+}
+
+function get_next_training() {
+    get_training();
 }
 
 function get_training() {
@@ -98,6 +125,7 @@ function get_training() {
 }
 
 function save_job_apply() {
+    save_scores();
     var job_id = $("#job_id").val();
     $.ajax({
         type :	"POST",
@@ -113,8 +141,9 @@ function save_job_apply() {
                 toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
             } else {
                 $('#job_apply_div').hide();
-                $('#training_complete_div').show();
-                setTimeout(function(){ location.href = "/job/job_list.php"; }, 5000);
+                $('#training_result_div').hide();
+                $('#apply_finish_div').show();
+                //setTimeout(function(){ location.href = "/job/job_list.php"; }, 5000);
             }
         },
         error: function (obj) {
@@ -154,8 +183,54 @@ function handle_response(question_id, correct_answer) {
             if(elements[i].checked) {
                 score += 10;
             }
-            document.getElementById(question_id+correct_answer).style.color = "red";
+            //document.getElementById(question_id+correct_answer).style.color = "red";
         }
         elements[i].disabled=true;
     }
+}
+
+function adjust_result_page() {
+    console.log('scores_map.size: ' + scores_map.keys().length);
+    if (scores_map.size()>0) {
+        $("#training_result_div").show();
+        $("#training_result").html(draw_training_result_page());
+    } else {
+        $("#no_training_div").show();
+    }
+}
+
+function draw_training_result_page() {
+    var total_score = 0;
+    var result = "<table>";
+    var keys = scores_map.keys();
+    for (var index in keys) {
+        var obj = scores_map.get(keys[index]);
+        total_score += obj.score;
+        result += "<tr>" + "<td>" + obj.name + "</td><td>" + obj.score + "</tr>" 
+    }
+    result += "<tr>" + "<td>总分</td><td>" + total_score + "</tr></table>";
+    console.log(result);
+    return result;
+}
+
+function get_hot_jobs() {
+    $.ajax({
+        type:	"POST",
+        url :	"/job/hot_jobs.php",
+        data:   {
+            job_id            : job_id,
+            training_number   : training_number,
+            training          : 1,
+        },
+        dataType: "text",
+        timeout:120000, // 2min
+        success: function (text) {
+            if (text == "") {
+                $('#next_training_btn').hide();
+                $("#training_content").hide();
+            } else {
+                $("#training_content").html(text);
+            }
+        },
+    });
 }

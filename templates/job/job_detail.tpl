@@ -39,9 +39,23 @@
 								<div class="content" style="display:block">
 									<div class="clearfix training-info">
 										<div id="training_content"></div>
-                                        <div id="training_complete_div" style="display:none">
-                                            已经提交职位申请，请耐心等待<br>
-                                            您可以查看更多<a href="job/job_list.php">职位</a>5秒后为你跳转
+                                        <div id="no_training_div" style="display:none">
+                                            该职位没有提供相关培训
+                                            <div style="margin-top:20px;">
+                                                <input class="button radius large green" type="button" onclick="save_job_apply()" value="直接申请">
+                                            </div>
+                                        </div>
+                                        <div id="training_result_div" style="display:none">
+                                            您的培训成绩为：<br>
+                                            <div id="training_result"></div>
+                                            <input class="button radius large green" type="button" onclick="save_job_apply()" value="申请">
+                                            <input class="button radius large green" type="button" onclick="redo_training()" value="重做">
+                                        </div>
+                                        <div id="apply_finish_div" style="display:none">
+                                            已经提交职位申请，请耐心等待企业的回复<br>
+                                            为你推荐以下热门职位
+                                            <div id="apply_success_div" style="display:none">
+                                            </div>
                                         </div>
 										<div style="margin-top:20px;margin-left:74%;">
 											<input class="button radius large green" id="next_training_btn" name="next_training_btn" type="button" value="下一题">
@@ -58,6 +72,7 @@
 
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/common.js"></script>
-    <script src="/static/js/job.js"></script>
+    <script src="/static/js/HashMap.js"></script>
+    <script src="/static/js/job_detail.js"></script>
 </body>
 </html>
