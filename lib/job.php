@@ -103,7 +103,7 @@
         global $_db;
         $res = array(result => "", errCode => 0, errMsg => "");
 
-        list($result, $mysql_err_no, $mysql_err_msg) = $_db->select_hot_jobs_by_zipcode($params);
+        list($result, $mysql_err_no, $mysql_err_msg) = $_db->select_hot_jobs_by_zipcode($zipcode);
         validate_db_error($mysql_err_no, $mysql_err_msg, $res);
         if ($res[errCode]) return $res;
 

@@ -293,11 +293,14 @@ class DbAdapter {
     public function select_hot_jobs_by_zipcode($zipcode) {
         $zipcode = $this->escape($zipcode);
         $sql = "SELECT
-                    job_id
+                    job_application.job_id as id,
+                    job.name as name
                 FROM
-                    job_application
+                    job_application, job
                 WHERE
-                    job_id
+                    job_application.job_id = job.id
+                        AND
+                    job_application.job_id
                 IN
                     (SELECT
                         id

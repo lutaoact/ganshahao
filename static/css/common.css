@@ -155,6 +155,8 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #explore #job_list ul .block-grid{padding-top:0;}
 .block-grid.three-up{margin-left:-2%;}
 .block-grid.three-up>li{margin-left:2%;width:31.3%;}
+.block-grid.five-up{margin-left:-2%;}
+.block-grid.five-up>li{margin-left:2%;width:15%;}
 .block-grid{display:block;overflow:hidden;}
 .block-grid>li{display:block;height:auto;float:left;}
 #explore #job_list .employer{background:#fff;padding:3%;box-shadow:-1px -1px 0 #fff, 1px 1px 5px #E9E9E9;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}

@@ -7,6 +7,7 @@
 
     $zipcode = $_REQUEST['zipcode'] ? $_REQUEST['zipcode'] : 200011;
 
+    session_set('zipcode', $zipcode);
     if($_REQUEST['search']) {
         try_get_job_list_div($zipcode);
     } else {

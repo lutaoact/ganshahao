@@ -143,6 +143,8 @@ function save_job_apply() {
                 $('#job_apply_div').hide();
                 $('#training_result_div').hide();
                 $('#apply_finish_div').show();
+                $('#apply_success_div').show();
+                get_hot_jobs();
                 //setTimeout(function(){ location.href = "/job/job_list.php"; }, 5000);
             }
         },
@@ -214,23 +216,14 @@ function draw_training_result_page() {
 }
 
 function get_hot_jobs() {
+    console.log("get hot jobs");
     $.ajax({
         type:	"POST",
         url :	"/job/hot_jobs.php",
-        data:   {
-            job_id            : job_id,
-            training_number   : training_number,
-            training          : 1,
-        },
         dataType: "text",
         timeout:120000, // 2min
         success: function (text) {
-            if (text == "") {
-                $('#next_training_btn').hide();
-                $("#training_content").hide();
-            } else {
-                $("#training_content").html(text);
-            }
+            $("#apply_success_div").html(text);
         },
     });
 }

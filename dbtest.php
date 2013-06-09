@@ -1,8 +1,9 @@
 <?php
     require_once('db/DbAdapter.php');
     require_once('lib/company.php');
+    require_once('lib/job.php');
     
-    var_dump(get_all_job_applications_api(1));
+    var_dump(get_top_jobs_api(200011));
     
     /* $db = new DbAdapter();
 
