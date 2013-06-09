@@ -92,6 +92,9 @@ function save_score(training_id, training_score) {
 
 function redo_training() {
     $("#training_number").val("0");
+    $("#next_training_btn").show();
+    $("#training_result_div").hide();
+    scores_map.clear();
     get_training();
 }
 
