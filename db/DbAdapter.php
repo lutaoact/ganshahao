@@ -316,9 +316,16 @@ class DbAdapter {
         return $this->getData($sql);
     }
 
-    public function select_top_job_seeker_by_job_id($id) {
-        $id = $this->escape($id);
-        $sql = "";
+    public function select_top_job_seeker_by_job_id() {
+        /* $id = $this->escape($id); */
+        $sql = "SELECT DISTINCT
+                    training_completed.user_id as id,
+                    user.nick_name as name
+                FROM
+                    training_completed, user
+                WHERE
+                    training_completed.user_id = user.id
+                LIMIT 5";
         return $this->getData($sql);
     }
     ##################

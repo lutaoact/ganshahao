@@ -110,4 +110,16 @@
         $res[result] = $result;
         return $res;
     }
+
+    function get_top_user_api() {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($result, $mysql_err_no, $mysql_err_msg) = $_db->select_top_job_seeker_by_job_id();
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $result;
+        return $res;
+    }
 ?>

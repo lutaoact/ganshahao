@@ -25,7 +25,7 @@ function check_real_info_setted() {
         success: function (obj) {
             if (obj.errCode == 0) {
                 if (obj.result) {
-                    $("#apply_btn").attr('disabled', true);
+                    $("#apply_btn").hide();
                     $("#train_div").show();
                     get_training();
                 } else {

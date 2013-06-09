@@ -3,9 +3,10 @@
     require_once('lib/company.php');
     require_once('lib/job.php');
     
-    var_dump(get_top_jobs_api(200011));
+    var_dump(get_top_user_api());
+    /* var_dump(get_top_jobs_api(200011));
     
-    /* $db = new DbAdapter();
+    $db = new DbAdapter();
 
     list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_application_by_company_id(1);
     var_dump($res);

@@ -53,7 +53,6 @@
                                     </div>
                                     <div id="apply_finish_div" style="display:none">
                                         <h5>已经提交职位申请，请耐心等待企业的回复</h5>
-                                        <h5>为你推荐以下热门职位</h5>
                                         <div id="apply_success_div" style="display:none">
                                         </div>
                                     </div>
