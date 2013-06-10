@@ -14,7 +14,7 @@
     <ul class="block-grid five-up">
         {foreach $user_list as $user}
             <li>
-                <a href="/user/info.php?user_id={$user.id}" target="_blank">{$user.name}</a>
+                <a href="/user/info.php?user_id={$user.id}">{$user.name}</a>
             </li>
         {/foreach}
     </ul>

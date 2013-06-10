@@ -7,6 +7,11 @@
 
     require_login();
 
+    if ( !isset($_REQUEST['job_id']) ) {
+        echo "请提供job_id";
+        exit;
+    }
+
     $job_id = $_REQUEST['job_id'];
     $training_number = $_POST['training_number'] ? $_POST['training_number'] : 0;
     if($_POST['training']) {
