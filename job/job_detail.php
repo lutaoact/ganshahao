@@ -8,7 +8,7 @@
     require_login();
 
     if ( !isset($_REQUEST['job_id']) ) {
-        echo "请提供job_id";
+        echo "ERROR: without job_id";
         exit;
     }
 

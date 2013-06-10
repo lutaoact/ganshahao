@@ -6,6 +6,11 @@
 
     require_login();
 
+    if ( !isset($_REQUEST['company_id']) ) {
+        echo "ERROR: without company_id";
+        exit;
+    }
+
     $company_id = $_REQUEST['company_id'];
     $company = try_get_company_detail($company_id);
     $job_list = try_get_job_list_by_company_id($company_id);

@@ -3,7 +3,7 @@
     <ul class="block-grid five-up">
         {foreach $job_list as $job}
             <li>
-                <a href="/job/job_detail.php?job_id={$job.id}">{$job.name}</a>
+                <a href="/job/job_detail.php?job_id={$job.id}" target="_blank">{$job.name}</a>
             </li>
         {/foreach}
     </ul>
@@ -14,7 +14,7 @@
     <ul class="block-grid five-up">
         {foreach $user_list as $user}
             <li>
-                <a href="/user/info.php?user_id={$user.id}">{$user.name}</a>
+                <a href="/user/profile.php?user_id={$user.id}" target="_blank">{$user.name}</a>
             </li>
         {/foreach}
     </ul>
