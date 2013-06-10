@@ -3,10 +3,12 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/db/DbAdapter.php";
 require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
+$smarty = new MySmarty();
 if (isset($_GET['user_id'])) {
     $user_id = $_GET['user_id'];
 } else {
     $user_id = require_login();
+    $smarty->assign("self_flag", 1);
 }
 $_db = new DbAdapter();
 
@@ -28,7 +30,6 @@ if ($res['errCode']) json_exit($res);
 
 #var_dump($training_names_completed);
 
-$smarty = new MySmarty();
 $smarty->assign('user', $user);
 $smarty->assign('count_training_completed', $count_training_completed);
 $smarty->assign('training_names', $training_names);

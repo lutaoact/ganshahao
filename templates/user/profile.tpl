@@ -30,9 +30,11 @@
                             <div class="row" id="user-welcome">
                                 <p>你好，{$user.nick_name}，完成培训，在简介中察看你的进程，向雇主展示你是一个主动性很强，并且受过良好培训的求职者。</p>
                             </div>
+                            {if $self_flag == 1}
                             <div class="row" id="user-invite" >
                                 <a class="button radius medium green" href="/job/job_list.php">现在就开始接受培训吧！</a>
                             </div>
+                            {/if}
                         </div>
                     </div>
                     <div class="columns eight">
