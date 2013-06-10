@@ -80,10 +80,12 @@
     }
 
     function session_set($key, $value) {
+        session_start();
         $_SESSION[$key] = $value;
     }
 
     function session_get($key) {
+        session_start();
         return  $_SESSION[$key];
     }
 ?>
