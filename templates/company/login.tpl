@@ -49,6 +49,8 @@
                     "company_password"    : $("#company_password").val(),
                     "submit"           : 1
                 };
+                console.log($("#company_account").val());
+                console.log($("#company_password").val());
                 $.post('login.php', params,
                     function(obj) {
                         if(obj["errCode"] > 0) {
@@ -56,7 +58,7 @@
                             $("#company_account").val(obj["company_account"]);
                             $("#company_password").val("");
                         } else if(obj["errCode"] == 0) {
-                            location.href = "/company/job_application.php";
+                            location.href = "/company/job_applications.php";
                         }
                     },
                     "json"
