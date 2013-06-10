@@ -58,7 +58,7 @@
                             $("#company_account").val(obj["company_account"]);
                             $("#company_password").val("");
                         } else if(obj["errCode"] == 0) {
-                            location.href = "/company/job_applications.php";
+                            location.href = "/company/company_profile.php";
                         }
                     },
                     "json"
