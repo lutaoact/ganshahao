@@ -12,7 +12,7 @@
             <div class="columns twelve">
                 <h3>{$company.name}</h3>
                 {foreach $job_applications as $job_application}
-                    <h5>{$job_application.user_name}申请了{$job_application.job_name}</h5>
+                    <h5><a href="/user/info.php?user_id={$job_application.user_id}">{$job_application.user_name}</a>申请了<a href="/job/job_detail.php?job_id={$job_application.job_id}">{$job_application.job_name}</a></h5>
                 {/foreach}
             </div>
         </div>
