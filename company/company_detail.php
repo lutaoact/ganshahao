@@ -10,6 +10,10 @@
         echo "ERROR: without company_id";
         exit;
     }
+    if ( !is_numeric($_REQUEST['company_id']) ) {
+        echo "ERROR: company_id should be numberic";
+        exit;
+    }
 
     $company_id = $_REQUEST['company_id'];
     $company = try_get_company_detail($company_id);

@@ -11,6 +11,10 @@
         echo "ERROR: without job_id";
         exit;
     }
+    if ( !is_numeric($_REQUEST['job_id']) ) {
+        echo "ERROR: job_id should be numberic";
+        exit;
+    }
 
     $job_id = $_REQUEST['job_id'];
     $training_number = $_POST['training_number'] ? $_POST['training_number'] : 0;
