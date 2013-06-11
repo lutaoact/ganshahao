@@ -40,6 +40,7 @@
         </div>
     </div>
 
+    {include file="common/footer.tpl"}
     <script src="/static/js/jquery.js"></script>
     <script>
         $(function() {

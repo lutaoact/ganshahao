@@ -72,5 +72,6 @@
             });
         });
     </script>
+    {include file="common/footer.tpl"}
 </body>
 </html>

@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>[干啥好] 工作详情</title>
+    <title>[干啥好] 公司信息</title>
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
 </head>
 <body id="company-profile" lang="en">
-	{include file="common/header.tpl"}
+	{include file="common/header_company.tpl"}
     <div class="container content">
 		<div class="row">
             <div class="columns twelve">
@@ -17,5 +17,6 @@
             </div>
         </div>
     <div>
+    {include file="common/footer.tpl"}
 </body>
 </html>

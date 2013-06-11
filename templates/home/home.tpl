@@ -12,10 +12,9 @@
         <div style="clear:both;"></div>
         <div class="header">
             <div class="container">
-                <div class="row">
-                
-                </div>
-            </dvi>
+                <div class="row"></div>
+            </div>
         </div>
+        {include file="common/footer.tpl"}
     </body>
 </html>

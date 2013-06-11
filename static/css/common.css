@@ -191,4 +191,8 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #profile #user-profile .side-nav #user-invite a{width:75%;}
 #profile .actions a{font-size:14px;}
 
-
+#page-footer{margin-top:5%;padding:3% 0;background-color:#DFDFDF;text-align:center;color:#333;font-size:14px;border-top:1px #DDD solid;box-shadow:0 -2px 0 #fff;}
+#page-footer .eight.columns{margin:0 auto; float:none;}
+#page-footer ul{margin:0;padding:0;list-style:none;float:left;}
+#page-footer ul li{float:left;display:inline;}
+#page-footer ul li a {padding:0 5px;}

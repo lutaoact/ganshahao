@@ -166,11 +166,7 @@
                 </div>
             </div>
 		</div>
-		<div id="page-footer">
-			<div class="container">
-				
-			</div>
-		</div>
+		{include file="common/footer.tpl"}
         <script src="/static/js/jquery.js"></script>
         <script src="/static/js/common.js"></script>
         <script>

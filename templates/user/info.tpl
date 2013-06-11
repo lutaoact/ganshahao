@@ -83,5 +83,6 @@
         {else}
             <p>没有相关用户信息</p>
         {/if}
+        {include file="common/footer.tpl"}
     </body>
 </html>
