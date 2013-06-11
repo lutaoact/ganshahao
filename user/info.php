@@ -8,6 +8,11 @@ if ( !isset($_GET['user_id']) ) {
     exit;
 }
 
+if ( !is_numeric($_GET['user_id']) ) {
+    echo "ERROR: user_id should be numberic";
+    exit;
+}
+
 $user_id = $_GET['user_id'];
 
 $smarty = new MySmarty();

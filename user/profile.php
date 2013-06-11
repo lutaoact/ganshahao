@@ -5,6 +5,10 @@ require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
 
 $smarty = new MySmarty();
 if (isset($_GET['user_id'])) {
+    if ( !is_numeric($_GET['user_id']) ) {
+        echo "ERROR: user_id should be numberic";
+        exit;
+    }
     $user_id = $_GET['user_id'];
 } else {
     $user_id = require_login();
