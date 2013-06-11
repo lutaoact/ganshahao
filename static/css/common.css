@@ -50,10 +50,10 @@ form.custom span.custom{display:inline-block;width:14px;height:14px;position:rel
 input.input-text,textarea{border-right:1px solid #bbb;border-bottom:1px solid #bbb}
 input.input-text,textarea,select{display:block;margin-bottom:9px}
 form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #ccc solid;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;box-shadow:0px 0px 6px #dedede;-moz-box-shadow:0px 0px 6px #dedede;-webkit-box-shadow:0px 0px 6px #dedede}
-#user-settings .settings label,#user-settings .settings input,#user-settings .settings .tips{margin-right:10px}
+#user-settings .settings label,#user-profile label,#user-settings .settings input,#user-settings .settings .tips{margin-right:10px}
 #user-settings .settings label,#user-settings .settings .tips{margin-top:8px}
-#user-settings .settings label{float:left;width:150px;font-size:18px;line-height:1.6em;margin-bottom:0;text-shadow:0 2px 0px #fff;-moz-text-shadow:0 2px 0px #fff;-webkit-text-shadow:0 2px 0px #fff}
-#user-settings .settings .field{border-bottom:1px #f0f0f0 solid;box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;-webkit-box-shadow:0 1px 0 #fff;margin:0;padding:1em 0;float:left;width:100%}
+#user-settings .settings label,#user-profile label{float:left;width:150px;font-size:18px;line-height:1.6em;margin-bottom:0;text-shadow:0 2px 0px #fff;-moz-text-shadow:0 2px 0px #fff;-webkit-text-shadow:0 2px 0px #fff}
+#user-settings .settings .field,#user-profile .field{border-bottom:1px #f0f0f0 solid;box-shadow:0 1px 0 #fff;-moz-box-shadow:0 1px 0 #fff;-webkit-box-shadow:0 1px 0 #fff;margin:0;padding:1em 0;float:left;width:100%}
 #user-settings .settings .field:first-child{padding-top:0}
 #user-settings .settings .field:last-child{padding-bottom:0;border-bottom:0}
 #user-settings .settings input:not(.button),#user-settings .settings textarea{float:left;width:20em;font-size:1.1em;padding:8px}
@@ -190,6 +190,13 @@ table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr
 #profile #user-profile .side-nav  #user-welcome p{padding:5px;font-size:18px;font-weight:bold;margin-top:20px;display:block;overflow:hidden;background:#fff;border:1px solid #ddd;box-shadow:1px 1px 3px #dfdfdf;-webkit-box-shadow:1px 1px 3px #dfdfdf;-webkit-border-radius:3px;border-radius:3px;}
 #profile #user-profile .side-nav #user-invite a{width:75%;}
 #profile .actions a{font-size:14px;}
+#profile #right-side{margin-left:4%;width:100%;}
+#profile  #right-side #completed-title{margin-bottom:20px;background:#f0f0f0;padding:20px 0;width:100%;text-align:center;}
+#profile #training-list{border-top:2px solid #f0f0f0;width:100%;padding-top:20px;}
+#profile #training-list ul{border:1px solid #f0f0f0;border-radius:3px;}
+#profile #training-list ul li{padding:10px 0; padding-left:5%;}
+
+#user-profile fieldset p{line-height:1.6em;font-size:18px;text-shadow:0 2px 0px white}
 
 #page-footer{margin-top:5%;padding:3% 0;background-color:#DFDFDF;text-align:center;color:#333;font-size:14px;border-top:1px #DDD solid;box-shadow:0 -2px 0 #fff;}
 #page-footer .eight.columns{margin:0 auto; float:none;}

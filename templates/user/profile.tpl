@@ -38,12 +38,18 @@
                         </div>
                     </div>
                     <div class="columns eight">
-                        <p>已完成{$count_training_completed}个培训：以下为完成列表</p>
-                        <ul>
-                            {foreach $training_names as $training_name}
-                            <li>{$training_name.training_name}</li>
-                            {/foreach}
-                        </ul>
+                        <div id="right-side">
+                            <div id="completed-title">
+                                <h3>已完成{$count_training_completed}个培训：以下为完成列表</h3>
+                            </div>
+                            <div id="training-list"> 
+                                <ul>
+                                    {foreach $training_names as $training_name}
+                                    <li><h5>{$training_name.training_name}</h5></li>
+                                    {/foreach}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
