@@ -1,6 +1,7 @@
 <?php
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/constants.php";
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/formvalidator.php";
+    require_once "$_SERVER[DOCUMENT_ROOT]/lib/MyMail.php";
 
     function json_exit( $res ) {
         echo json_encode( $res );
@@ -87,5 +88,31 @@
     function session_get($key) {
         session_start();
         return  $_SESSION[$key];
+    }
+
+    function send_mail($to, $subject, $content, $params = array()) {
+        $_post = array(
+            from            => 'tfirer@foxmail.com',
+            to              => $to,
+            subject         => $subject,
+            content         => $content,
+            smtp_host       => 'smtp.163.com',
+            smtp_port       => 25,
+            smtp_username   => "干啥好",
+            smtp_password   => "ishine",
+            tls             => false,
+        );
+        if (isset($params['reply_to'])) {
+            $_post['reply_to']      = $params['reply_to'];
+            $_post['reply_name']    = $params['reply_name'];
+        }
+
+        $mailer = new MyMail($_post);
+        $res = $mailer->send();
+        if(!$res){
+            logd('from:'.$_post['from'].' to: '.$to.' >>>'.$mailer->errmsg());
+        }
+        $mailer->clean();
+        return $res;
     }
 ?>
