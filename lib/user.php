@@ -90,6 +90,18 @@
         return $res;
     }
 
+    function get_user_all_job_applications_api($user_id) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        list($application_list, $mysql_err_no, $mysql_err_msg) = $_db->select_job_applications_by_user_id($user_id);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        $res[result] = $application_list;
+        return $res;
+    }
+
     function user_settings_api($user_settings) {
         global $_db;
         $res = array(result => "", errCode => 0, errMsg => "");

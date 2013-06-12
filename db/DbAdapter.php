@@ -487,6 +487,26 @@ class DbAdapter {
                     job.company_id = {$id}";
         return $this->getData($sql);
     }
+
+    public function select_job_applications_by_user_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT DISTINCT
+                    job_application.job_id  as job_id,
+                    job.name                as job_name,
+                    job.company_id          as company_id,
+                    company.name            as company_name
+                FROM
+                    job_application, job, user, company
+                WHERE
+                    job_application.user_id = {$id}
+                        AND
+                    job_application.user_id = user.id
+                        AND
+                    job_application.job_id = job.id
+                        AND
+                    job.company_id = company.id";
+        return $this->getData($sql);
+    }
     ##################
     # settings
     ##################
