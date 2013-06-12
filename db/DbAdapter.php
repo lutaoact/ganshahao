@@ -456,6 +456,18 @@ class DbAdapter {
         return $this->runSql($sql);
     }
 
+    public function update_job_application_by_id($id, $params) {
+        $id  = $this->escape($id);
+        $data = $this->format_data($params);
+        $sql = "update
+                    job_application
+                SET
+                    {$data}
+                WHERE
+                    id = {$id}";
+        return $this->runSql($sql);
+    }
+
     public function get_status_by_job_id_and_user_id($job_id, $user_id) {
         $job_id  = $this->escape($job_id);
         $user_id = $this->escape($user_id);

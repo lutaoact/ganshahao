@@ -13,7 +13,7 @@
                 <h3>{$company.name}</h3>
                 {foreach $job_applications as $job_application}
                     <h5>
-						<input type="hidden" value="{$job_application.id}" />
+						<input type="hidden" class="job_application_id" value="{$job_application.id}" />
 						<a href="/user/info.php?user_id={$job_application.user_id}">{$job_application.user_name}</a>申请了<a href="/job/job_detail.php?job_id={$job_application.job_id}">{$job_application.job_name}</a>
 						<select class="status_selected">
 							<option value="0" {if $job_application.status == 0}selected{/if}>请选择</option>
@@ -31,12 +31,13 @@
             console.log("in");
             $(".status_selected").change(function() {
                 console.log($(this).val());
-                console.log($(this).siblings(":input:hidden").val());
+                console.log($(this).siblings(".job_application_id").val());
                 $.ajax({
                     type:"POST",
-                    url :"/company/company_profile.php",
+                    url :"/company/change_status.php",
                     data:   {
                         'status_selected'  : $(this).val(),
+                        'job_application_id' : $(this).siblings(".job_application_id").val(),
                     },
                     dataType: "json",
                     timeout:120000, // 2min
