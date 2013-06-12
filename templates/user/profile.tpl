@@ -55,7 +55,5 @@
             </div>
         </div>
         {include file="common/footer.tpl"}
-        <script src="/static/js/jquery.js"></script>
-        <script src="/static/js/common.js"></script>
     </body>
 </html>

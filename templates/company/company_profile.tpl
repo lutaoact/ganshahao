@@ -24,7 +24,35 @@
                 {/foreach}
             </div>
         </div>
-    <div>
+    </div>
     {include file="common/footer.tpl"}
+    <script>
+        $(function() {
+            console.log("in");
+            $(".status_selected").change(function() {
+                console.log($(this).val());
+                console.log($(this).siblings(":input:hidden").val());
+                $.ajax({
+                    type:"POST",
+                    url :"/company/company_profile.php",
+                    data:   {
+                        'status_selected'  : $(this).val(),
+                    },
+                    dataType: "json",
+                    timeout:120000, // 2min
+                    success: function (obj) {
+                        if(obj.errCode == 0 ){
+                            toast("更新成功");
+                        }else{
+                            toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+                        }
+                    },
+                    error: function () {
+                        toast_err("提交失败");
+                    },
+                });
+            });
+        });
+    </script>
 </body>
 </html>
