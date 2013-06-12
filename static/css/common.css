@@ -47,9 +47,6 @@ form label{display:block;font-size:12.em;color:#666}
 form .field{margin-bottom:.75em}
 form.custom span.custom{display:inline-block;width:14px;height:14px;position:relative;top:2px;border:solid 1px #ccc;background:url("//d3h58ti7lx89tg.cloudfront.net/assets/misc/custom-form-sprites-246767b29319471699a18ec137478ff4.png") 0 0 no-repeat;}
 #availability .custom.checkbox{width:14px; height:14px;}
-input.input-text,textarea{border-right:1px solid #bbb;border-bottom:1px solid #bbb}
-input.input-text,textarea,select{display:block;margin-bottom:9px}
-form input:not(.button),form textarea{font-size:1.4em;padding:5px;border:1px #ccc solid;background:#fff;-webkit-border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;border-radius:3px;box-shadow:0px 0px 6px #dedede;-moz-box-shadow:0px 0px 6px #dedede;-webkit-box-shadow:0px 0px 6px #dedede}
 #user-settings .settings label,#user-profile label,#user-settings .settings input,#user-settings .settings .tips{margin-right:10px}
 #user-settings .settings label,#user-settings .settings .tips{margin-top:8px}
 #user-settings .settings label,#user-profile label{float:left;width:150px;font-size:18px;line-height:1.6em;margin-bottom:0;text-shadow:0 2px 0px #fff;-moz-text-shadow:0 2px 0px #fff;-webkit-text-shadow:0 2px 0px #fff}

@@ -3,31 +3,32 @@
 <head>
     <title>[干啥好] 工作列表</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../../static/css/common.css" type="text/css" />
+    <script src="/static/js/common.js"></script>
+    <link rel="stylesheet" rev="stylesheet" href="/static/CSS/main.css" type="text/css" media="all" />
+	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
+	<script src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
+
+	<link rel="icon" type="/image/ico" href="favicon.ico">
 </head>
 <body id="explore" lang="en">
-	{include file="common/header.tpl"}
-	<div class="container content">
-		<div class="row">
-			<div class="columns twelve">
-				<h1 class="page-title search-job">黄浦区 上海
-					<div class="columns seven right">
+	{include file="common/headersec.tpl"}
+    <section>
+<div class="container">
+	<div class="joblisttitle">
+    黄浦区 上海
+					
 					<input style="margin-left:20px;" type="text" name="zipcode" id="zipcode" maxlength="6" placeholder="您工作目标地点的邮编" />
 					<input class="button radius large green" id="search_btn" name="search_btn" type="button" value="搜索">
-					</div>
-				</h1>
-			</div>
-		</div>
-		<div class="row">
-			<div class="columns twelve">
-				<div id="job_list">
-                    <ul class="block-grid three-up">
-                        {include file='job/job_list_div.tpl'}
-                    </ul>
-                </div>
-			</div>
-		</div>
+					
+				
+    </div>
+    {include file='job/job_list_div.tpl'}
+    <div style="clear:both; height:30px;"></div>
 	</div>
+	</section>
+    
+	
     
     {include file="common/footer.tpl"}
     <script src="../../static/js/jquery.js"></script>

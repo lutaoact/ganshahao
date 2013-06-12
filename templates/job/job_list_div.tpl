@@ -1,26 +1,13 @@
 {foreach $company_list as $company}
-    <li style="opacity:1;">
-        <div class="employer clearfix" style="height:188.25px;">
-            <div class="employer-info clearfix">
-                <div class="user-name">
-                    <a href="/company/company_detail.php?company_id={$company.company_id}" title="{$company.company_name}">
-                        {$company.company_name}
-                    </a>
-                </div>
-            </div>
-            <div class="job-titles">
-                <ul>
-                {foreach $company.job_list as $job}
-                <li>
-                    <div class="columns eight">
-                        <a href="/job/job_detail.php?job_id={$job.job_id}" class="job-title-link">
-                            {$job.job_name}
-                        </a>
-                    </div>
-                </li>
-                {/foreach}
-                </ul>
-            </div>
+    <!-- joblist item -->
+    <div class="joblistblock"><div class="joblistcon">
+    	<div class="joblistlogo"><!-- 公司图片 --><img src="/static/img/{$company.company_logo}" width="60" height="60"></div>
+        <div class="joblistname"><!-- 公司名称 -->{$company.company_name}</div>
+        <div class="joblist">
+        {foreach $company.job_list as $job}
+        	<a href="/job/job_detail.php?job_id={$job.job_id}"><li><div class="jobstatus1"><!-- 职位状态 -->Hiring Now</div><div class="jobname"><!-- 职位名称 -->{$job.job_name}</div></li></a>
+        {/foreach}
         </div>
-    </li>
+    </div></div>
+    <!-- joblist item -->
 {/foreach}

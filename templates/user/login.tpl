@@ -4,6 +4,13 @@
     <title>[干啥好] 登录页面</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
+    <script src="/static/js/common.js"></script>
+    <link rel="stylesheet" rev="stylesheet" href="/static/CSS/main.css" type="text/css" media="all" />
+	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
+	<script src="/static/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
+
+	<link rel="icon" type="/image/ico" href="favicon.ico">
 </head>
 
 <body>
