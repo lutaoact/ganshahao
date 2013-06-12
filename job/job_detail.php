@@ -5,7 +5,7 @@
     define('JOB_DETAIL_TPL', 'job/job_detail.tpl');
     define('JOB_TRAINING_TPL', 'job/job_training.tpl');
 
-    require_login();
+    //require_login();
 
     if ( !isset($_REQUEST['job_id']) ) {
         echo "ERROR: without job_id";

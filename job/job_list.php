@@ -3,7 +3,7 @@
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/common.php";
     require_once "$_SERVER[DOCUMENT_ROOT]/lib/MySmarty.php";
 
-    require_login();
+    //require_login();
 
     $zipcode = $_REQUEST['zipcode'] ? $_REQUEST['zipcode'] : 200011;
 

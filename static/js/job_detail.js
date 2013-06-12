@@ -23,7 +23,26 @@ function check_real_info_setted() {
         dataType: "json",
         timeout:120000, // 2min
         success: function (obj) {
-            if (obj.errCode == 0) {
+            switch (obj.errCode) {
+                case 0:
+                    $("#apply_btn").hide();
+                    $("#train_div").show();
+                    get_training();
+                    break;
+                case 151:
+                    if (confirm("你还没有填写联系信息(姓名和电话)，现在就去设置？")) {
+                        setTimeout(function(){ location.href = "/user/settings.php"; }, 500);
+                    }
+                    break;
+                case 150:
+                    if (confirm("你还没有登陆，先登陆？")) {
+                        setTimeout(function(){ location.href = "/user/login.php?jumpto="+window.location.href; }, 500);
+                    }
+                    break;
+                default:
+                    toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
+            }
+            /* if (obj.errCode == 0) {
                 if (obj.result) {
                     $("#apply_btn").hide();
                     $("#train_div").show();
@@ -36,7 +55,7 @@ function check_real_info_setted() {
                 }
             } else {
                 toast_err("出错["+ obj.errCode +"]: " + obj.errMsg);
-            }
+            } */
         },
     });
 }

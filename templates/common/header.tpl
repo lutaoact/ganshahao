@@ -10,6 +10,9 @@
                 <div class="columns ten">
                     <ul class="right nav-bar">
                         <li class="register">
+                            <a href="/job/job_list.php" class="register-link" title="Register for Ganshahao.">工作机会</a>
+                        </li>
+                        <li class="register">
                             <a href="/user/register.php" class="register-link" title="Register for Ganshahao.">注册</a>
                         </li>
                         <li class="signin">

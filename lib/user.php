@@ -81,7 +81,10 @@
         if ($res[errCode]) return $res;
 
         if($user_info[real_name] && $user_info[mobile]) {
-            $res[result] = true;
+            //$res[result] = true;
+        } else {
+            $res[errCode] = ERR_WITHOUT_REAL_INFO;
+            $res[errMsg] = '没有设置联系信息(姓名和电话)';
         }
 
         return $res;
