@@ -3,12 +3,7 @@
 <head>
     <title>[干啥好] 工作列表</title>
     <meta charset="UTF-8" />
-    <script src="/static/js/common.js"></script>
     <link rel="stylesheet" rev="stylesheet" href="/static/CSS/main.css" type="text/css" media="all" />
-	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
-	<script src="/static/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
-
 	<link rel="icon" type="/image/ico" href="favicon.ico">
 </head>
 <body id="explore" lang="en">
@@ -31,8 +26,8 @@
 	
     
     {include file="common/footer.tpl"}
-    <script src="../../static/js/jquery.js"></script>
-    <script src="../../static/js/common.js"></script>
+	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
     <script>
         function validate_zipcode(zipcode) {
             reg = /^\d{6}$/;
@@ -81,4 +76,5 @@
             });
         });
     </script>
+
 </body>
