@@ -473,7 +473,9 @@ class DbAdapter {
                     user.id        as user_id,
                     user.nick_name as user_name,
                     job.id         as job_id,
-                    job.name       as job_name
+                    job.name       as job_name,
+					job_application.id,
+					job_application.status
                 FROM
                     job_application, job, user
                 WHERE
