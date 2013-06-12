@@ -80,7 +80,7 @@ CREATE TABLE job_application(
     id              int unsigned    NOT NULL auto_increment,
     job_id          int unsigned    NOT NULL DEFAULT 0,
     user_id         int unsigned    NOT NULL DEFAULT 0,
-    status          tinyint         NOT NULL DEFAULT 0,
+    status          tinyint         NOT NULL DEFAULT 0, -- 1 => 接受   2 => 拒绝
     updated_time    timestamp       NOT NULL DEFAULT CURRENT_TIMESTAMP,
     primary key(id)
 )Engine=InnoDB;

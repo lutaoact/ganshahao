@@ -291,6 +291,7 @@ class DbAdapter {
                     company.id as company_id,
                     job.name as job_name,
                     company.name as company_name,
+                    company.logo as company_logo,
                     job.description as job_description,
                     job.address as job_address
                 FROM
