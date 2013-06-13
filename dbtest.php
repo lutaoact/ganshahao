@@ -6,9 +6,13 @@
 
     //$db = new DbAdapter();
 
-    var_dump(get_user_all_job_applications_api(1));
+    //var_dump(get_training_detail_api(2));
 
-    /* list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_applications_by_user_id(1);
+    var_dump(get_training_list_api(1));
+
+    /* var_dump(get_user_all_job_applications_api(1));
+
+    list($res, $mysql_err_no, $mysql_err_msg) = $db->select_job_applications_by_user_id(1);
     var_dump($res);
 
     var_dump(get_top_user_api());

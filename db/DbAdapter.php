@@ -267,6 +267,33 @@ class DbAdapter {
         return $this->runSql($sql);
     }
 
+    public function select_training_list_by_job_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT
+                    id as id,
+                    name as name
+                FROM
+                    training
+                WHERE
+                    job_id = {$id}";
+        return $this->getData($sql);
+    }
+
+    public function select_training_detail_by_id($id) {
+        $id = $this->escape($id);
+        $sql = "SELECT
+                    id as id,
+                    training_type as type,
+                    name as name,
+                    description as description,
+                    link as link
+                FROM
+                    training
+                WHERE
+                    id = {$id}";
+        return $this->getLine($sql);
+    }
+
     public function select_trainings_by_job_id($id, $offset) {
         $id = $this->escape($id);
         $sql = "SELECT
