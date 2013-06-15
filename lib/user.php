@@ -57,6 +57,26 @@
         return $res;
     }
 
+    function find_pwd_api($user_email) {
+        global $_db;
+        $res = array(result => "", errCode => 0, errMsg => "");
+
+        validate_login_email_format($user_email, $res);
+        if ($res[errCode]) return $res;
+
+        list($user_info, $mysql_err_no, $mysql_err_msg) = $_db->select_user_by_email($user_email);
+        validate_db_error($mysql_err_no, $mysql_err_msg, $res);
+        if ($res[errCode]) return $res;
+
+        if (!$user_info) {
+            $res[errCode] = ERR_EMAIL_NOT_EXIST;
+            $res[errMsg] = '邮箱不存在';
+        }
+        
+        $result = array(res => $res, password => $user_info['password']);
+        return $result;
+    }
+
     function check_email_api($user_email) {
         global $_db;
         $res = array(result => "", errCode => 0, errMsg => "");

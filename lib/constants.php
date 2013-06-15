@@ -25,6 +25,8 @@ define('ERR_EMAIL_EXIST',                   112);
 define('ERR_CHANGE_EMAIL',                  113); //不能修改邮箱
 define('ERR_PASSWORD',                      114); //密码错误
 define('ERR_TWO_NEW_PASSWORD_DO_NOT_MATCH', 115); //两次输入的新密码不相同
+define('ERR_EMAIL_NOT_EXIST',               116);
+define('ERR_SEND_MAIL_FAIL',                117);
 
 define('ERR_NOT_LOGIN',                     150);
 define('ERR_WITHOUT_REAL_INFO',             151);
@@ -36,4 +38,11 @@ define('IMG_PATH',                          "/static/img/");
 define('UPLOADS_DIR_PICTURE',               "/uploads/");
 define('UPLOADS_DIR_RESUME',                "/uploads/");
 define('LOGIN_COOKIE',                      'GANSHAHAO_WEB_SESSION');          //login cookie name
+
+// email server
+define('SMTP_SERVER',                       'smtp.163.com');        // SMTP邮件服务器
+define('SMTP_SERVER_PORT',                  25);                  // SMTP服务器端口
+define('SMTP_USER_MAIL',                    'gsh_test@163.com');   // 暂时不知道
+define('SMTP_USER',                         'gsh_test@163.com');   // 发送者邮箱
+define('SMTP_PASSWORD',                     'gsh123456');           // 发送方邮箱密码
 ?>

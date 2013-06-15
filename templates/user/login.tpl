@@ -32,6 +32,9 @@
                                         <label for="user_password">密码</label>
                                         <input type="password" id="user_password" name="user_password" />
                                     </div>
+                                    <div class="field">
+                                        <a href="forget_password.php">忘记密码？</a>
+                                    </div>
                                     <div class="field action">
                                         <input class="button radius large green" id="login_btn" name="login_btn" type="button" value="登陆" >
                                         <input class="button radius large green" id="register_btn" name="login_btn" type="button" value="注册" style="margin-left:195px">
