@@ -1,18 +1,10 @@
-<div id="top-bar">
+<div class="popupmask" id="popupmask" style="visibility:hidden; opacity:0;" onclick="loginhide()"></div>
+<div class="navcon">
+	<div class="navbg">
     <div class="container">
-        <div class="row">
-            <div class="columns two">
-                <a href="/home.php" class="logo">
-                    <img alt="Ganshahao" src="/static/img/logo.png">
-                </a>
-            </div>
-            <div class="columns ten">
-                <ul class="right nav-bar">
-                    <li class="signin">
-                        <a href="/user/logout.php" class="signin" title="Sign in to Ganshahao.">退出</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    	<a href="/home.php"><div class="navbutLogo">LOGO</div></a>
+        <a href=""><div class="navbutL">了解我们</div></a>
+        <a href="/user/logout.php"><div class="navbutR" style="width:auto;">退出</div></a>
+    </div>
     </div>
 </div>

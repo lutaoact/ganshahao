@@ -4,12 +4,7 @@
     <meta charset="utf-8">
     <title>Home</title>
     <link rel="stylesheet" href="/static/css/common.css" type="text/css" />
-    <script src="/static/js/common.js"></script>
     <link rel="stylesheet" rev="stylesheet" href="/static/CSS/main.css" type="text/css" media="all" />
-	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
-	<script src="/static/js/jquery.js"></script>
-	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
-
 	<link rel="icon" type="/image/ico" href="favicon.ico">
     </head>
     <body id="home">
@@ -51,6 +46,13 @@
 		</div>
 	<span class="als-next"><img src="/static/img/thin_right_arrow_333.png" alt="next" title="next" /></span>
 </div>
+</div>
+</section>
+  
+    
+        {include file="common/footer.tpl"}
+	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#list").als({
@@ -65,8 +67,7 @@
 		});
 	});	
 </script>
-</div>
-</section>
-        {include file="common/footer.tpl"}
+
+
     </body>
 </html>

@@ -14,5 +14,5 @@
     	<div class="container" style="text-align:right;">subfooter text</div>
     </div>
 </div>
-<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery-2.0.0.min.js"></script>
 <script src="/static/js/common.js"></script>

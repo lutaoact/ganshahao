@@ -1,5 +1,14 @@
 var score;
 var scores_map = new HashMap();
+(function($){
+			$(window).load(function(){
+				$("#trainingcontent").mCustomScrollbar({
+					scrollButtons:{
+						enable:true
+					}
+				});
+			});
+		})(jQuery);
 
 $(function() {
 /*     $("#job_apply_btn").click(function(e) {

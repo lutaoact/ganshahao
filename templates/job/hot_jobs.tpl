@@ -1,21 +1,25 @@
 <div>
-    <h5>为你推荐以下热门职位</h5>
-    <ul class="block-grid five-up">
+    <div class="hotjobscon">
+    <div class="hotjobstitle">&nbsp&nbsp&nbsp&nbsp 为你推荐以下热门职位</div>
         {foreach $job_list as $job}
-            <li>
-                <a href="/job/job_detail.php?job_id={$job.id}" target="_blank">{$job.name}</a>
-            </li>
+        <div class="hotjobsobj">
+            <a href="/job/job_detail.php?job_id={$job.id}" target="_blank">
+                <div class="hotjobsobjtitle">{$job.name}</div>
+            </a>
+        </div>
         {/foreach}
-    </ul>
+    </div>
 </div>
 
 <div>
-    <h5>TOP 5 用户，去看看他们的主页</h5>
-    <ul class="block-grid five-up">
+    <div class="hotjobscon">
+    <div class="hotjobstitle">&nbsp&nbsp&nbsp&nbsp TOP 5 用户，去看看他们的主页</div>
         {foreach $user_list as $user}
-            <li>
-                <a href="/user/profile.php?user_id={$user.id}" target="_blank">{$user.name}</a>
-            </li>
+        <div class="hotjobsobj">
+            <a href="/user/profile.php?user_id={$user.id}" target="_blank">
+                <div class="hotjobsobjtitle">{$user.name}</div>
+            </a>
+        </div>
         {/foreach}
-    </ul>
+    </div>
 </div>
