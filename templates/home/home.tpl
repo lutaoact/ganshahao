@@ -51,8 +51,9 @@
   
     
         {include file="common/footer.tpl"}
-	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
+	
 	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/loginexpand.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#list").als({

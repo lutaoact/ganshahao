@@ -3,10 +3,10 @@
 	<div class="navbg">
     <div class="container">
     	<div class="navbutLogo">LOGO</div>
-        <a href=""><div class="navbutL">我要雇人</div></a>
+        <a href="job/job_list.php"><div class="navbutL">我要雇人</div></a>
         <a href=""><div class="navbutL">了解我们</div></a>
         <div class="navbutR2" id="login" onclick="loginexpand()">登录</div>
-        <a href=""><div class="navbutR">注册</div></a>
+        <a href="user/register.php"><div class="navbutR">注册</div></a>
     </div>
     </div>
 </div>
