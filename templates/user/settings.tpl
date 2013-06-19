@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="columns two">
                                     <div class="user-icon large">
-                                    <img alt="Default-user-icon" src="/uploads/{$user.picture}">
+                                    <img alt="Default-user-icon" src="/uploads/{$user.picture}" width="150" height="150">
                                     </div>
                                 </div>
                                 <div class="columns six">
