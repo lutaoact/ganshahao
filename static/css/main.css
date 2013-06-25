@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+/* AtlantisArtist 2013 */
+
+
+/* Global */
+body {margin:0px; list-style-type:none;}
+.container {width:960px; margin:0px auto;}
+.popupmask {position:fixed; width:100%; height:100%; background:#000; opacity:0.75; -ms-filter:alpha(opacity=75); z-index:4; transition:visibility 0s ease 0s, opacity .5s ease; -webkit-transition:visibility 0s ease 0s, opacity .5s ease;}
+a {text-decoration: none; color:#333;}
+a:visited {color:#333;}
+a:hover {color:#666;}
+img {border:none;}
+.leftcol {position:relative; width:33.3%; float:left;}
+.leftcol50 {position:relative; width:47.3%; float:left;}
+.rightcol {position:relative; width:64%; float:right;}
+.rightcol50 {position:relative; width:50%; float:right;}
+.input {position:absolute; left:0px; width:24px; height:24px; margin:0px; background:#eee; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset;}
+input[type="radio"] + span, input[type="checkbox"] + span {position: absolute; width:24px; height:24px; margin:0px; background:#fff}
+input[type="file"] + span {padding:0 15px 0 15px; height:30px; border-radius:15px; background:#9ae34c; font-size:16px; line-height:30px; font-family:"微软雅黑"; color:#fff; font-weight:bold; border:none; opacity:1; transition:opacity 0.15s ease; -webkit-transition:opacity 0.15s ease;}
+input[type="radio"]:checked + span, input[type="checkbox"]:checked + span {background:#70d900;}
+label {position:absolute; width:100%; left:40px;}
+.title24 {font-family:"微软雅黑"; font-size:24px;}
+.notification {width:100%; padding:30px 0 30px 0; font-size:28px; font-family:"微软雅黑"; color:#333; text-align:center;}
+.notificationicon {margin-left:220px; padding:0 60px 0 60px; height:160px; border-radius:80px; background:#70d900; font-size:60px; line-height:160px;  width:40px; text-align:center;font-family:"微软雅黑"; color:#fff; font-weight:bold; border:none; opacity:1; transition:opacity 0.15s ease; -webkit-transition:opacity 0.15s ease;}
+.buttonlarge {padding:0 50px 0 50px; height:100px; border-radius:50px; background:#70d900; font-size:20px; line-height:100px; font-family:"微软雅黑"; color:#fff; font-weight:bold; border:none; opacity:0.7; transition:opacity 0.15s ease; -webkit-transition:opacity 0.15s ease;}
+.buttonlarge:hover {opacity:1;}
+.buttonsmall {padding:0 15px 0 15px; height:30px; border-radius:15px; background:#9ae34c; font-size:16px; line-height:30px; font-family:"微软雅黑"; color:#fff; font-weight:bold; border:none; opacity:1; transition:opacity 0.15s ease, background 0.15s ease; -webkit-transition:opacity 0.15s ease, background 0.15s ease;}
+.buttonsmall:hover {background:#70d900;}
+.buttonmedium {padding:0 25px 0 25px; height:50px; border-radius:25px; background:#9ae34c; font-size:20px; line-height:50px; font-family:"微软雅黑"; color:#fff; border:none; opacity:1; transition:opacity 0.15s ease, background 0.15s ease; -webkit-transition:opacity 0.15s ease, background 0.15s ease;}
+.buttonmedium:hover {background:#70d900;}
+input.login {padding:0 25px 0 25px; height:50px; border-radius:25px; background:#fff; font-size:20px; line-height:50px; font-family:"微软雅黑"; color:#333; border:none; opacity:1; transition:opacity 0.15s ease, background 0.15s ease; -webkit-transition:opacity 0.15s ease, background 0.15s ease;}
+
+/* Login */
+.loginbox {position:relative; float:right; width:40%; height:300px; background:#eee; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+
+/* Nav */
+.navcon {position:relative; width:100%; height:80px; padding-top:30px; z-index:4; font-family:"微软雅黑"; overflow:visible;}
+.navbg {position:absolute; width:100%; height:60px; background: rgb(0, 0, 0) transparent; background: rgba(0, 0, 0, 0.3); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#44000000, endColorstr=#44000000); -ms--ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#44000000,endColorstr=#44000000)"; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555; transition:background .25s ease; -webkit-transition:background .25s ease; z-index:2; overflow:visible;}
+.navbg:hover {background: rgb(0, 0, 0) transparent; background: rgba(0, 0, 0, 0.5); -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#88000000, endColorstr=#88000000); -ms--ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#88000000,endColorstr=#88000000)"}
+.navbutLogo {position:relative; float:left; height:80px; padding:0px 25px 0px 25px; margin:0px 3px 0px 0px; width:auto; border-bottom:#ffdb17 5px solid; background:#ffdb17; line-height:80px; color:#333; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555; z-index:10;}
+.navbutL {position:relative; float:left; background:; padding:0px 25px 0px 25px; margin:0px 3px 0px 3px; width:auto; height:55px; border-bottom:#ffdb17 5px solid; color:white; text-align:center; line-height:60px; font-size:18px; transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; -webkit-transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; z-index:5;}
+.navbutL:hover {height:80px; background:#ffdb17; line-height:80px; color:#333; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555;}
+.navbutR {position:relative; float:right; background:#333; padding:0px 25px 0px 25px; margin:0px 0px 0px 0px; width:auto; height:55px; width:45px; border-bottom:#ffdb17 5px solid; color:#fff; text-align:center; font-weight:bold; line-height:60px; font-size:18px; transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; -webkit-transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555; z-index:5;}
+.navbutR:hover {height:80px; background:#000; line-height:80px; color:#fff; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555;}
+.navbutR2 {position:relative; float:right; background:#666; padding:0px 25px 0px 25px; margin:0px 3px 0px 0px; width:auto; height:55px; width:45px; border-bottom:#ffdb17 5px solid; color:#fff; text-align:center; line-height:60px; font-size:18px; transition:height .25s ease .25s, background .25s ease, line-height .25s ease, color .25s ease, width .25s ease; -webkit-transition:height .25s ease, background .25s ease, line-height .25s ease .25s, color .25s ease, width .25s eases; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555; z-index:6;}
+.navbutR2:hover {height:55px; background:#eee; line-height:60px; color:#333; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555;}
+.navbutR3 {position:relative; float:right; background:; padding:0px 25px 0px 25px; margin:0px 3px 0px 3px; width:auto; height:55px; border-bottom:#ffdb17 5px solid; color:white; text-align:center; line-height:60px; font-size:18px; transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; -webkit-transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; z-index:5;}
+.navbutR3:hover {height:80px; background:#ffdb17; line-height:80px; color:#333; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555;}
+.navbutRA {position:relative; float:right; background:; padding:0px; margin:0px 0px 0px 3px; width:auto; height:55px; border-bottom:#ffdb17 5px solid; color:white; text-align:center; line-height:60px; font-size:18px; transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; -webkit-transition:height .25s ease, background .25s ease, line-height .25s ease, color .25s ease; z-index:5;}
+.navbutRA:hover {height:55px; background:#ffdb17; line-height:60px; color:#333; -moz-box-shadow: 1px 1px 5px #555; -webkit-box-shadow: 1px 1px 5px #555; box-shadow: 1px 1px 5px #555;}
+
+/* Footer */
+.footercon {position:relative; width:100%; top:50px; height:180px; background:#fff; font-family:"微软雅黑";}
+.subfooter {position:relative; width:100%; top:17px; height:30px; background:#666; font-family:"微软雅黑"; font-size:14px; color:#fff; line-height:30px;}
+
+/* Index */
+.headerimg {position:absolute; width:100%; height:600px; background: url(/static/img/index.jpg) no-repeat center right; -webkit-background-size:contain; -moz-background-size: cover; -o-background-size: cover; background-size: cover; -moz-box-shadow: 1px 1px 5px #666; -webkit-box-shadow: 1px 1px 5px #666; box-shadow: 1px 1px 5px #666; z-index:1;}
+.stepscon {position:relative; width:960px; height:130px; top:440px; margin:0px auto; background:#ddd; -moz-box-shadow: 1px 1px 5px #666; -webkit-box-shadow: 1px 1px 5px #666; box-shadow: 1px 1px 5px #666; z-index:2; font-family:"微软雅黑";}
+.stepsblock {position:relative; float:left; width:20%; height:110px; padding:10px 1% 10px 1%; background:#fff; -moz-box-shadow: 2px 2px 22px #ddd inset; -webkit-box-shadow: 2px 2px 22px #ddd inset; box-shadow:  2px 2px 22px #ddd inset; color:#333; line-height:110px; font-size:24px; text-align:center;}
+.stepsblock2 {position:relative; float:left; width:20%; height:110px; padding:10px 1% 10px 1%; background:#ffe660; -moz-box-shadow: 2px 2px 22px #ddd inset; -webkit-box-shadow: 2px 2px 22px #ddd inset; box-shadow:  2px 2px 22px #ddd inset; color:#333; font-weight:bold; line-height:110px; font-size:24px; text-align:center; transition:background 0.15s ease, color 0.15s ease; -webkit-transition:background 0.15s ease, color 0.15s ease; cursor:pointer;}
+.stepsblock2:hover {background:#ffdb17; color:#fff;}
+.circlespan {border-radius: 25px; behavior: url(PIE.htc); background:#333; color:white; width:50px; height:50px;}
+input.zipcode {height:20px; border-radius:25px; border:none; padding:15px 15px 15px 15px; line-height:20px; font-family:"微软雅黑"; text-align:center; font-size:18px;}
+input.zipcodebut {height:50px; border-radius:25px; border:none; background:#333; color:white; padding:15px 15px 15px 15px; line-height:20px; font-family:"微软雅黑"; text-align:center; font-size:18px; transition:background 0.25s ease; -webkit-transition:background 0.15s ease;}
+input.zipcodebut:hover {background:#70d900;}
+.als-container {position: relative; width: 100%;  height:120px; margin: 0px auto; z-index: 0;}
+.als-prev, .als-next {position: relative; float:left; cursor: pointer; height:22px; padding:49px 22.5px 0px 22.5px; width:15px;}
+.als-wrapper {position: relative; list-style: none;}
+.als-item {position: relative; display: block; height:120px; width:200px; padding:0px; margin:0px; text-align: center; cursor: pointer;	float: left;}
+.als-viewport {position: relative; overflow: hidden; margin: 0px auto; width:840px; float:left;}
+.popupcon {position:fixed; top:120px; width:40%; height:480px; margin:0 30% 0 30%; background:#666; -moz-box-shadow: 2px 2px 22px #333 inset,0px 0px 5px #000; -webkit-box-shadow: 2px 2px 22px #333 inset, 0px 0px 5px #000; box-shadow:  2px 2px 22px #333 inset, 0px 0px 5px #000; z-index:10;}
+.popupleftcol {position:absolute; width:40%; height:480px; overflow:hidden;}
+.popuprightcol {position:absolute; width:60%; right:0px; height:480px; overflow:hidden;}
+.popupobjcon {position:relative; width:100%; height:30px; overflow:visible;}
+.popupobj {position:absolute; width:100%; height:30px; background:#fff; -moz-box-shadow: 2px 2px 22px #ccc inset,0px 0px 5px #aaa; -webkit-box-shadow: 2px 2px 22px #ccc inset, 0px 0px 5px #aaa; box-shadow:  2px 2px 22px #ccc inset, 0px 0px 5px #aaa; font-family:"微软雅黑"; font-size:18px; line-height:30px; text-align:center; color:#333; cursor:default;}
+.popupobj:hover {background:#eee;}
+.popupsubobj {position:relative; width:100%; height:24px; background:#aaa; -moz-box-shadow: 2px 2px 22px #888 inset,0px 0px 5px #555; -webkit-box-shadow: 2px 2px 22px #888 inset, 0px 0px 5px #555; box-shadow:  2px 2px 22px #888 inset, 0px 0px 5px #555; font-family:"微软雅黑"; font-size:14px; line-height:24px; text-align:center; right:0px; color:#fff; cursor:pointer;}
+.popupsubobj:hover {height:30px; line-height:30px; background:#999;}
+.popupsubobjsubmit {position:absolute; left:0px; opacity:0; -ms-filter:alpha(opacity=0); width:100%; height:100%; cursor:pointer;}
+
+/* Job List */
+.joblisttitle {color:#333; height:60px; padding:30px 0 10px 0; font-size:24px; line-height:60px; font-family:"微软雅黑";}
+.joblistblock {position:relative; width:33.3%; height:200px; float:left; overflow:hidden; font-family:"微软雅黑";}
+.joblistcon {position:relative; width:94%; height:180px; margin:3% 10px 3% 10px; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+.joblistlogo {position:absolute; top:0px; left:0px; width:60px; height:60px; }
+.joblistname {position:absolute; top:0px; right:0px; width:220.5px; padding:0 10px 0 10px; height:60px; line-height:60px; font-size:18px; color:#333;}
+.joblist {position:absolute; top:60px; left:0px; width:100%; height:120px;}
+.joblist li {position:relative; height:24px; background:; opacity:0.6; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.joblist li:hover {background:; opacity:1;}
+.jobname {position:absolute; width:185px; right:0px; background:; color:#333; font-size:12px; line-height:24px; text-align:left;}
+.jobstatus1 {position:absolute; width:100px; background:#70d900; color:#fff; font-size:12px; line-height:24px; text-align:center;}
+.jobstatus2 {position:absolute; width:100px; background:#aaa; color:#fff; font-size:12px; line-height:24px; text-align:center;}
+
+/* Job Info */
+.jobinfoblock {position:relative; width:320px; height:180px; overflow:visible; font-family:"微软雅黑"; color:#333;}
+.jobinfocon {position:absolute; width:94%; height:180px; margin:0px; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+.jobinfoname {position:absolute; top:60px; width:100%; text-align:center; font-size:28px; line-height:60px; height:60px;}
+.jobinfobut {position:absolute; height:35px; width:80%; bottom:20px; margin:0 10% 0 10%; border-radius:17.5px; background:#70d900; opacity:0.6; line-height:35px; font-size:18px; color:white; text-align:center; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; border:none; font-family:"微软雅黑";}
+.jobinfobut:hover {opacity:1;}
+.jobinfo {width:95%; padding:0 0 0 5%; font-size:14px; text-align:left; font-family:"微软雅黑"; color:#333;}
+
+/* Job Apply */
+.jobapplybut {position:absolute; height:35px; width:80%; bottom:20px; margin:0 10% 0 10%; border-radius:17.5px; background:#aaa; opacity:0.6; line-height:35px; font-size:18px; color:white; text-align:center; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.jobapplybut:hover {opacity:1;}
+.jobapplystep {position:relative; width:320px; height:80px; overflow:hidden; font-family:"微软雅黑"; color:#333;}
+.jobapplystep0 {position:absolute; width:94%; height:80px; opacity:0.7; background:#fff; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; text-align:center; font-size:20px; line-height:80px; color:#333; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; cursor:pointer;}
+.jobapplystep0:hover {opacity:1;}
+.jobapplystep1 {position:absolute; width:94%; height:80px; opacity:0.7; background:#70d900; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; text-align:center; font-size:20px; line-height:80px; color:#fff; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; cursor:pointer;}
+.jobapplystep1:hover {opacity:1;}
+.jobtraining {width:95%; padding:0 0 0 5%; text-align:left; font-family:"微软雅黑"; color:#333;}
+.jobtraining li {positon:relative; height:50px; width:100%; background:#fff; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; cursor:pointer; font-size:18px; line-height:50px;}
+.trainingbutton {positon:relative; height:50px; width:100%; background:#fff; transition:background 0.15s ease, color 0.15s ease; -webkit-transition:background 0.15s ease, color 0.15s ease; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; cursor:pointer; font-size:18px; line-height:50px; font-family:"微软雅黑"; color:#333; line-height: 50px; border:none; margin-top:10px;}
+.trainingbutton:hover {background:#ddd; color:#fff;}
+.jobtrainingli {positon:relative; height:50px; width:100%; background:#fff; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; cursor:pointer; font-size:18px; line-height:50px;}
+.jobtraining li:hover {background:#eee;}
+.testname {position:absolute; top:5px; left:20px; height:45px; font-size:24px; line-height:45px; color:#333; }
+.testinfo {position:absolute; bottom:5px; left:20px; height:25px; font-size:14px; line-height:25px; color:#333;}
+.teststatus {position:absolute; bottom:5px; right:100px; height:25px; font-size:14px; line-height:25px; color:#333;}
+.ranking0 {position:absolute; right:0px; width:80px; height:80px; background:#ddd; text-align:center; font-size:20px; line-height:80px; color:#fff;}
+.ranking1 {position:absolute; right:0px; width:80px; height:80px; background:#70d900; text-align:center; font-size:20px; line-height:80px; color:#fff;}
+.ranking2 {position:absolute; right:0px; width:80px; height:80px; background:#ffdb17; text-align:center; font-size:20px; line-height:80px; color:#fff;}
+.ranking3 {position:absolute; right:0px; width:80px; height:80px; background:#eb4924; text-align:center; font-size:20px; line-height:80px; color:#fff;}
+.training {width:95%; padding:0 0 0 5%; text-align:left; font-family:"微软雅黑"; color:#333;}
+.trainingcon {position:relative; width:100%; height:154px; margin-top:5px; background:#fff; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; overflow:hidden;}
+.trainingobj {position:relative; width:100%; top:58px; height:96px;}
+.trainingobj li {position:relative; width:100%; height:24px; background:#fff; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; }
+.trainingobj li:hover {background:#eee;}
+.objnum {position:absolute; left:0px; top:0px; width:58px; height:58px; line-height:58px; font-size:20px; color:#333; text-align:center; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset;}
+.objtext {position:absolute; left:58px; width:485px; height:48px; padding:5px 10px 5px 20px; line-height:24px; font-size:14px;}
+.progbar {position:relative; width:95%; height:24px; margin:0 0 0 5%; padding:8px 2% 8px 2%; font-family:"微软雅黑"; font-size:12px; background:#fff; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset;}
+.progbarcon {position:relative; width:85%; height:24px;}
+.progbarobj {position:absolute; height:24px; background:#70d900; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset;}
+.progbartext {position:absolute; width:80px; right:-92px; color:#70d900; font-size:18px; line-height:24px;}
+.trainingdescription {padding:20px 0 20px 0; font-family:"微软雅黑"; font-size:14px; line-height:24px; color:#333;}
+.trainingprogblock {position:relative; width:320px; height:40px; overflow:visible; font-family:"微软雅黑"; color:#333; line-height:40px; font-size:16px; text-align:center;}
+.trainingprogcon0 {position:absolute; width:94%; height:40px; margin:0px; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+.trainingprogcon1 {position:absolute; width:94%; height:40px; margin:0px; background:#70d900; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; color:#fff;}
+
+/* Hot Jobs */
+.hotjobscon {position:relative; width:100%; height:auto; margin-top:5px; background:#fff; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; overflow:hidden;}
+.hotjobstitle {position:relative; width:100%; height:36px; margin-top:5px; font-size:18px; font-weight:bold; text-align:left; line-height:36px; font-family:"微软雅黑"; color:#333; background:#fff; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; overflow:hidden;}
+.hotjobsobj {position:relative; width:18%; height:48px; padding:1%; float:left; font-family:"微软雅黑"; color:#333; font-size:16px; line-height:48px; background:#fff; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease; overflow:hidden;}
+.hotjobsobj:hover {background:#ddd;}
+
+/* Membership */
+.memberblock {position:relative; width:320px; height:200px; overflow:visible; font-family:"微软雅黑"; color:#333;}
+.membercon {position:absolute; width:94%; height:200px; margin:0px; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+.memberavatar {position:absolute; width:150px; height:150px; top:0px; left:0px;}
+.memberinfo {position:absolute; width:130px; height:140px; top:10px; right:0px; font-size:14px; line-height:24px; color:#333;}
+.updateinfo {position:absolute; width:301px; height:50px; bottom:0px; right:0px; font-size:18px; line-height:50px; color:#333; text-align:center; background:#ddd; opacity:0.7; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.updateinfo:hover {opacity:1}
+.latest {position:relative; width:95%; padding-left:5%; padding-bottom:30px; }
+.latesttitle {position:relative; height:24px; padding-bottom:30px; font-size:24px; line-height:24px; font-family:"微软雅黑"; color:#666; }
+.latestblock {position:relative; float:left; width:33.3%; height:170px; font-family:"微软雅黑"; color:#333;}
+.latestcon {position:absolute; width:98%; margin:1%; height:170px; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow:  2px 2px 22px #eee inset, 0px 0px 5px #999;}
+.latestlogo {position:absolute; top:0px; left:0px; width:40px; height:40px; }
+.latestname {position:absolute; top:0px; right:0px; width:120px; padding:0 10px 0 10px; height:40px; line-height:40px; font-size:14px; color:#333;}
+.latestposname {position:absolute; top:40px; left:0px; width:100%; padding:0px; height:60px; line-height:60px; font-size:18px; color:#333; text-align:center;}
+.latestbut {position:absolute; width:100%; height:40px; bottom:0px; right:0px; font-size:16px; line-height:40px; color:#333; text-align:center; background:#ddd; opacity:0.7; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.latestbut:hover {opacity:1}
+.lateststatus1 {position:absolute; width:100%; height:30px; bottom:40px; right:0px; font-size:14px; line-height:30px; color:#fff; text-align:center; background:#70d900; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.lateststatus2 {position:absolute; width:100%; height:30px; bottom:40px; right:0px; font-size:14px; line-height:30px; color:#fff; text-align:center; background:#ffdb17; opacity:1; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset; transition:background 0.15s ease, opacity 0.15s ease; -webkit-transition:background 0.15s ease, opacity 0.15s ease;}
+.settings {width:95%; padding:0 0 0 5%; font-size:14px; text-align:left; font-family:"微软雅黑"; color:#333;}
+.settings li {width:96%; padding:2%; -moz-box-shadow: 2px 2px 22px #eee inset,0px 0px 5px #999; -webkit-box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; box-shadow: 2px 2px 22px #eee inset, 0px 0px 5px #999; margin-bottom:5px;}
+label.settingstitle {position:relative; height:32px; font-size:16px; line-height:32px; left:0px; font-weight:bold;}
+
+/* Employer */
+.memberinfoblock {position:relative; width:33.3%; height:220px; float:left; overflow:hidden; font-family:"微软雅黑";}
+.memberinfocon {position:relative; width:94%; height:200px; margin:3% 10px 3% 10px; -moz-box-shadow: 2px 2px 22px #eee inset; -webkit-box-shadow: 2px 2px 22px #eee inset; box-shadow:  2px 2px 22px #eee inset;}
+
