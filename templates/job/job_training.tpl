@@ -4,7 +4,7 @@
         $('#next_training_btn').hide();
     </script>
 {else}
-    <div class="jobtraining" id="trainingcontent" style="max-height:500px; overflow:auto; width:100%; padding:20px 0 0 0;">
+    <div class="jobtraining" id="trainingcontent" style="max-height:500px; overflow:auto; width:100%; padding:0 0 0 0;">
     <div id="training-description">
         <input type="hidden" id="training_id" name="training_id" value="{$training.id}" />
         <input type="hidden" id="training_name" name="training_name" value="{$training.name}" />

@@ -9,7 +9,6 @@
     </head>
     <body id="home">
         <div class="headerimg"></div>
-        {include file="common/popupselection.tpl"}
         {include file="common/header.tpl"}
         <section>
 <div class="stepscon">
@@ -23,8 +22,11 @@
     <div class="stepsblock">
 		<span class="circlespan">&nbsp3 </span>&nbsp 提交申请
     </div>
-    <div class="stepsblock2" style="width:32%; font-size:32px;" onClick="loginexpand()">
-        开始找工作！
+    <div class="stepsblock" style="background:#ffdb17; width:32%">
+    <!-- 邮编搜索 -->
+		<input type="text" class="zipcode" name="zipcode" maxlength="6"  placeholder="请输入邮编" style="width:150px" />
+        <input type="submit" class="zipcodebut" name="submit" value="&nbsp搜索 " />
+    <!-- 邮编搜索 -->
     </div>
 </div>
 
@@ -51,7 +53,6 @@
         {include file="common/footer.tpl"}
 	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
 	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
-    <script type="text/javascript" src="/static/js/selection.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#list").als({

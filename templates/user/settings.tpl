@@ -66,9 +66,6 @@
                             <br>{$user.email}
                             <input class="field_change" id="user_email" name="user_email" value="{$user.email}" size="30" type="hidden">
 						</li>
-                        <li class="field email">    
-                            <a href="/user/change_password.php" style="font-size:16px; font-weight:bold;">修改密码</a>
-                        </li>
                         <li class="field zipcode">
                             <label for="user_zipcode" class="settingstitle">邮政编码</label>
                             <br><input class="field_change" id="user_zipcode" name="user_zipcode" value="{$user.zipcode}" size="30" type="text">

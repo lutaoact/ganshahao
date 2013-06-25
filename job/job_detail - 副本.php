@@ -61,7 +61,4 @@
         $smarty->assign('question_list', $question_list);
         @$smarty->display(JOB_TRAINING_TPL);
     }
-	
-	
-
 ?>

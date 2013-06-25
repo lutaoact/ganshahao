@@ -7,14 +7,14 @@
 	<link rel="icon" type="/image/ico" href="favicon.ico">
 </head>
 <body id="explore" lang="en">
-	{include file="common/headersec.tpl"}
+	{include file="common/popupselection.tpl"}
+    {include file="common/headersec.tpl"}
     <section>
 <div class="container">
 	<div class="joblisttitle">
-    黄浦区 上海
+    <div style="float:left; ">卢湾区 淮海路</div><div style="float:left; margin:15px 0 0 20px; cursor:pointer;" class="buttonsmall"  onClick="loginexpand()">更改地点</div>
 					
-					<input style="margin-left:20px;" type="text" name="zipcode" id="zipcode" maxlength="6" placeholder="您工作目标地点的邮编" />
-					<input class="button radius large green" id="search_btn" name="search_btn" type="button" value="搜索">
+					
 					
 				
     </div>
@@ -28,6 +28,7 @@
     {include file="common/footer.tpl"}
 	<script type="text/javascript" src="/static/js/loginexpand.js"></script>
 	<script type="text/javascript" src="/static/js/jquery.alsEN-1.0.min.js"></script>
+    <script type="text/javascript" src="/static/js/selection.js"></script>
     <script>
         function validate_zipcode(zipcode) {
             reg = /^\d{6}$/;

@@ -27,9 +27,7 @@
 </div>
 <div class="rightcol">
     <div class="latest">
-    <div class="latesttitle">我的工作申请</div>
-    	<!-- 最近申请列表 -->
-        <!-- 最近申请单元 -->
+		<div class="latesttitle">我的工作申请</div>
 			<div class="latestblock">
             	<div class="latestcon">
                 	<div class="joblistlogo"><!-- 公司图片 --><img src="image/brand1.png" width="40" height="40"></div>
@@ -38,33 +36,9 @@
                     <div class="latestbut">查看详情</div>
                     <div class="lateststatus1"><!-- 当前状态 -->已提交</div>
                 </div>
-            </div>
-        <!-- 最近申请单元 -->
-        <!-- 最近申请单元 -->
-			<div class="latestblock">
-            	<div class="latestcon">
-                	<div class="joblistlogo"><!-- 公司图片 --><img src="image/brand1.png" width="40" height="40"></div>
-        			<div class="latestname"><!-- 公司名称 -->公司名称</div>
-					<div class="latestposname"><!-- 职位名称 -->职位名称</div>
-                    <div class="latestbut">查看详情</div>
-                    <div class="lateststatus2"><!-- 当前状态 -->培训中</div>
-                </div>
-            </div>
-        <!-- 最近申请单元 -->
-        <!-- 最近申请单元 -->
-			<div class="latestblock">
-            	<div class="latestcon">
-                	<div class="joblistlogo"><!-- 公司图片 --><img src="image/brand1.png" width="40" height="40"></div>
-        			<div class="latestname"><!-- 公司名称 -->公司名称</div>
-					<div class="latestposname"><!-- 职位名称 -->职位名称</div>
-                    <div class="latestbut">查看详情</div>
-                    <div class="lateststatus2"><!-- 当前状态 -->培训中</div>
-                </div>
-            </div>
-        <!-- 最近申请单元 -->
-
-	<div style="clear:both; height:30px;"></div>
-    </div>
+			</div>
+		<div style="clear:both; height:30px;"></div>
+	</div>
     
 	<div class="jobtraining">
     <div class="latesttitle">我最近完成的{$count_training_completed}个培训</div>
@@ -84,5 +58,6 @@
 </section>
 
         {include file="common/footer.tpl"}
+        <script src="/static/js/application_list.js"></script>
     </body>
 </html>

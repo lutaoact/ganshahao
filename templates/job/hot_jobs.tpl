@@ -20,6 +20,6 @@
                 <div class="hotjobsobjtitle">{$user.name}</div>
             </a>
         </div>
-        {/foreach}
+        {/foreach} 
     </div>
 </div>

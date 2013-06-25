@@ -17,19 +17,24 @@
                             <fieldset style="border:none; padding:0; margin:0;">
                                 <form accept-charset="UTF-8" class="new_user" method="post">
                                     <div class="field">
-                                        <input type="email" class="login" id="user_email" name="user_email" style="width:295.59px" placeholder="example@example.com" />
+                                        <input type="email" class="login" id="user_email" name="user_email" style="width:295.59px" placeholder="你的电子邮件地址" />
                                         
                                     </div><div style="height:5px"></div>
                                     <div class="field">
                                         
                                         <input type="password" class="login" id="user_password" name="user_password" style="width:295.59px;" placeholder="密码" />
-                                    </div><div style="height:20px"></div>
+                                        
+                                    </div>
+                                    
+                                    <div style="clear:both; height:20px"></div>
                                     <div class="field" style="padding-bottom:15px;">
-                                        <div style="text-align:right;"><a href="forget_password.php">忘记密码？</a></div>
-                                    </div>
+                                        <div style="text-align:right;"><a href="forget_password.php">忘记密码？<br>&nbsp </a></div>
                                     <div class="field action">
-                                        <input id="login_btn" name="login_btn" type="button" class="buttonmedium" style="width:100%;" value="登陆" >
+                                        <input id="login_btn" name="login_btn" type="button" class="buttonmedium" style="width:190.59px; float:left;" value="登陆" >
+                                        <a href="/user/register.php"><div class="buttonmedium" id="user_password" name="user_password" style="width:95px; float:right; text-align:center; background:#333; color:#fff;">注册</div></a>
+                                        <div style="clear:both;"></div>
                                     </div>
+                                    
                                 </form>
                                 <ul class="additional-links">
                                     <!-- <li><a href="">Forgot your password?</a></li> -->
@@ -45,6 +50,7 @@
     {include file="common/footer.tpl"}
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/common.js"></script>
+    <script src="/static/js/ieplaceholder.js"></script>
     <script>
         $(function() {
             $("#login_btn").click(function(e) {
@@ -73,5 +79,6 @@
             });
         });
     </script>
+    
 </body>
 </html>

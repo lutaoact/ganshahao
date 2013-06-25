@@ -7,8 +7,9 @@
 
     $job_list = try_get_job_list(session_get('zipcode'));
     $user_list = try_get_top_user();
+	
 
-    show_page($job_list, $user_list);
+    show_page($job_list, $user_list );
 
     function try_get_job_list($zipcode) {
         $res = get_top_jobs_api($zipcode);
@@ -24,7 +25,7 @@
         return $res[result];
     }
 
-    function show_page($job_list, $user_list){
+    function show_page($job_list, $user_list ){
         $smarty = new MySmarty();
         $smarty->assign('job_list', $job_list);
         $smarty->assign('user_list', $user_list);
