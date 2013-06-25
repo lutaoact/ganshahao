@@ -32,6 +32,9 @@
         global $_db;
         $res = array(result => "", errCode => 0, errMsg => "");
 
+        $res = check_email_api($user_email);
+        if ($res[errCode]) return $res;
+
         validate_login_email_format($user_email, $res);
         if ($res[errCode]) return $res;
 
