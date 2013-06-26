@@ -533,7 +533,9 @@ class DbAdapter {
                     job_application.job_id  as job_id,
                     job.name                as job_name,
                     job.company_id          as company_id,
-                    company.name            as company_name
+                    company.logo            as company_logo,
+                    company.name            as company_name,
+                    job_application.status  as status
                 FROM
                     job_application, job, user, company
                 WHERE

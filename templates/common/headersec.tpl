@@ -6,6 +6,7 @@
         <a href="/job/job_list.php"><div class="navbutL">工作列表</div></a>
         <a href="/company/company_profile.php"><div class="navbutL">我要雇人</div></a>
         <a href=""><div class="navbutL">了解我们</div></a>
+        <a href="/user/logout.php"><div class="navbutR">登出</div></a>
         <a href="/user/profile.php"><div class="navbutR" style="width:auto;">个人中心</div></a>
     </div>
     </div>

@@ -8,7 +8,7 @@
 
     //var_dump(get_training_detail_api(2));
 
-    var_dump(get_training_list_api(1));
+    var_dump(get_user_all_job_applications_api(1));
 
     /* var_dump(get_user_all_job_applications_api(1));
 

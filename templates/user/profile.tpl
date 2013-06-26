@@ -28,15 +28,35 @@
 <div class="rightcol">
     <div class="latest">
 		<div class="latesttitle">我的工作申请</div>
+            {foreach $application_list as $application}
 			<div class="latestblock">
             	<div class="latestcon">
-                	<div class="joblistlogo"><!-- 公司图片 --><img src="image/brand1.png" width="40" height="40"></div>
-        			<div class="latestname"><!-- 公司名称 -->公司名称</div>
-					<div class="latestposname"><!-- 职位名称 -->职位名称</div>
+                    <div class="joblistlogo"><!-- 公司图片 -->
+                        <img src="/static/img/{$application.company_logo}" width="40" height="40">
+                    </div>
+                    <div class="latestname"><!-- 公司名称 -->
+                        <a href="/company/company_detail.php?company_id={$application.company_id}" target="_blank">
+                            {$application.company_name}
+                        </a>
+                    </div>
+					<div class="latestposname"><!-- 职位名称 -->
+                        <a href="/job/job_detail.php?job_id={$application.job_id}" target="_blank">
+                            {$application.job_name}
+                        </a>
+                    </div>
                     <div class="latestbut">查看详情</div>
-                    <div class="lateststatus1"><!-- 当前状态 -->已提交</div>
+                    <div class="lateststatus1"><!-- 当前状态 -->
+                        {if $application.status == 1}
+                            已接受
+                        {elseif $application.status == 2}
+                            已拒绝
+                        {else}
+                            已提交，正在审核
+                        {/if}
+                    </div>
                 </div>
 			</div>
+            {/foreach}
 		<div style="clear:both; height:30px;"></div>
 	</div>
     
